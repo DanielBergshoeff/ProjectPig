@@ -296,7 +296,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 254188345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d39701b1917dc0a4599f59f84ca77d49, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc85b26fd314c04ba622afcde4aee02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &646767731
@@ -619,12 +619,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 254188350}
-        m_MethodName: StartDialog
+        m_MethodName: StartDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 35bc87c74bd022f42b3d94c959b2b1c2,
+          m_ObjectArgument: {fileID: 11400000, guid: 96429c0479f986d4a8bfda37c28734d6,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogObject, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -749,12 +749,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 254188350}
-        m_MethodName: StartDialog
+        m_MethodName: StartDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 334ef70d7f752e1479db088bf775be3b,
+          m_ObjectArgument: {fileID: 11400000, guid: 7ee2ba79cd5908a45882dc801c8e52be,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: DialogObject, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
