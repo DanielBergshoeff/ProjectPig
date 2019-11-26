@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 /// <summary>
 /// Shows and plays the dialogue objects contents
 /// </summary>
 public class DialogueManager : MonoBehaviour
 {
+    public List<KeyCode> keycodes;
+
     private GameObject dialogueBox;
     private TextMeshProUGUI dialogueText;
     private AudioSource dialogueAudio;
 
-    private DialogueObject lastDialogueObject;
+    private DialogueObject currentDialogue;
     private int dialogueIndex;
+    private bool dialogueMode = false;
 
     /// <summary>
     /// Initializes the dialogue manager and his dependencies 
@@ -37,6 +41,37 @@ public class DialogueManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Skip through all the dialogue options
+    /// </summary>
+    private void Update()
+    {
+        if (!dialogueMode) { return; }
+
+        //Wait for input before showing next line
+        foreach (var keycode in keycodes)
+        {
+            if (!Input.GetKeyDown(keycode)) { continue; }
+
+            dialogueIndex++;
+
+            if (dialogueIndex < currentDialogue.lines.Length)
+            {
+                ShowDialogue(currentDialogue.lines[dialogueIndex]);
+                return;
+            }
+            else
+            {
+                //Reset the dialogue system
+                dialogueMode = false;
+                dialogueBox.SetActive(false);
+                currentDialogue = null;
+                dialogueIndex = 0;
+                return;
+            }
+        }
+    }
+
+    /// <summary>
     /// Start playing the a dialogue object or skip through it
     /// </summary>
     /// <param name="dialogue">The dialogue object to play</param>
@@ -44,28 +79,17 @@ public class DialogueManager : MonoBehaviour
     {
         if (!CheckDialogue(dialogue)) { return; }
 
+        dialogueMode = true;
+
         //If new dialogue then start directly
         if (dialogueIndex == 0)
         {
             dialogueBox.SetActive(true);
             ShowDialogue(dialogue.lines[dialogueIndex]);
-            dialogueIndex++;
-        }
-        else if (dialogueIndex < dialogue.lines.Length)
-        {
-            //Wait for input before showing next line
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ShowDialogue(dialogue.lines[dialogueIndex]);
-                dialogueIndex++;
-            }
         }
         else
         {
-            //Reset the dialogue system
-            dialogueBox.SetActive(false);
-            lastDialogueObject = null;
-            dialogueIndex = 0;
+            dialogueMode = true;
         }
     }
 
@@ -92,9 +116,9 @@ public class DialogueManager : MonoBehaviour
     private bool CheckDialogue(DialogueObject dialogue)
     {
         //Check if dialogue is loaded, and if it's the same dialogue
-        if (lastDialogueObject == null || lastDialogueObject != dialogue)
+        if (currentDialogue == null || currentDialogue != dialogue)
         {
-            lastDialogueObject = dialogue;
+            currentDialogue = dialogue;
             dialogueIndex = 0;
             return true;
         }
