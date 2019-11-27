@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8400139359723566041}
   - component: {fileID: 1610274158788950254}
   - component: {fileID: 710414019471186196}
-  - component: {fileID: 710414019471186198}
   - component: {fileID: 710414019471186199}
   m_Layer: 0
   m_Name: upper_circle_rotate
@@ -98,20 +97,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &710414019471186198
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710414019471186197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: -1
-  m_Mesh: {fileID: -8641093441023732493, guid: 75b4f274e8a302b489adc0053271cd5b, type: 3}
 --- !u!65 &710414019471186199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -229,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2510391570436545927}
   m_Layer: 0
-  m_Name: robot_arm_static
+  m_Name: robot_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +227,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481097197328510868}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.65, y: -0.76, z: 3.36}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
@@ -438,7 +423,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.3283064e-10, y: 0.0078179315, z: -0.000020313262}
+  m_ConnectedAnchor: {x: 0, y: 0.0078179315, z: -0.000020314454}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -863,7 +848,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00005965948, y: 0.00083772326, z: 0.000036212205}
+  m_ConnectedAnchor: {x: -0.000059659596, y: 0.00083772326, z: 0.00003621101}
   m_UseSpring: 0
   m_Spring:
     spring: 0
