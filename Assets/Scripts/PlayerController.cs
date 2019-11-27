@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject Hand;
+    public GameObject Arm;
 
     [Header("Hand variables")]
     [SerializeField] private float handDistanceNormal;
