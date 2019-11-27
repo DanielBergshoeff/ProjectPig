@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2878622480483304951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6681636132804567890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05760d63155e7b44e9bbe9faa755eb1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2769092032682540365
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +141,7 @@ MonoBehaviour:
   pigPrefab: {fileID: 7932370090260705719, guid: a571a49d549b6ca4b85bb3cc2690b714,
     type: 3}
   pigSpawnPosition: {fileID: 0}
+  buttonObject: {fileID: 0}
 --- !u!1 &2769092033354123143
 GameObject:
   m_ObjectHideFlags: 0

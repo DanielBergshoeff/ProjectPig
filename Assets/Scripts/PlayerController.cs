@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject pigPrefab;
     [SerializeField] private Transform pigSpawnPosition;
 
+    [Header("Button variables")]
+    [SerializeField] private CollisionObject buttonObject;
+
     private float handDistance;
     private bool stretching;
     private Camera cam;
@@ -44,10 +47,10 @@ public class PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         handDistance = handDistanceNormal;
-        if (Hand.GetComponent<CollisionObject>().triggerEvent == null)
-            Hand.GetComponent<CollisionObject>().triggerEvent = new TriggerEvent();
+        if (buttonObject.collisionEvent == null)
+            buttonObject.collisionEvent = new CollisionEvent();
 
-        Hand.GetComponent<CollisionObject>().triggerEvent.AddListener(HandTrigger);
+        buttonObject.collisionEvent.AddListener(HandTrigger);
     }
 
     // Update is called once per frame
@@ -62,10 +65,8 @@ public class PlayerController : MonoBehaviour
     /// Called when the hand touches another object
     /// </summary>
     /// <param name="other"></param>
-    private void HandTrigger(Collider other) {
-        if (other.CompareTag("Button")) {
-            ButtonPressed();
-        }
+    private void HandTrigger(Collision coll) {
+        ButtonPressed();
     }
 
     private void ButtonPressed() {
@@ -123,6 +124,7 @@ public class PlayerController : MonoBehaviour
             if(heldPig != null) {
                 heldPig.transform.parent = null;
                 heldPig.GetComponent<Rigidbody>().isKinematic = false;
+                heldPig.GetComponent<Collider>().enabled = true;
                 heldPig = null;
             }
         }
@@ -152,6 +154,7 @@ public class PlayerController : MonoBehaviour
                 heldPig = c.gameObject;
                 heldPig.GetComponent<Rigidbody>().isKinematic = true;
                 heldPig.transform.parent = Hand.transform;
+                heldPig.GetComponent<Collider>().enabled = false;
                 if (heldPig == hangingPig)
                     hangingPig = null;
                 return;

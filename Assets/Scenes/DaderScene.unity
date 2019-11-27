@@ -2202,6 +2202,11 @@ PrefabInstance:
       propertyPath: pigSpawnPosition
       value: 
       objectReference: {fileID: 1292612231}
+    - target: {fileID: 2769092033128270343, guid: 3c8dfeadcbee951439b3d6fa2d39cef4,
+        type: 3}
+      propertyPath: buttonObject
+      value: 
+      objectReference: {fileID: 4843960822085560911}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8dfeadcbee951439b3d6fa2d39cef4, type: 3}
 --- !u!4 &2777248865698151442
@@ -3158,8 +3163,9 @@ GameObject:
   - component: {fileID: 6273831239419440410}
   - component: {fileID: 1197654347376816492}
   - component: {fileID: 4843960822085560910}
+  - component: {fileID: 4843960822085560911}
   m_Layer: 0
-  m_Name: pCylinder9
+  m_Name: Button
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3178,6 +3184,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0031844873, y: 0.0014443501, z: 0.003184488}
   m_Center: {x: -6.9849193e-10, y: 0.0000000018626451, z: -2.9103833e-10}
+--- !u!114 &4843960822085560911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843960822085560909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05760d63155e7b44e9bbe9faa755eb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4852936837052701058
 Transform:
   m_ObjectHideFlags: 0
