@@ -73,4 +73,3 @@ public class RobotArm : MonoBehaviour
     }
 }
 
-public class CollisionEvent : UnityEvent<Collision> { }

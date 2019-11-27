@@ -6,23 +6,35 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject Hand;
 
+    [Header("Hand variables")]
     [SerializeField] private float handDistanceNormal;
     [SerializeField] private float handDistanceStretched;
     [SerializeField] private float stretchSpeed;
     [SerializeField] private float handReach;
     [SerializeField] private float handHeight;
 
+    [Header("Body variables")]
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float moveSpeed;
 
+    [Header("Rail variables")]
     [SerializeField] private Transform railA;
     [SerializeField] private Transform railB;
+
+    [Header("Pig variables")]
+    [SerializeField] private GameObject pigPrefab;
+    [SerializeField] private Transform pigSpawnPosition;
 
     private float handDistance;
     private bool stretching;
     private Camera cam;
 
     private GameObject heldPig;
+    private GameObject hangingPig;
+
+    private float buttonTimer = 0f;
+    private float buttonWaitTime = 3f;
+    private bool buttonPressed = false;
 
     
     // Start is called before the first frame update
@@ -32,6 +44,10 @@ public class PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         handDistance = handDistanceNormal;
+        if (Hand.GetComponent<CollisionObject>().triggerEvent == null)
+            Hand.GetComponent<CollisionObject>().triggerEvent = new TriggerEvent();
+
+        Hand.GetComponent<CollisionObject>().triggerEvent.AddListener(HandTrigger);
     }
 
     // Update is called once per frame
@@ -42,6 +58,37 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
     }
 
+    /// <summary>
+    /// Called when the hand touches another object
+    /// </summary>
+    /// <param name="other"></param>
+    private void HandTrigger(Collider other) {
+        if (other.CompareTag("Button")) {
+            ButtonPressed();
+        }
+    }
+
+    private void ButtonPressed() {
+        if (buttonPressed)
+            return;
+
+        if (hangingPig != null)
+            return;
+
+        buttonPressed = true;
+        Invoke("ButtonUnPress", buttonWaitTime);
+        hangingPig = Instantiate(pigPrefab);
+        hangingPig.transform.position = pigSpawnPosition.position;
+        hangingPig.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    private void ButtonUnPress() {
+        buttonPressed = false;
+    }
+
+    /// <summary>
+    /// Move player based on A and D button press
+    /// </summary>
     private void MovePlayer() {
         if (Input.GetKey(KeyCode.A)) {
             Vector3 targetPosition = Vector3.MoveTowards(transform.position, railA.transform.position, Time.deltaTime * moveSpeed);
@@ -53,6 +100,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Rotate player based on A and D button press
+    /// </summary>
     private void RotatePlayer() {
         if (Input.GetKey(KeyCode.A)) {
             transform.Rotate(-Vector3.up * Time.deltaTime * rotateSpeed);
@@ -102,6 +152,8 @@ public class PlayerController : MonoBehaviour
                 heldPig = c.gameObject;
                 heldPig.GetComponent<Rigidbody>().isKinematic = true;
                 heldPig.transform.parent = Hand.transform;
+                if (heldPig == hangingPig)
+                    hangingPig = null;
                 return;
             }
         }
