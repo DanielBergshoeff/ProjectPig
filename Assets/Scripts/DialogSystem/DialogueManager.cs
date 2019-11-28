@@ -7,6 +7,8 @@ using System.Collections.Generic;
 /// </summary>
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get; private set; }
+
     public List<KeyCode> keycodes;
 
     private GameObject dialogueBox;
@@ -22,6 +24,8 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
+        Instance = this;
+
         //Get the DialogueBox
         dialogueBox = GameObject.Find("DialogueBox");
 
