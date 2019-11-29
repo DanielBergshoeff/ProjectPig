@@ -1,19 +1,19 @@
 using UnityEngine;
 
-// ReSharper disable once InconsistentNaming
 public class IKController : MonoBehaviour
 {
     [SerializeField] private Transform _targetTransform;
-    public ArmJoint[] Joints;
-    public float[] Angles;
+    private ArmJoint[] Joints;
+    private float[] Angles;
 
-    public float SamplingDistance = 5f;
-    public float LearningRate = 100f;
-    public float DistanceThreshold = 0.01f;
-
+    private const float SamplingDistance = 5f;
+    private const float LearningRate = 100f;
+    private const float DistanceThreshold = 0.01f;
 
     private void Start()
     {
+        Joints = GetComponentsInChildren<ArmJoint>();
+
         float[] angles = new float[Joints.Length];
 
         for (int i = 0; i < Joints.Length; i++)
@@ -88,7 +88,6 @@ public class IKController : MonoBehaviour
         for (int i = Joints.Length - 1; i >= 0; i--)
         {
             // Gradient descent
-            // Update : Solution -= LearningRate * Gradient
             float gradient = PartialGradient(target, angles, i);
             angles[i] -= LearningRate * gradient;
 
