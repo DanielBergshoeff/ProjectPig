@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public List<KeyCode> keycodes;
 
     private GameObject dialogueBox;
+    private TextMeshProUGUI dialogueSpeaker;
     private TextMeshProUGUI dialogueText;
     private AudioSource dialogueAudio;
 
@@ -38,7 +39,9 @@ public class DialogueManager : MonoBehaviour
         }
 
         //Get references to components
-        dialogueText = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] textMeshProUGUI = dialogueBox.GetComponentsInChildren<TextMeshProUGUI>();
+        dialogueSpeaker = textMeshProUGUI[0];
+        dialogueText = textMeshProUGUI[1];
         dialogueAudio = dialogueBox.GetComponentInChildren<AudioSource>();
 
         dialogueBox.SetActive(false);
@@ -104,6 +107,7 @@ public class DialogueManager : MonoBehaviour
     private void ShowDialogue(DialogueLine dialogueLine)
     {
         //Display the text
+        dialogueSpeaker.text = dialogueLine.speaker;
         dialogueText.text = dialogueLine.line;
 
         //Play the audio clip with it

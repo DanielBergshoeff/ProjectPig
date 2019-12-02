@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: BitchesDialogue
   m_EditorClassIdentifier: 
   lines:
-  - line: Hey bitches!
+  - speaker: Bas
+    line: Hey bitches!
     audio: {fileID: 8300000, guid: 9dfa750ede5717e4c816698e2213aeb2, type: 3}
-  - line: Wow don't call me a bitch!
+  - speaker: Bitch
+    line: Wow don't call me a bitch!
     audio: {fileID: 8300000, guid: 31f16bef33e1eb440a549eb9426a6ef2, type: 3}
-  - line: I do what I want!
+  - speaker: Bas
+    line: I do what I want!
     audio: {fileID: 8300000, guid: 11a952590b0c62b4eb60567197c1ef50, type: 3}
