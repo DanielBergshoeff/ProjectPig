@@ -141,7 +141,6 @@ public class PlayerController : MonoBehaviour
 
         stretching = Input.GetMouseButton(0);
 
-
         if (stretching && handDistance < handDistanceStretched)
         {
             handDistance += Time.deltaTime * stretchSpeed;
