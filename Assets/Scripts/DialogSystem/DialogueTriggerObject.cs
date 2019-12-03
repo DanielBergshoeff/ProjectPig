@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DialogueTriggerObject : MonoBehaviour
 {
@@ -8,17 +6,35 @@ public class DialogueTriggerObject : MonoBehaviour
 
     [SerializeField] private DialogueObject dialogue;
 
-
-    public void TriggerDialogue() {
-        DialogueManager.Instance.StartDialogue(dialogue);
+    private void Start()
+    {
+        GetComponent<Collider>().isTrigger = true;
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
         if (!TriggerByTouch)
             return;
 
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag("Player"))
+        {
             TriggerDialogue();
         }
+    }
+
+    [ExecuteInEditMode]
+    private void OnDrawGizmos()
+    {
+        if (TriggerByTouch)
+        {
+            Gizmos.color = new Color(0, 0, 0.5f, 0.25f);
+            Gizmos.DrawCube(transform.position, transform.localScale);
+        }
+        Gizmos.DrawIcon(transform.position, "DialogueGizmo.png", true);
+    }
+
+    public void TriggerDialogue()
+    {
+        DialogueManager.Instance.StartDialogue(dialogue);
     }
 }

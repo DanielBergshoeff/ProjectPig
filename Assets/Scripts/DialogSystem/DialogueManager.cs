@@ -1,15 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
 
 /// <summary>
 /// Shows and plays the dialogue objects contents
 /// </summary>
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager Instance { get; private set; }
+    public static DialogueManager _instance;
+    public static DialogueManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                GameObject go = Instantiate((GameObject)Resources.Load("Prefabs/DialogueManager"));
+                _instance = go.GetComponent<DialogueManager>();
+            }
+            return _instance;
+        }
+        private set { }
+    }
 
-    public List<KeyCode> keycodes;
+    public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.E, KeyCode.Return, KeyCode.Space };
 
     private GameObject dialogueBox;
     private TextMeshProUGUI dialogueSpeaker;
@@ -25,8 +38,6 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        Instance = this;
-
         //Get the DialogueBox
         dialogueBox = GameObject.Find("DialogueBox");
 

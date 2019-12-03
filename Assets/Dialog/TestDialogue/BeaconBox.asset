@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802ba7c8b0865514f90b6edaf82fa41c, type: 3}
+  m_Name: BeaconBox
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: You
+    line: What does seem to be the problem?
+    audio: {fileID: 0}
+  - speaker: Store owner
+    line: That took you long enough!
+    audio: {fileID: 0}
+  - speaker: Store owner
+    line: The beacon box doesn't seem to work.
+    audio: {fileID: 0}
+  - speaker: You
+    line: Hmm! Let me see..
+    audio: {fileID: 0}
+  - speaker: You
+    line: The box seems to be in tip top shape.
+    audio: {fileID: 0}
+  - speaker: Store owner
+    line: I need a solution now, I need to make my money with this machine!
+    audio: {fileID: 0}
+  - speaker: You
+    line: Have you checked with the supplier yet?
+    audio: {fileID: 0}
+  - speaker: Store owner
+    line: I do not deal with those robots. You better go look what's wrong.
+    audio: {fileID: 0}
+  - speaker: You
+    line: Sure, I will have a look.
+    audio: {fileID: 0}
