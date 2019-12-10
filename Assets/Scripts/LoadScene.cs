@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(AudioSource))]
-public class LoadScene : MonoBehaviour
+public class LoadScene : MonoBehaviour, IInteractible
 {
     [SerializeField] private GameObject transitionUI;
     [SerializeField] private float transitionOffset = 2f;
@@ -19,11 +19,20 @@ public class LoadScene : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<Collider>().isTrigger = true;
         source = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider col)
+    {
+        InnitLoadScene();
+    }
+
+    public void Interact()
+    {
+        InnitLoadScene();
+    }
+
+    private void InnitLoadScene()
     {
         GetComponent<Collider>().enabled = false;
 
@@ -70,7 +79,6 @@ public class LoadScene : MonoBehaviour
     {
         for (int i = 0; i <= 10; i += 1)
         {
-            print("up" + i);
             float a = canvas.alpha;
             a = i / 10f;
             canvas.alpha = a;

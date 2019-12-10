@@ -2,42 +2,42 @@
 
 public class BystanderController : MonoBehaviour
 {
-    [SerializeField] private float interactDistance;
-    [SerializeField] private KeyCode interactionKey;
+    [SerializeField] private float interactDistance = 2f;
+    [SerializeField] private KeyCode interactionKey = KeyCode.Mouse0;
 
-    [SerializeField] private GameObject interactionCanvas;
+    private GameObject interactionCanvas;
 
-    private void Start()
+    private void Awake()
     {
+        interactionCanvas = GetComponentInChildren<Canvas>().transform.GetChild(0).gameObject;
         interactionCanvas.SetActive(false);
     }
 
     private void Update()
     {
         CheckForInteraction();
+
+        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * interactDistance, Color.red);
     }
 
     private void CheckForInteraction()
     {
-        interactionCanvas.SetActive(false);
+
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance))
+        if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance))
         {
-            if (hit.transform.CompareTag("Dialogue"))
-            {
-                DialogueTriggerObject dto = hit.transform.GetComponent<DialogueTriggerObject>();
-                if (dto != null)
-                {
-                    if (!dto.TriggerByTouch)
-                    {
-                        interactionCanvas.SetActive(true);
-                        if (Input.GetKeyDown(interactionKey))
-                        {
-                            dto.TriggerDialogue();
-                        }
-                    }
-                }
-            }
+            interactionCanvas.SetActive(false);
+            return;
         }
+
+        IInteractible interactible = hit.collider.GetComponent<IInteractible>();
+
+        if (interactible == null) { return; }
+
+        interactionCanvas.SetActive(true);
+
+        if (!Input.GetKey(KeyCode.Mouse0)) { return; }
+
+        interactible.Interact();
     }
 }
