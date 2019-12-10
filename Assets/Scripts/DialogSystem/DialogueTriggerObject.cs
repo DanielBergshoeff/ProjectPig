@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DialogueTriggerObject : MonoBehaviour
+public class DialogueTriggerObject : MonoBehaviour, IInteractible
 {
     public bool TriggerByTouch;
 
@@ -8,7 +8,7 @@ public class DialogueTriggerObject : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<Collider>().isTrigger = true;
+        GetComponent<Collider>().isTrigger = TriggerByTouch;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,6 +22,16 @@ public class DialogueTriggerObject : MonoBehaviour
         }
     }
 
+    public void TriggerDialogue()
+    {
+        DialogueManager.Instance.StartDialogue(dialogue);
+    }
+
+    public void Interact()
+    {
+        TriggerDialogue();
+    }
+
     [ExecuteInEditMode]
     private void OnDrawGizmos()
     {
@@ -31,10 +41,5 @@ public class DialogueTriggerObject : MonoBehaviour
             Gizmos.DrawCube(transform.position, transform.localScale);
         }
         Gizmos.DrawIcon(transform.position, "DialogueGizmo.png", true);
-    }
-
-    public void TriggerDialogue()
-    {
-        DialogueManager.Instance.StartDialogue(dialogue);
     }
 }
