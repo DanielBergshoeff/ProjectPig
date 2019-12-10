@@ -13,10 +13,14 @@ public class CollisionObject : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        triggerEvent.Invoke(other);
+        triggerEvent.Invoke(other, true);
+    }
+
+    private void OnTriggerExit(Collider other) {
+        triggerEvent.Invoke(other, false);
     }
 }
 
 public class CollisionEvent : UnityEvent<Collision> { }
 
-public class TriggerEvent : UnityEvent<Collider> { }
+public class TriggerEvent : UnityEvent<Collider, bool> { }
