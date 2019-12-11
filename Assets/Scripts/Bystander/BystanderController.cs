@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BystanderController : MonoBehaviour
 {
     [SerializeField] private float interactDistance = 2f;
     [SerializeField] private KeyCode interactionKey = KeyCode.Mouse0;
+
+    [Header("Flashlight")]
+    [SerializeField] private GameObject flashlightObject;
+    [SerializeField] private KeyCode flashlightKey = KeyCode.F;
 
     private GameObject interactionCanvas;
 
@@ -16,8 +21,14 @@ public class BystanderController : MonoBehaviour
     private void Update()
     {
         CheckForInteraction();
+        CheckForFleshlight();
 
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * interactDistance, Color.red);
+    }
+
+    private void CheckForFleshlight() {
+        if(Input.GetKeyDown(flashlightKey))
+            flashlightObject.SetActive(!flashlightObject.activeSelf);
     }
 
     private void CheckForInteraction()
