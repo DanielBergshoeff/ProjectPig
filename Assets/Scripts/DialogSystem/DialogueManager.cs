@@ -25,38 +25,12 @@ public class DialogueManager : MonoBehaviour
     public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.E, KeyCode.Space };
 
     private GameObject dialogueBox;
-    private TextMeshProUGUI dialogueSpeaker;
-    private TextMeshProUGUI dialogueText;
+    private TMP_Text[] textObjects;
     private AudioSource dialogueAudio;
 
     private DialogueObject currentDialogue;
     private int dialogueIndex;
     private bool dialogueMode = false;
-
-    /// <summary>
-    /// Initializes the dialogue manager and his dependencies 
-    /// </summary>
-    private void Awake()
-    {
-        //Get the DialogueBox
-        dialogueBox = GameObject.Find("DialogueBox");
-
-        //If there is no DialogueBox create one
-        if (dialogueBox == null)
-        {
-            GameObject original = (GameObject)Resources.Load("Prefabs/DialogueBox");
-            dialogueBox = Instantiate(original, transform);
-            dialogueBox.name = original.name;
-        }
-
-        //Get references to components
-        TextMeshProUGUI[] textMeshProUGUI = dialogueBox.GetComponentsInChildren<TextMeshProUGUI>();
-        dialogueSpeaker = textMeshProUGUI[0];
-        dialogueText = textMeshProUGUI[1];
-        dialogueAudio = dialogueBox.GetComponentInChildren<AudioSource>();
-
-        dialogueBox.SetActive(false);
-    }
 
     /// <summary>
     /// Skip through all the dialogue options
@@ -93,11 +67,18 @@ public class DialogueManager : MonoBehaviour
     /// Start playing the a dialogue object or skip through it
     /// </summary>
     /// <param name="dialogue">The dialogue object to play</param>
-    public void StartDialogue(DialogueObject dialogue)
+    public void StartDialogue(DialogueObject dialogue, GameObject box = default)
     {
         if (!CheckDialogue(dialogue)) { return; }
 
         dialogueMode = true;
+
+        if (box != default)
+            dialogueBox = box;
+
+        GetDialogueBox();
+
+        InnitDialogueBox();
 
         //If new dialogue then start directly
         if (dialogueIndex == 0)
@@ -111,6 +92,37 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void InnitDialogueBox()
+    {
+        //Get references to components
+        textObjects = dialogueBox.GetComponentsInChildren<TMP_Text>();
+
+        dialogueAudio = dialogueBox.GetComponentInChildren<AudioSource>();
+
+        if (dialogueAudio == null)
+            dialogueAudio = dialogueBox.AddComponent<AudioSource>();
+
+        dialogueBox.SetActive(false);
+    }
+
+    /// <summary>
+    /// Gets a text container to show text
+    /// </summary>
+    private void GetDialogueBox()
+    {
+        //If there is no DialogueBox create one
+        if (dialogueBox != null) { return; }
+
+        //Get the DialogueBox
+        dialogueBox = GameObject.Find("DialogueBox");
+
+        if (dialogueBox != null) { return; }
+
+        GameObject original = (GameObject)Resources.Load("Prefabs/DialogueBox");
+        dialogueBox = Instantiate(original, transform);
+        dialogueBox.name = original.name;
+    }
+
     /// <summary>
     /// This handles the displaying of the text and playing of the audio.
     /// </summary>
@@ -118,8 +130,15 @@ public class DialogueManager : MonoBehaviour
     private void ShowDialogue(DialogueLine dialogueLine)
     {
         //Display the text
-        dialogueSpeaker.text = dialogueLine.speaker;
-        dialogueText.text = dialogueLine.line;
+        try
+        {
+            textObjects[0].text = dialogueLine.line;
+            textObjects[1].text = dialogueLine.speaker;
+        }
+        catch
+        {
+            Debug.LogError(dialogueBox.name + " is missing a speaker box");
+        }
 
         //Play the audio clip with it
         dialogueAudio.Stop();
