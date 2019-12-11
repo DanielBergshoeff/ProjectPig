@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class DialogueTriggerObject : MonoBehaviour, IInteractible
 {
@@ -6,8 +7,14 @@ public class DialogueTriggerObject : MonoBehaviour, IInteractible
 
     [SerializeField] private DialogueObject dialogue;
 
+    public void Interact()
+    {
+        TriggerDialogue();
+    }
+
     private void Start()
     {
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
         GetComponent<Collider>().isTrigger = TriggerByTouch;
     }
 
@@ -22,14 +29,20 @@ public class DialogueTriggerObject : MonoBehaviour, IInteractible
         }
     }
 
-    public void TriggerDialogue()
+    private void TriggerDialogue()
     {
-        DialogueManager.Instance.StartDialogue(dialogue);
-    }
+        if (dialogue == null) { Debug.LogError(gameObject.name + " has no dialogue object."); return; }
 
-    public void Interact()
-    {
-        TriggerDialogue();
+        if (dialogue.lines.Length < 1) { Debug.LogError(gameObject.name + " has no dialogue lines."); return; }
+
+        TMP_Text tMP_Text = gameObject.GetComponentInChildren<TMP_Text>();
+
+        if (tMP_Text)
+        {
+            DialogueManager.Instance.StartDialogue(dialogue, tMP_Text.gameObject);
+        }
+        DialogueManager.Instance.StartDialogue(dialogue);
+
     }
 
     [ExecuteInEditMode]
