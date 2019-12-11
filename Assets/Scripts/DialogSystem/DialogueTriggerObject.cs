@@ -6,6 +6,11 @@ public class DialogueTriggerObject : MonoBehaviour, IInteractible
 
     [SerializeField] private DialogueObject dialogue;
 
+    private void Start()
+    {
+        GetComponent<Collider>().isTrigger = TriggerByTouch;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!TriggerByTouch)
