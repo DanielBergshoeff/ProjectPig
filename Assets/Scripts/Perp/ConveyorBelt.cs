@@ -1,32 +1,40 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
-    private GameObject itemOnBelt;
+    private List<GameObject> itemsOnBelt;
+
+
+    private void Start() {
+        itemsOnBelt = new List<GameObject>();
+    }
 
     private void Update()
     {
-        if (itemOnBelt == null)
-            return;
 
-        itemOnBelt.transform.position += transform.forward * Time.deltaTime * 0.3f;
+        foreach (GameObject go in itemsOnBelt) {
+            go.transform.position += transform.forward * Time.deltaTime * 0.3f;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pig"))
+        /*if (other.gameObject.CompareTag("Pig"))
         {
             itemOnBelt = other.gameObject;
+        }*/
+
+        if (!itemsOnBelt.Contains(other.gameObject)) {
+            itemsOnBelt.Add(other.gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (itemOnBelt == null)
-            return;
-
-        if (itemOnBelt == other.gameObject)
-            itemOnBelt = null;
+        if (itemsOnBelt.Contains(other.gameObject)) {
+            itemsOnBelt.Remove(other.gameObject);
+        }
     }
 
     [ExecuteInEditMode]
