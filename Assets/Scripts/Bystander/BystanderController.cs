@@ -24,11 +24,13 @@ public class BystanderController : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance))
+        if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance, 1 << LayerMask.NameToLayer("Interactable")))
         {
             interactionCanvas.SetActive(false);
             return;
         }
+
+        print(hit.collider.name);
 
         IInteractible interactible = hit.collider.GetComponent<IInteractible>();
 
