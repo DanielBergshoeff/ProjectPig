@@ -14,6 +14,7 @@ public class DialogueTriggerObject : MonoBehaviour, IInteractible
 
     private void Start()
     {
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
         GetComponent<Collider>().isTrigger = TriggerByTouch;
     }
 

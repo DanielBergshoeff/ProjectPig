@@ -26,14 +26,14 @@ public class BystanderController : MonoBehaviour
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * interactDistance, Color.red);
     }
 
-    private void CheckForFleshlight() {
-        if(Input.GetKeyDown(flashlightKey))
+    private void CheckForFleshlight()
+    {
+        if (Input.GetKeyDown(flashlightKey))
             flashlightObject.SetActive(!flashlightObject.activeSelf);
     }
 
     private void CheckForInteraction()
     {
-
         RaycastHit hit;
         if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance, 1 << LayerMask.NameToLayer("Interactable")))
         {
@@ -41,15 +41,15 @@ public class BystanderController : MonoBehaviour
             return;
         }
 
-        print(hit.collider.name);
-
         IInteractible interactible = hit.collider.GetComponent<IInteractible>();
 
         if (interactible == null) { return; }
 
         interactionCanvas.SetActive(true);
 
-        if (!Input.GetKey(KeyCode.Mouse0)) { return; }
+        if (!Input.GetKeyDown(KeyCode.Mouse0)) { return; }
+
+        print("click");
 
         interactible.Interact();
     }

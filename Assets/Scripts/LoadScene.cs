@@ -19,6 +19,7 @@ public class LoadScene : MonoBehaviour, IInteractible
 
     private void Start()
     {
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
         source = GetComponent<AudioSource>();
     }
 

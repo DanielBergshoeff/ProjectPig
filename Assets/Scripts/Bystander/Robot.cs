@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class Robot : MonoBehaviour
@@ -17,7 +15,7 @@ public class Robot : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private Light mySpotLight;
-    [SerializeField] private bool evil = true;
+    [SerializeField] public bool evil = true;
     [SerializeField] private Color evilLightColor;
     [SerializeField] private Color goodLightColor;
 
@@ -29,43 +27,52 @@ public class Robot : MonoBehaviour
     private float timeLost = 0f;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         myNavMeshAgent = GetComponent<NavMeshAgent>();
 
         path = new Transform[pathParent.childCount];
-        for (int i = 0; i < pathParent.childCount; i++) {
+        for (int i = 0; i < pathParent.childCount; i++)
+        {
             path[i] = pathParent.GetChild(i);
         }
 
         myNavMeshAgent.speed = moveSpeed;
 
-        SetEvil(evil);
+        SetEvil();
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
+        SetEvil();
+
         Move();
-        if(evil)
+        if (evil)
             CheckForPlayer();
     }
 
-    public void SetEvil(bool evilness) {
-        evil = evilness;
+    public void SetEvil()
+    {
         if (evil)
             mySpotLight.color = evilLightColor;
         else
             mySpotLight.color = goodLightColor;
     }
 
-    private void Move() {
+    private void Move()
+    {
         if (!playerSpotted)
             CheckForPathUpdate();
-        else {
+        else
+        {
             WalkToPlayer();
 
-            if (playerLost) {
+            if (playerLost)
+            {
                 timeLost += Time.deltaTime;
-                if (timeLost > timeTillLost) {
+                if (timeLost > timeTillLost)
+                {
                     playerSpotted = false;
                     myNavMeshAgent.SetDestination(path[currentPathPosition].position);
                 }
@@ -73,12 +80,16 @@ public class Robot : MonoBehaviour
         }
     }
 
-    private void CheckForPathUpdate() {
-        if (Vector3.Distance(transform.position, path[currentPathPosition].position) < 0.1f) {
-            if (currentPathPosition < path.Length - 1) {
+    private void CheckForPathUpdate()
+    {
+        if (Vector3.Distance(transform.position, path[currentPathPosition].position) < 0.1f)
+        {
+            if (currentPathPosition < path.Length - 1)
+            {
                 currentPathPosition++;
             }
-            else {
+            else
+            {
                 currentPathPosition = 0;
                 ReturnToStart();
             }
@@ -86,11 +97,13 @@ public class Robot : MonoBehaviour
         }
     }
 
-    private void WalkToPlayer() {
+    private void WalkToPlayer()
+    {
         myNavMeshAgent.SetDestination(GameManager.Instance.Player.transform.position);
     }
 
-    private void CheckForPlayer() {
+    private void CheckForPlayer()
+    {
         Vector3 heading = GameManager.Instance.Player.transform.position - transform.position;
         playerLost = true;
 
@@ -99,22 +112,26 @@ public class Robot : MonoBehaviour
 
         if (Mathf.Abs(Vector3.Angle(transform.forward, heading.normalized)) > viewAngle)
             return;
-        
+
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, heading.normalized, out hit, viewDistance)) {
-            if(hit.transform.CompareTag("Player")) {
+        if (Physics.Raycast(transform.position, heading.normalized, out hit, viewDistance))
+        {
+            if (hit.transform.CompareTag("Player"))
+            {
                 playerSpotted = true;
                 playerLost = false;
                 timeLost = 0f;
 
-                if(heading.magnitude < attackDistance) {
+                if (heading.magnitude < attackDistance)
+                {
                     GameManager.Instance.Respawn();
                 }
             }
         }
     }
 
-    private void ReturnToStart() {
+    private void ReturnToStart()
+    {
         transform.position = path[0].position;
     }
 }
