@@ -20,11 +20,6 @@ public class ConveyorBelt : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.gameObject.CompareTag("Pig"))
-        {
-            itemOnBelt = other.gameObject;
-        }*/
-
         if (!itemsOnBelt.Contains(other.gameObject)) {
             itemsOnBelt.Add(other.gameObject);
         }
