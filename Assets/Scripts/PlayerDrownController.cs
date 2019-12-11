@@ -5,13 +5,9 @@ using UnityEngine;
 
 public class PlayerDrownController : MonoBehaviour
 {
-    public GameObject Platform;
 
     [SerializeField] private float distanceDown = 0.5f;
     [SerializeField] private float timeTillDown = 1.0f;
-    [SerializeField] private KeyCode keyDown;
-    [SerializeField] private KeyCode keySpawn;
-
 
     [Header("Pig variables")]
     [SerializeField] private GameObject pigPrefab;
@@ -21,6 +17,12 @@ public class PlayerDrownController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI drownTimeText;
     [SerializeField] private float totalTimeDrown = 5.0f;
     [SerializeField] private CollisionObject drownTriggerObject;
+    public GameObject Platform;
+
+    [Header("Keycodes")]
+    [SerializeField] private KeyCode keySpawn = KeyCode.Alpha1;
+    [SerializeField] private KeyCode keyDown = KeyCode.Alpha2;
+    [SerializeField] private KeyCode keyTilt = KeyCode.Alpha3;
 
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -30,6 +32,8 @@ public class PlayerDrownController : MonoBehaviour
     private bool drowning = false;
     private float drownTimer = 0f;
     private bool drowned = false;
+
+    private Animator gridAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,7 @@ public class PlayerDrownController : MonoBehaviour
         drownTriggerObject.triggerEvent.AddListener(DrownPig);
 
         drownTimer = totalTimeDrown;
+        gridAnimator = Platform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,6 +53,10 @@ public class PlayerDrownController : MonoBehaviour
     {
         if (Input.GetKeyDown(keySpawn)) {
             SpawnPig();
+        }
+
+        if (Input.GetKeyDown(keyTilt)) {
+            gridAnimator.SetTrigger("Tilt");
         }
 
         MovePlatform();
@@ -69,7 +78,7 @@ public class PlayerDrownController : MonoBehaviour
                 drownTimer = totalTimeDrown;
         }
 
-        drownTimeText.text = drownTimer.ToString();
+        drownTimeText.text = drownTimer.ToString("F2");
     }
 
 

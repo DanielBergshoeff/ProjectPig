@@ -13,6 +13,13 @@ public class Robot : MonoBehaviour
     [SerializeField] private float viewDistance = 20.0f;
     [SerializeField] private float viewAngle = 50.0f;
     [SerializeField] private float timeTillLost = 5.0f;
+    [SerializeField] private float attackDistance = 2.0f;
+
+    [Header("Attributes")]
+    [SerializeField] private Light mySpotLight;
+    [SerializeField] private bool evil = true;
+    [SerializeField] private Color evilLightColor;
+    [SerializeField] private Color goodLightColor;
 
     private Transform[] path;
     private int currentPathPosition = 0;
@@ -31,12 +38,23 @@ public class Robot : MonoBehaviour
         }
 
         myNavMeshAgent.speed = moveSpeed;
+
+        SetEvil(evil);
     }
 
     // Update is called once per frame
     void Update() {
         Move();
-        CheckForPlayer();
+        if(evil)
+            CheckForPlayer();
+    }
+
+    public void SetEvil(bool evilness) {
+        evil = evilness;
+        if (evil)
+            mySpotLight.color = evilLightColor;
+        else
+            mySpotLight.color = goodLightColor;
     }
 
     private void Move() {
@@ -47,8 +65,10 @@ public class Robot : MonoBehaviour
 
             if (playerLost) {
                 timeLost += Time.deltaTime;
-                if (timeLost > timeTillLost)
+                if (timeLost > timeTillLost) {
                     playerSpotted = false;
+                    myNavMeshAgent.SetDestination(path[currentPathPosition].position);
+                }
             }
         }
     }
@@ -83,10 +103,13 @@ public class Robot : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, heading.normalized, out hit, viewDistance)) {
             if(hit.transform.CompareTag("Player")) {
-                Debug.Log("Player spotted");
                 playerSpotted = true;
                 playerLost = false;
                 timeLost = 0f;
+
+                if(heading.magnitude < attackDistance) {
+                    GameManager.Instance.Respawn();
+                }
             }
         }
     }
