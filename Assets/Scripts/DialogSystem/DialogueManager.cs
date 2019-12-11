@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
         private set { }
     }
 
-    public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.E, KeyCode.Return, KeyCode.Space };
+    public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.E, KeyCode.Space };
 
     private GameObject dialogueBox;
     private TextMeshProUGUI dialogueSpeaker;
