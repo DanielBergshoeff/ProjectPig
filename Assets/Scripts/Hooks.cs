@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Hooks : MonoBehaviour
 {
     public List<Pig> Pigs;
     public List<GameObject> AllHooks;
+
+    [SerializeField] private TextMeshProUGUI processTime;
+    private float processTimer = 0f;
 
 
     [Header("Pig variables")]
@@ -25,6 +29,8 @@ public class Hooks : MonoBehaviour
     private Animator myAnimator;
     private Vector3[] pigPositions;
     private bool pigDropTime = false;
+    private bool pigProcess = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +49,17 @@ public class Hooks : MonoBehaviour
         if (pigDropTime) {
             DropPig();
             pigDropTime = false;
+            pigProcess = true;
         }
 
         if (Input.GetKeyDown(keySpawn) && newPigAllowed) {
             myAnimator.SetTrigger("Move");
             newPigAllowed = false;
+        }
+
+        if (pigProcess) {
+            processTimer += Time.deltaTime;
+            processTime.text = processTimer.ToString("F2");
         }
     }
 
@@ -57,6 +69,9 @@ public class Hooks : MonoBehaviour
 
         Pigs[Pigs.Count - 1].transform.parent = null;
         Pigs[Pigs.Count - 1].UnHook();
+
+        processTimer = 0f;
+        processTime.text = processTimer.ToString("F2");
 
         for (int i = AllHooks.Count - 1; i > 0; i--) {
             Pigs[i] = Pigs[i - 1];
@@ -94,6 +109,7 @@ public class Hooks : MonoBehaviour
 
         pig.Checked = true;
         newPigAllowed = true;
+        pigProcess = false;
 
         if (pig.Dehaired)
             checkLight.color = correctLightColor;
