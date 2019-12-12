@@ -5,13 +5,10 @@ using UnityEngine;
 
 public class PlayerDrownController : MonoBehaviour
 {
+    public static PlayerDrownController Instance { get; private set; }
 
     [SerializeField] private float distanceDown = 0.5f;
     [SerializeField] private float timeTillDown = 1.0f;
-
-    [Header("Pig variables")]
-    [SerializeField] private GameObject pigPrefab;
-    [SerializeField] private Transform pigSpawnPosition;
 
     [Header("Drowning variables")]
     [SerializeField] private TextMeshProUGUI drownTimeText;
@@ -19,8 +16,10 @@ public class PlayerDrownController : MonoBehaviour
     [SerializeField] private CollisionObject drownTriggerObject;
     public GameObject Platform;
 
+    [Header("Hooks")]
+    [SerializeField] private List<GameObject> hooks;
+
     [Header("Keycodes")]
-    [SerializeField] private KeyCode keySpawn = KeyCode.Alpha1;
     [SerializeField] private KeyCode keyDown = KeyCode.Alpha2;
     [SerializeField] private KeyCode keyTilt = KeyCode.Alpha3;
 
@@ -31,13 +30,13 @@ public class PlayerDrownController : MonoBehaviour
     private float goingDownTimer = 0f;
     private bool drowning = false;
     private float drownTimer = 0f;
-    private bool drowned = false;
+
+    private Pig pigBeingDrowned;
 
     private Animator gridAnimator;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         startPosition = Platform.transform.position;
         endPosition = startPosition - Vector3.up * distanceDown;
         if (drownTriggerObject.triggerEvent == null)
@@ -45,31 +44,29 @@ public class PlayerDrownController : MonoBehaviour
         drownTriggerObject.triggerEvent.AddListener(DrownPig);
 
         drownTimer = totalTimeDrown;
+        drownTimeText.text = drownTimer.ToString("F2");
+
         gridAnimator = Platform.GetComponent<Animator>();
+
+        Instance = this;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(keySpawn)) {
-            SpawnPig();
-        }
-
+    void Update() {
         if (Input.GetKeyDown(keyTilt)) {
             gridAnimator.SetTrigger("Tilt");
         }
 
         MovePlatform();
 
-
-        if (drowned)
+        if (pigBeingDrowned == null || pigBeingDrowned.Dehaired)
             return;
 
         if (drowning && drownTimer > 0f) {
             drownTimer -= Time.deltaTime;
             if (drownTimer <= 0f) {
                 drownTimer = 0f;
-                drowned = true;
+                pigBeingDrowned.Dehaired = true;
             }
         }
         else if (!drowning && drownTimer < totalTimeDrown) {
@@ -78,6 +75,11 @@ public class PlayerDrownController : MonoBehaviour
                 drownTimer = totalTimeDrown;
         }
 
+        drownTimeText.text = drownTimer.ToString("F2");
+    }
+
+    public void ResetDrown() {
+        drownTimer = totalTimeDrown;
         drownTimeText.text = drownTimer.ToString("F2");
     }
 
@@ -102,21 +104,17 @@ public class PlayerDrownController : MonoBehaviour
         Platform.transform.position = startPosition + direction * goingDownTimer / timeTillDown;
     }
 
-
-    /// <summary>
-    /// Instantiate pig at the pig spawn position
-    /// </summary>
-    private void SpawnPig() {
-        Instantiate(pigPrefab, pigSpawnPosition.transform.position, pigSpawnPosition.transform.rotation);
-    }
-
     private void DrownPig(Collider other, bool enter) {
         if (!other.CompareTag("Pig")) 
             return;
 
-        if (enter)
+        if (enter) {
             drowning = true;
-        else
+            pigBeingDrowned = other.GetComponentInParent<Pig>();
+        }
+        else {
             drowning = false;
+            pigBeingDrowned = null;
+        }
     }
 }
