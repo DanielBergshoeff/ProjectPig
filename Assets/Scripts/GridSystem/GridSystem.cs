@@ -4,137 +4,76 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GridSystem : MonoBehaviour
 {
-    [HideInInspector]
-    public List<GridObject> _grids
-    {
-        get { return grids; }
-        set { updateGrid = true; }
-    }
+    public GameObject gridObject;
+    public Vector3 offset;
+    private Vector3 Offset;
+    private Vector3 gridOrigin;
 
-    [SerializeField]
-    private List<GridObject> grids = new List<GridObject>();
-
-    private bool updateGrid = false;
     private List<GameObject> currentGrid = new List<GameObject>();
-
     private const string gridRootName = "GridRoot";
-    private const string boundaryRootName = "BoundaryRoot";
-
-    private void OnValidate()
-    {
-        _grids = grids;
-    }
 
     private void Awake()
     {
-        foreach (Transform child in transform)
-            if (child.name == gridRootName || child.name == boundaryRootName)
+        foreach (Transform child in transform.GetChild(0).transform)
+            if (child.name == gridRootName)
                 currentGrid.Add(child.gameObject);
     }
 
     private void Update()
     {
-        if (!updateGrid) { return; }
-
-        ClearGrid(currentGrid);
-
-        Vector2 point = new Vector2();
-
-        foreach (GridObject grid in grids)
+        if (transform.hasChanged)
         {
-            if (!grid.tile)
+            gridObject.transform.localScale = Vector3.one;
+            Vector3 objectSize = gridObject.GetSize();
+            gridOrigin = new Vector3(transform.localScale.x * (objectSize.x + offset.x), transform.localScale.y, transform.localScale.z * (objectSize.z + offset.z));
+
+            transform.hasChanged = false;
+
+            ClearGrid(currentGrid);
+
+            Vector2 point = transform.position;
+
+            if (!gridObject)
             {
                 print("Please give a tile object");
-                updateGrid = false;
                 return;
             }
 
-            point = CreateGrid(grid.tile, grid.size, point);
-
-            if (grid.boundaries)
-                CreateBoundaries(grid.boundaries, grid.size, point);
+            CreateGrid(gridObject, transform.localScale, offset);
         }
-        updateGrid = false;
     }
 
-    private Vector2 CreateGrid(GameObject obj, Vector3 size, Vector2 origin = default)
+    private Vector2 CreateGrid(GameObject obj, Vector3 size, Vector3 offset = default)
     {
         Vector3 objectSize = obj.GetSize();
 
-        GameObject root = new GameObject(gridRootName);
+        GameObject root = null;
+        try
+        {
+            root = transform.GetChild(0).gameObject;
+        }
+        catch
+        {
+            root = new GameObject(gridRootName);
+        }
+
+        Vector3 origin = root.transform.position = transform.position + -(gridOrigin / 2);
         root.transform.SetParent(transform);
-        origin.x = transform.position.x - (objectSize.x / 2);
+
+        origin -= new Vector3((objectSize.x / 2) + offset.x, 0, -(objectSize.z / 2) + offset.z);
 
         for (int x = 0; x < (int)size.x; x++)
         {
+            origin.x += objectSize.x + offset.x;
+            origin.z = root.transform.position.z - ((objectSize.z / 2) + offset.z);
 
-            origin.y = transform.position.y - (objectSize.z / 2);
-            origin.x += objectSize.x;
-
-            for (int z = 0; z < (int)size.y; z++)
+            for (int z = 0; z < (int)size.z; z++)
             {
-                origin.y += objectSize.z;
-                Vector3 position = new Vector3(origin.x, 0, origin.y);
+                origin.z += objectSize.z + offset.z;
+                Vector3 position = new Vector3(origin.x, 0, origin.z);
                 Instantiate(obj, position, Quaternion.identity, root.transform);
             }
         }
-
-        currentGrid.Add(root);
-        return origin;
-    }
-
-    private Vector2 CreateBoundaries(GameObject obj, Vector3 size, Vector2 origin = default)
-    {
-        Vector3 objectSize = obj.GetSize();
-
-        GameObject root = new GameObject(boundaryRootName);
-        root.transform.SetParent(transform);
-
-        Quaternion rotation = Quaternion.identity;
-        // origin.x = origin.x - (objectSize.x / 2);
-        // origin.y = origin.y - (objectSize.z / 2);
-
-        for (int x = 0; x < (int)size.x; x++)
-        {
-            origin.x += objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
-
-        rotation = Quaternion.AngleAxis(90, Vector3.up);
-        origin.x += (objectSize.x / 2);
-        origin.y -= (objectSize.x / 2);
-
-        for (int y = 0; y < (int)size.y; y++)
-        {
-            origin.y += objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
-
-        rotation = Quaternion.AngleAxis(0, Vector3.up);
-        origin.x += (objectSize.x / 2);
-        origin.y -= (objectSize.x / 2);
-
-        for (int x = 0; x < (int)size.x; x++)
-        {
-            origin.x -= objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
-
-        rotation = Quaternion.AngleAxis(90, Vector3.up);
-        origin.x -= (objectSize.x / 2);
-        origin.y += (objectSize.x / 2);
-
-        for (int y = 0; y < (int)size.y; y++)
-        {
-            origin.y -= objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
-
-        rotation = Quaternion.AngleAxis(0, Vector3.up);
 
         currentGrid.Add(root);
         return origin;
@@ -150,5 +89,18 @@ public class GridSystem : MonoBehaviour
         }
 
         grid.Clear();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(transform.position, gridOrigin);
+        Gizmos.color = new Color(0, 0, 1, 0.5f);
+        Gizmos.DrawSphere(transform.position + -gridOrigin / 2, .5f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawIcon(transform.position, "grid.png");
     }
 }
