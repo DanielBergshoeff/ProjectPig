@@ -1235,6 +1235,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7285707816948513138, guid: 54d9a58d76d846442b2d17c7416d6ef1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 54d9a58d76d846442b2d17c7416d6ef1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1304,11 +1309,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 7285707816948513138, guid: 54d9a58d76d846442b2d17c7416d6ef1,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d9a58d76d846442b2d17c7416d6ef1, type: 3}
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionUI: {fileID: 8359781753860747531, guid: a003ae9f8d376e34fbbd65e0c706dfcd,
     type: 3}
-  transitionOffset: 2
+  transitionOffset: 0
   transitionInAudio: {fileID: 8300000, guid: 9dfa750ede5717e4c816698e2213aeb2, type: 3}
   transitionOutAudio: {fileID: 8300000, guid: 31f16bef33e1eb440a549eb9426a6ef2, type: 3}
 --- !u!82 &1200485436
