@@ -14836,6 +14836,7 @@ GameObject:
   - component: {fileID: 413554811}
   - component: {fileID: 413554810}
   - component: {fileID: 413554809}
+  - component: {fileID: 413554814}
   m_Layer: 8
   m_Name: DaderScene_GridTank
   m_TagString: Untagged
@@ -14990,7 +14991,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413554807}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15029,6 +15030,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413554807}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &413554814
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413554807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e353f1ace1583b458a80f246d653341, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &414718479
 GameObject:
   m_ObjectHideFlags: 0
@@ -24715,13 +24735,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626438939}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.169, y: 0.71, z: 0}
+  m_LocalRotation: {x: 0.29548192, y: 0.48188952, z: -0.32912186, w: 0.7564072}
+  m_LocalPosition: {x: 0.34, y: 4.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1756919191}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 49.837, y: 55.969, z: -19.295}
 --- !u!108 &626438941
 Light:
   m_ObjectHideFlags: 0
@@ -35194,7 +35214,7 @@ PrefabInstance:
     - target: {fileID: 990382144435484907, guid: c0caa9f4de2047240b77e1b826184ba1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 990382144435053771, guid: c0caa9f4de2047240b77e1b826184ba1,
         type: 3}
@@ -35260,6 +35280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WalkSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 990382144435053769, guid: c0caa9f4de2047240b77e1b826184ba1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0caa9f4de2047240b77e1b826184ba1, type: 3}
@@ -44507,7 +44532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1146157843
 AudioListener:
   m_ObjectHideFlags: 0
@@ -59003,7 +59028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499675518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.17, y: -0.34498, z: 9.91}
+  m_LocalPosition: {x: -32.17, y: -0.34498, z: 10.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 387083590}
@@ -64902,11 +64927,6 @@ PrefabInstance:
       propertyPath: pathParent
       value: 
       objectReference: {fileID: 387083590}
-    - target: {fileID: 714706090630734056, guid: 155b23c814bcc564a86b057bc181988a,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155b23c814bcc564a86b057bc181988a, type: 3}
 --- !u!1 &1654537874
@@ -67722,14 +67742,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729572262}
-  m_LocalRotation: {x: -0, y: 0.000000044703484, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6499994, y: 0.703, z: -0.019999834}
+  m_LocalRotation: {x: -0, y: 0.70710564, z: -0, w: 0.70710796}
+  m_LocalPosition: {x: 4.88, y: 0.694, z: -2.439}
   m_LocalScale: {x: 3.8999999, y: 1.5119998, z: 0.040000003}
   m_Children:
   - {fileID: 395386652}
   m_Father: {fileID: 1192211078}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!65 &1729572264
 BoxCollider:
   m_ObjectHideFlags: 0
