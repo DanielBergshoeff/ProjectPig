@@ -63,8 +63,11 @@ public class PlayerController : MonoBehaviour
     /// Called when the hand touches another object
     /// </summary>
     /// <param name="other"></param>
-    private void HandTrigger(Collision coll)
+    private void HandTrigger(Collision coll, bool enter)
     {
+        if (!enter)
+            return;
+
         ButtonPressed();
     }
 

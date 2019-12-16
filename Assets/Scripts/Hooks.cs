@@ -10,7 +10,8 @@ public class Hooks : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI processTime;
     private float processTimer = 0f;
-
+    [SerializeField] private int correctPigsTillTimerGone;
+    [SerializeField] private CollisionObject resetObject;
 
     [Header("Pig variables")]
     [SerializeField] private GameObject pigPrefab;
@@ -31,6 +32,8 @@ public class Hooks : MonoBehaviour
     private bool pigDropTime = false;
     private bool pigProcess = false;
 
+    private int amtOfCorrectPigs = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +43,11 @@ public class Hooks : MonoBehaviour
         if (checkPigTrigger.triggerEvent == null)
             checkPigTrigger.triggerEvent = new TriggerEvent();
 
+        if (resetObject.collisionEvent == null)
+            resetObject.collisionEvent = new CollisionEvent();
+
         checkPigTrigger.triggerEvent.AddListener(CheckPig);
+        resetObject.collisionEvent.AddListener(ResetPig);
     }
 
     // Update is called once per frame
@@ -96,6 +103,24 @@ public class Hooks : MonoBehaviour
         Pigs[0].transform.SetParent(AllHooks[0].transform);
     }
 
+    private void ResetPig(Collision coll, bool enter) {
+        if (!enter)
+            return;
+
+        Pig pig = coll.gameObject.GetComponentInParent<Pig>();
+        if (pig == null)
+            return;
+
+        if (pig.Checked)
+            return;
+
+        pig.Checked = true;
+        newPigAllowed = true;
+        pigProcess = false;
+
+        Destroy(pig.gameObject);
+    }
+
     public void CheckPig(Collider coll, bool enter) {
         if (!enter)
             return;
@@ -111,9 +136,16 @@ public class Hooks : MonoBehaviour
         newPigAllowed = true;
         pigProcess = false;
 
-        if (pig.Dehaired)
+        if (pig.Dehaired) {
             checkLight.color = correctLightColor;
-        else
+            amtOfCorrectPigs++;
+            if(amtOfCorrectPigs == correctPigsTillTimerGone) {
+                PlayerDrownController.Instance.DisableTimer();
+            }
+        }
+        else {
             checkLight.color = wrongLightColor;
+            amtOfCorrectPigs = 0;
+        }
     }
 }
