@@ -9,7 +9,11 @@ public class CollisionObject : MonoBehaviour
     public TriggerEvent triggerEvent;
 
     private void OnCollisionEnter(Collision collision) {
-        collisionEvent.Invoke(collision);
+        collisionEvent.Invoke(collision, true);
+    }
+
+    private void OnCollisionExit(Collision collision) {
+        collisionEvent.Invoke(collision, false);
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -21,6 +25,6 @@ public class CollisionObject : MonoBehaviour
     }
 }
 
-public class CollisionEvent : UnityEvent<Collision> { }
+public class CollisionEvent : UnityEvent<Collision, bool> { }
 
 public class TriggerEvent : UnityEvent<Collider, bool> { }

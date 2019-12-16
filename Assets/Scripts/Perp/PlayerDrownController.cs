@@ -31,6 +31,8 @@ public class PlayerDrownController : MonoBehaviour
     private bool drowning = false;
     private float drownTimer = 0f;
 
+    private bool showTimer = true;
+
     private Pig pigBeingDrowned;
 
     private Animator gridAnimator;
@@ -75,12 +77,22 @@ public class PlayerDrownController : MonoBehaviour
                 drownTimer = totalTimeDrown;
         }
 
+        if (!showTimer)
+            return;
         drownTimeText.text = drownTimer.ToString("F2");
     }
 
     public void ResetDrown() {
         drownTimer = totalTimeDrown;
+
+        if (!showTimer)
+            return;
         drownTimeText.text = drownTimer.ToString("F2");
+    }
+
+    public void DisableTimer() {
+        showTimer = false;
+        drownTimeText.text = "";
     }
 
 
