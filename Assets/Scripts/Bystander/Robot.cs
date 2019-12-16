@@ -5,13 +5,14 @@ public class Robot : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private Transform pathParent;
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float moveSpeed = 1.0f;
 
     [Header("Find player")]
     [SerializeField] private float viewDistance = 20.0f;
     [SerializeField] private float viewAngle = 50.0f;
     [SerializeField] private float timeTillLost = 5.0f;
     [SerializeField] private float attackDistance = 2.0f;
+    [SerializeField] private float chasingSpeed = 2.0f;
 
     [Header("Attributes")]
     [SerializeField] private Light mySpotLight;
@@ -74,6 +75,7 @@ public class Robot : MonoBehaviour
                 if (timeLost > timeTillLost)
                 {
                     playerSpotted = false;
+                    myNavMeshAgent.speed = moveSpeed;
                     myNavMeshAgent.SetDestination(path[currentPathPosition].position);
                 }
             }
@@ -93,12 +95,14 @@ public class Robot : MonoBehaviour
                 currentPathPosition = 0;
                 ReturnToStart();
             }
+            myNavMeshAgent.speed = moveSpeed;
             myNavMeshAgent.SetDestination(path[currentPathPosition].position);
         }
     }
 
     private void WalkToPlayer()
     {
+        myNavMeshAgent.speed = chasingSpeed;
         myNavMeshAgent.SetDestination(GameManager.Instance.Player.transform.position);
     }
 
