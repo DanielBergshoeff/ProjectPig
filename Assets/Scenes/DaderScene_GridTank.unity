@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 329534772}
   - component: {fileID: 329534775}
   m_Layer: 0
-  m_Name: FloorDaderRuimte (1)
+  m_Name: ResetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,11 +752,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329534770}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2883124, y: -23.62, z: 1.1383685}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.707107, z: -0, w: 0.70710665}
+  m_LocalPosition: {x: -1.3944453, y: -3.8913004, z: 3.7951367}
+  m_LocalScale: {x: 0.5497592, y: 0.549759, z: 0.5497592}
   m_Children: []
-  m_Father: {fileID: 821429944}
+  m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &329534772
@@ -1519,12 +1519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05760d63155e7b44e9bbe9faa755eb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &821429944 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7652164236839973503, guid: e824d35ed6b29d64395edeee33de403b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2025728225}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &825732536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1727,7 +1721,7 @@ Transform:
   m_LocalScale: {x: 0.22814113, y: 0.24885318, z: 0.2783174}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &856880566
 AudioSource:
@@ -2466,6 +2460,7 @@ MonoBehaviour:
   - {fileID: 1402166939}
   processTime: {fileID: 1501568292}
   correctPigsTillTimerGone: 1
+  resetObject: {fileID: 329534775}
   pigPrefab: {fileID: 5893678609028029561, guid: 5e933f8e0af273243be2f9cfd70571b1,
     type: 3}
   pigSpawnPosition: {fileID: 935381013}
@@ -3772,7 +3767,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: -44.005, y: 0, z: 0}
 --- !u!1 &1640380591
 GameObject:
@@ -4065,6 +4060,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8480274657864405172, guid: 70a7141f96eebc14f8af95bd9449ad2c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8480274656806127579, guid: 70a7141f96eebc14f8af95bd9449ad2c,
         type: 3}
       propertyPath: m_Enabled
@@ -4165,11 +4165,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -15.000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480274657864405172, guid: 70a7141f96eebc14f8af95bd9449ad2c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8480274657864405168, guid: 70a7141f96eebc14f8af95bd9449ad2c,
         type: 3}
