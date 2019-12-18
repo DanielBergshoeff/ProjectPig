@@ -42,7 +42,7 @@ public class RobotArm : MonoBehaviour
         }
     }
 
-    private void CollisionEnter(Collision coll) {
+    private void CollisionEnter(Collision coll, bool enter) {
         if (coll.gameObject == Pig) {
             Pig.transform.SetParent(Arm.transform);
             Pig.GetComponent<Rigidbody>().isKinematic = true;
