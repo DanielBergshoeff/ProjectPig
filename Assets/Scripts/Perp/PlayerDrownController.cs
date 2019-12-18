@@ -37,6 +37,8 @@ public class PlayerDrownController : MonoBehaviour
 
     private Animator gridAnimator;
 
+    private bool tilting = false;
+
     // Start is called before the first frame update
     void Start() {
         startPosition = Platform.transform.position;
@@ -53,10 +55,16 @@ public class PlayerDrownController : MonoBehaviour
         Instance = this;
     }
 
+    private void UnTilt() {
+        tilting = false;
+    }
+
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(keyTilt)) {
+        if (Input.GetKeyDown(keyTilt) && goingDownTimer <= 0 && !tilting) {
             gridAnimator.SetTrigger("Tilt");
+            tilting = true;
+            Invoke("UnTilt", 2.5f);
         }
 
         MovePlatform();
@@ -100,6 +108,9 @@ public class PlayerDrownController : MonoBehaviour
     /// Move platform based on user input
     /// </summary>
     private void MovePlatform() {
+        if (tilting)
+            return;
+
         if (Input.GetKeyDown(keyDown)) {
             goingDown = true;
         }

@@ -9,7 +9,9 @@ public class Hooks : MonoBehaviour
     public List<GameObject> AllHooks;
 
     [SerializeField] private TextMeshProUGUI processTime;
+    [SerializeField] private TextMeshProUGUI shortestProcessTime;
     private float processTimer = 0f;
+    private float shortestProcessTimer = 100f;
     [SerializeField] private int correctPigsTillTimerGone;
     [SerializeField] private CollisionObject resetObject;
 
@@ -26,6 +28,11 @@ public class Hooks : MonoBehaviour
     [SerializeField] private Color correctLightColor;
     [SerializeField] private Color wrongLightColor;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource reactionSound;
+    [SerializeField] private AudioClip positiveClip;
+    [SerializeField] private AudioClip negativeClip;
+
     private bool newPigAllowed = true;
     private Animator myAnimator;
     private Vector3[] pigPositions;
@@ -33,6 +40,8 @@ public class Hooks : MonoBehaviour
     private bool pigProcess = false;
 
     private int amtOfCorrectPigs = 0;
+
+    private AudioSource myAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +57,8 @@ public class Hooks : MonoBehaviour
 
         checkPigTrigger.triggerEvent.AddListener(CheckPig);
         resetObject.collisionEvent.AddListener(ResetPig);
+
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,6 +71,7 @@ public class Hooks : MonoBehaviour
         }
 
         if (Input.GetKeyDown(keySpawn) && newPigAllowed) {
+            myAudioSource.Play();
             myAnimator.SetTrigger("Move");
             newPigAllowed = false;
         }
@@ -136,15 +148,22 @@ public class Hooks : MonoBehaviour
         pigProcess = false;
 
         if (pig.Dehaired) {
+            if (processTimer < shortestProcessTimer) {
+                shortestProcessTimer = processTimer;
+                shortestProcessTime.text = shortestProcessTimer.ToString("F2");
+            }
+
             checkLight.color = correctLightColor;
             amtOfCorrectPigs++;
             if(amtOfCorrectPigs == correctPigsTillTimerGone) {
                 PlayerDrownController.Instance.DisableTimer();
             }
+            reactionSound.PlayOneShot(positiveClip);
         }
         else {
             checkLight.color = wrongLightColor;
             amtOfCorrectPigs = 0;
+            reactionSound.PlayOneShot(negativeClip);
         }
     }
 }
