@@ -111,12 +111,11 @@ public class Hooks : MonoBehaviour
         if (pig == null)
             return;
 
-        if (pig.Checked)
-            return;
-
-        pig.Checked = true;
-        newPigAllowed = true;
-        pigProcess = false;
+        if (!pig.Checked) {
+            pig.Checked = true;
+            newPigAllowed = true;
+            pigProcess = false;
+        }
 
         Destroy(pig.gameObject);
     }

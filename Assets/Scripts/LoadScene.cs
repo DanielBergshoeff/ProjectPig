@@ -35,7 +35,16 @@ public class LoadScene : MonoBehaviour, IInteractible
 
     private void InnitLoadScene()
     {
-        GetComponent<Collider>().enabled = false;
+        string scene = gameObject.name;
+
+        if (scene == "Exit")
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+        }
 
         transition = Instantiate(transitionUI);
         DontDestroyOnLoad(transition);
@@ -50,7 +59,7 @@ public class LoadScene : MonoBehaviour, IInteractible
 
         fadeIn.Finished += delegate (bool manual)
         {
-            Load(gameObject.name);
+            Load(scene);
         };
     }
 
