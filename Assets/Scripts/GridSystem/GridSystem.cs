@@ -8,75 +8,89 @@ public class GridSystem : MonoBehaviour
     public Vector3 offset;
     private Vector3 Offset;
     private Vector3 gridOrigin;
+    private Vector3 objectSize;
 
     private List<GameObject> currentGrid = new List<GameObject>();
     private const string gridRootName = "GridRoot";
 
     private void Awake()
     {
-        foreach (Transform child in transform.GetChild(0).transform)
-            if (child.name == gridRootName)
-                currentGrid.Add(child.gameObject);
+        GetCurrentGrid();
     }
 
     private void Update()
     {
-        if (transform.hasChanged)
+        if (!transform.hasChanged) { return; }
+        transform.hasChanged = false;
+
+        if (!gridObject)
         {
-            gridObject.transform.localScale = Vector3.one;
-            Vector3 objectSize = gridObject.GetSize();
-            gridOrigin = new Vector3(transform.localScale.x * (objectSize.x + offset.x), transform.localScale.y, transform.localScale.z * (objectSize.z + offset.z));
+            print("Please give a tile object");
+            return;
+        }
 
-            transform.hasChanged = false;
+        //Clear the current grid
+        ClearGrid(currentGrid);
 
-            ClearGrid(currentGrid);
+        //Get the size of the object relative to height grid object
+        objectSize = ScaleYProportional(transform.localScale, gridObject.GetSize());
 
-            Vector2 point = transform.position;
+        //Calculate amount of objects in grid
+        Vector3 gridAmount = GetAmount(transform.localScale, objectSize);
+        print(gridAmount);
 
-            if (!gridObject)
+        //Get the grid origin
+        float x = transform.position.x + (transform.localScale.x * offset.x);
+        float y = transform.position.y + (transform.localScale.y * offset.y);
+        float z = transform.position.z + (transform.localScale.z * offset.z);
+        gridOrigin = new Vector3(x, y, z);
+
+        //Create the grid
+        CreateGrid(gridObject, gridOrigin, gridAmount, offset);
+    }
+
+    private Vector3 GetAmount(Vector3 gridSize, Vector3 objectSize)
+    {
+        return new Vector3(Mathf.RoundToInt(gridSize.x / objectSize.x), 1, Mathf.RoundToInt(gridSize.z / objectSize.z));
+    }
+
+    private void CreateGrid(GameObject obj, Vector3 position, Vector3 gridAmount, Vector3 offset = default)
+    {
+        //Setting the origin point from where the grid is going to be made
+        Vector3 origin = position;
+
+        //Setting the first position of the grid
+        origin -= (objectSize / 2) + offset;
+        for (int x = 0; x < gridAmount.x; x++)
+        {
+            origin.x += objectSize.x + offset.x;
+            origin.z = position.z;
+
+            for (int z = 0; z < gridAmount.z; z++)
             {
-                print("Please give a tile object");
-                return;
+                origin.z += objectSize.z + offset.z;
+                currentGrid.Add(CreateObject(obj, origin));
             }
-
-            CreateGrid(gridObject, transform.localScale, offset);
         }
     }
 
-    private Vector2 CreateGrid(GameObject obj, Vector3 size, Vector3 offset = default)
+    private GameObject CreateObject(GameObject obj, Vector3 position)
     {
-        Vector3 objectSize = obj.GetSize();
+        position = new Vector3(position.x, position.y, position.z);
+        GameObject go = Instantiate(obj, position, Quaternion.identity);
 
-        GameObject root = null;
-        try
-        {
-            root = transform.GetChild(0).gameObject;
-        }
-        catch
-        {
-            root = new GameObject(gridRootName);
-        }
+        Vector3 scale = objectSize;
+        go.transform.localScale = scale;
 
-        Vector3 origin = root.transform.position = transform.position + -(gridOrigin / 2);
-        root.transform.SetParent(transform);
+        go.transform.SetParent(transform);
+        return go;
+    }
 
-        origin -= new Vector3((objectSize.x / 2) + offset.x, 0, -(objectSize.z / 2) + offset.z);
-
-        for (int x = 0; x < (int)size.x; x++)
-        {
-            origin.x += objectSize.x + offset.x;
-            origin.z = root.transform.position.z - ((objectSize.z / 2) + offset.z);
-
-            for (int z = 0; z < (int)size.z; z++)
-            {
-                origin.z += objectSize.z + offset.z;
-                Vector3 position = new Vector3(origin.x, 0, origin.z);
-                Instantiate(obj, position, Quaternion.identity, root.transform);
-            }
-        }
-
-        currentGrid.Add(root);
-        return origin;
+    private void GetCurrentGrid()
+    {
+        foreach (Transform child in transform.GetChild(0).transform)
+            if (child.name == gridRootName)
+                currentGrid.Add(child.gameObject);
     }
 
     private void ClearGrid(List<GameObject> grid)
@@ -91,16 +105,22 @@ public class GridSystem : MonoBehaviour
         grid.Clear();
     }
 
-    private void OnDrawGizmosSelected()
+    private Vector3 ScaleYProportional(Vector3 toScale, Vector3 scaleTo)
     {
-        Gizmos.color = new Color(1, 0, 0, 0.5f);
-        Gizmos.DrawCube(transform.position, gridOrigin);
-        Gizmos.color = new Color(0, 0, 1, 0.5f);
-        Gizmos.DrawSphere(transform.position + -gridOrigin / 2, .5f);
+        return toScale / toScale.LongestAxis();
+    }
+
+    private float norm(float val, float min, float max)
+    {
+        return (val - min) / (max - min);
     }
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(transform.position, transform.localScale);
+        Gizmos.color = new Color(0, 0, 1, 0.5f);
+        Gizmos.DrawSphere(gridOrigin, 0.2f);
         Gizmos.DrawIcon(transform.position, "grid.png");
     }
 }
