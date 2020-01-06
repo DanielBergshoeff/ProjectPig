@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Pig : MonoBehaviour
+public class DehairingPig : MonoBehaviour
 {
     public GameObject FixedJointObject;
     public bool Dehaired = false;
