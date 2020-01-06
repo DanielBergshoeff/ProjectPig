@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3336058160561749695}
   - component: {fileID: 4228452782356458721}
   m_Layer: 0
-  m_Name: Mouse
+  m_Name: SS_Mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1108147716743453759, guid: ab4f797300966bc4eac990f8e7f0344f, type: 3}
+  - {fileID: 2100000, guid: b7064be797e88ae4ca2aeba91d9e6a86, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
