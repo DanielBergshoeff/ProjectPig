@@ -33,7 +33,7 @@ public class PlayerDrownController : MonoBehaviour
 
     private bool showTimer = true;
 
-    private Pig pigBeingDrowned;
+    private DehairingPig pigBeingDrowned;
 
     private Animator gridAnimator;
 
@@ -133,7 +133,7 @@ public class PlayerDrownController : MonoBehaviour
 
         if (enter) {
             drowning = true;
-            pigBeingDrowned = other.GetComponentInParent<Pig>();
+            pigBeingDrowned = other.GetComponentInParent<DehairingPig>();
         }
         else {
             drowning = false;

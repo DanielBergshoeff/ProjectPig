@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Hooks : MonoBehaviour
 {
-    public List<Pig> Pigs;
+    public List<DehairingPig> Pigs;
     public List<GameObject> AllHooks;
 
     [SerializeField] private TextMeshProUGUI processTime;
@@ -111,7 +111,7 @@ public class Hooks : MonoBehaviour
     /// </summary>
     private void SpawnPig() {
         GameObject pig = Instantiate(pigPrefab, pigSpawnPosition.transform.position, pigSpawnPosition.transform.rotation);
-        Pigs[0] = pig.GetComponent<Pig>();
+        Pigs[0] = pig.GetComponent<DehairingPig>();
         Pigs[0].transform.SetParent(AllHooks[0].transform);
     }
 
@@ -119,7 +119,7 @@ public class Hooks : MonoBehaviour
         if (!enter)
             return;
 
-        Pig pig = coll.gameObject.GetComponentInParent<Pig>();
+        DehairingPig pig = coll.gameObject.GetComponentInParent<DehairingPig>();
         if (pig == null)
             return;
 
@@ -136,7 +136,7 @@ public class Hooks : MonoBehaviour
         if (!enter)
             return;
 
-        Pig pig = coll.gameObject.GetComponentInParent<Pig>();
+        DehairingPig pig = coll.gameObject.GetComponentInParent<DehairingPig>();
         if (pig == null)
             return;
 

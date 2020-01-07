@@ -9,19 +9,23 @@ public class CollisionObject : MonoBehaviour
     public TriggerEvent triggerEvent;
 
     private void OnCollisionEnter(Collision collision) {
-        collisionEvent.Invoke(collision, true);
+        if(collisionEvent != null)
+            collisionEvent.Invoke(collision, true);
     }
 
     private void OnCollisionExit(Collision collision) {
-        collisionEvent.Invoke(collision, false);
+        if(collisionEvent != null)
+            collisionEvent.Invoke(collision, false);
     }
 
     private void OnTriggerEnter(Collider other) {
-        triggerEvent.Invoke(other, true);
+        if(triggerEvent != null)
+            triggerEvent.Invoke(other, true);
     }
 
     private void OnTriggerExit(Collider other) {
-        triggerEvent.Invoke(other, false);
+        if(triggerEvent != null)
+            triggerEvent.Invoke(other, false);
     }
 }
 
