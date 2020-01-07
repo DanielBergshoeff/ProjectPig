@@ -440,16 +440,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014321256
       objectReference: {fileID: 0}
-    - target: {fileID: 462645976686574090, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
-        type: 3}
-      propertyPath: m_TagString
-      value: Pig
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872153105664639771, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7314456133337263390, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -494,6 +484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.00024654102
+      objectReference: {fileID: 0}
+    - target: {fileID: 462645976686574090, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pig
       objectReference: {fileID: 0}
     - target: {fileID: 7314456133603297863, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
         type: 3}
@@ -599,6 +594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000000016298145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872153105664639771, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7314456134091116258, guid: 870ad4ef505b4ec4b80d173f7df8c4b2,
         type: 3}
@@ -2139,7 +2139,7 @@ PrefabInstance:
     - target: {fileID: 2769092033128270336, guid: 3c8dfeadcbee951439b3d6fa2d39cef4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2769092033128270336, guid: 3c8dfeadcbee951439b3d6fa2d39cef4,
         type: 3}
@@ -3442,7 +3442,7 @@ Transform:
   - {fileID: 4852936837052701058}
   - {fileID: 6532373768973074736}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5008901548090296444
 GameObject:

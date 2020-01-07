@@ -49,8 +49,8 @@ public class Robot : MonoBehaviour
         SetEvil();
 
         Move();
-        if (evil)
-            CheckForPlayer();
+        /*if (evil)
+            CheckForPlayer();*/
     }
 
     public void SetEvil()
@@ -60,6 +60,7 @@ public class Robot : MonoBehaviour
         else
             mySpotLight.color = goodLightColor;
     }
+
 
     private void Move()
     {
