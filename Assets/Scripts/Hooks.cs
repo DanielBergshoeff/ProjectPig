@@ -33,11 +33,14 @@ public class Hooks : MonoBehaviour
     [SerializeField] private AudioClip positiveClip;
     [SerializeField] private AudioClip negativeClip;
 
+    [SerializeField] private AudioSource heartBeatAudioSource;
+
     private bool newPigAllowed = true;
     private Animator myAnimator;
     private Vector3[] pigPositions;
     private bool pigDropTime = false;
     private bool pigProcess = false;
+    private bool livingPig = false;
 
     private int amtOfCorrectPigs = 0;
 
@@ -113,6 +116,14 @@ public class Hooks : MonoBehaviour
         GameObject pig = Instantiate(pigPrefab, pigSpawnPosition.transform.position, pigSpawnPosition.transform.rotation);
         Pigs[0] = pig.GetComponent<DehairingPig>();
         Pigs[0].transform.SetParent(AllHooks[0].transform);
+
+        if (!livingPig)
+            return;
+
+        pig.GetComponent<HalfDeadPig>().enabled = true;
+        heartBeatAudioSource.Play();
+        Pigs[0].Alive = true;
+        livingPig = false;
     }
 
     private void ResetPig(Collision coll, bool enter) {
@@ -147,6 +158,10 @@ public class Hooks : MonoBehaviour
         newPigAllowed = true;
         pigProcess = false;
 
+        if (pig.Alive) {
+            heartBeatAudioSource.Stop();
+        }
+
         if (pig.Dehaired) {
             if (processTimer < shortestProcessTimer) {
                 shortestProcessTimer = processTimer;
@@ -157,6 +172,7 @@ public class Hooks : MonoBehaviour
             amtOfCorrectPigs++;
             if(amtOfCorrectPigs == correctPigsTillTimerGone) {
                 PlayerDrownController.Instance.DisableTimer();
+                livingPig = true;
             }
             reactionSound.PlayOneShot(positiveClip);
         }

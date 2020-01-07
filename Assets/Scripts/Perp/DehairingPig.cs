@@ -9,6 +9,7 @@ public class DehairingPig : MonoBehaviour
     public GameObject FixedJointObjectRight;
     public bool Dehaired = false;
     public bool Checked = false;
+    public bool Alive = false;
 
     private FixedJoint myFixedJointLeft;
     private Rigidbody myRigidbodyLeft;
