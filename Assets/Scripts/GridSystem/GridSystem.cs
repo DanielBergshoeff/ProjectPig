@@ -4,140 +4,93 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GridSystem : MonoBehaviour
 {
-    [HideInInspector]
-    public List<GridObject> _grids
-    {
-        get { return grids; }
-        set { updateGrid = true; }
-    }
+    public GameObject gridObject;
+    public Vector3 offset;
+    private Vector3 Offset;
+    private Vector3 gridOrigin;
+    private Vector3 objectSize;
 
-    [SerializeField]
-    private List<GridObject> grids = new List<GridObject>();
-
-    private bool updateGrid = false;
     private List<GameObject> currentGrid = new List<GameObject>();
-
     private const string gridRootName = "GridRoot";
-    private const string boundaryRootName = "BoundaryRoot";
-
-    private void OnValidate()
-    {
-        _grids = grids;
-    }
 
     private void Awake()
     {
-        foreach (Transform child in transform)
-            if (child.name == gridRootName || child.name == boundaryRootName)
-                currentGrid.Add(child.gameObject);
+        GetCurrentGrid();
     }
 
     private void Update()
     {
-        if (!updateGrid) { return; }
+        if (!transform.hasChanged) { return; }
+        transform.hasChanged = false;
 
+        if (!gridObject)
+        {
+            print("Please give a tile object");
+            return;
+        }
+
+        //Clear the current grid
         ClearGrid(currentGrid);
 
-        Vector2 point = new Vector2();
+        //Get the size of the object relative to height grid object
+        objectSize = ScaleYProportional(transform.localScale, gridObject.GetSize());
 
-        foreach (GridObject grid in grids)
-        {
-            if (!grid.tile)
-            {
-                print("Please give a tile object");
-                updateGrid = false;
-                return;
-            }
+        //Calculate amount of objects in grid
+        Vector3 gridAmount = GetAmount(transform.localScale, objectSize);
+        print(gridAmount);
 
-            point = CreateGrid(grid.tile, grid.size, point);
+        //Get the grid origin
+        float x = transform.position.x + (transform.localScale.x * offset.x);
+        float y = transform.position.y + (transform.localScale.y * offset.y);
+        float z = transform.position.z + (transform.localScale.z * offset.z);
+        gridOrigin = new Vector3(x, y, z);
 
-            if (grid.boundaries)
-                CreateBoundaries(grid.boundaries, grid.size, point);
-        }
-        updateGrid = false;
+        //Create the grid
+        CreateGrid(gridObject, gridOrigin, gridAmount, offset);
     }
 
-    private Vector2 CreateGrid(GameObject obj, Vector3 size, Vector2 origin = default)
+    private Vector3 GetAmount(Vector3 gridSize, Vector3 objectSize)
     {
-        Vector3 objectSize = obj.GetSize();
-
-        GameObject root = new GameObject(gridRootName);
-        root.transform.SetParent(transform);
-        origin.x = transform.position.x - (objectSize.x / 2);
-
-        for (int x = 0; x < (int)size.x; x++)
-        {
-
-            origin.y = transform.position.y - (objectSize.z / 2);
-            origin.x += objectSize.x;
-
-            for (int z = 0; z < (int)size.y; z++)
-            {
-                origin.y += objectSize.z;
-                Vector3 position = new Vector3(origin.x, 0, origin.y);
-                Instantiate(obj, position, Quaternion.identity, root.transform);
-            }
-        }
-
-        currentGrid.Add(root);
-        return origin;
+        return new Vector3(Mathf.RoundToInt(gridSize.x / objectSize.x), 1, Mathf.RoundToInt(gridSize.z / objectSize.z));
     }
 
-    private Vector2 CreateBoundaries(GameObject obj, Vector3 size, Vector2 origin = default)
+    private void CreateGrid(GameObject obj, Vector3 position, Vector3 gridAmount, Vector3 offset = default)
     {
-        Vector3 objectSize = obj.GetSize();
+        //Setting the origin point from where the grid is going to be made
+        Vector3 origin = position;
 
-        GameObject root = new GameObject(boundaryRootName);
-        root.transform.SetParent(transform);
-
-        Quaternion rotation = Quaternion.identity;
-        // origin.x = origin.x - (objectSize.x / 2);
-        // origin.y = origin.y - (objectSize.z / 2);
-
-        for (int x = 0; x < (int)size.x; x++)
+        //Setting the first position of the grid
+        origin -= (objectSize / 2) + offset;
+        for (int x = 0; x < gridAmount.x; x++)
         {
-            origin.x += objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
+            origin.x += objectSize.x + offset.x;
+            origin.z = position.z;
+
+            for (int z = 0; z < gridAmount.z; z++)
+            {
+                origin.z += objectSize.z + offset.z;
+                currentGrid.Add(CreateObject(obj, origin));
+            }
         }
+    }
 
-        rotation = Quaternion.AngleAxis(90, Vector3.up);
-        origin.x += (objectSize.x / 2);
-        origin.y -= (objectSize.x / 2);
+    private GameObject CreateObject(GameObject obj, Vector3 position)
+    {
+        position = new Vector3(position.x, position.y, position.z);
+        GameObject go = Instantiate(obj, position, Quaternion.identity);
 
-        for (int y = 0; y < (int)size.y; y++)
-        {
-            origin.y += objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
+        Vector3 scale = objectSize;
+        go.transform.localScale = scale;
 
-        rotation = Quaternion.AngleAxis(0, Vector3.up);
-        origin.x += (objectSize.x / 2);
-        origin.y -= (objectSize.x / 2);
+        go.transform.SetParent(transform);
+        return go;
+    }
 
-        for (int x = 0; x < (int)size.x; x++)
-        {
-            origin.x -= objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
-
-        rotation = Quaternion.AngleAxis(90, Vector3.up);
-        origin.x -= (objectSize.x / 2);
-        origin.y += (objectSize.x / 2);
-
-        for (int y = 0; y < (int)size.y; y++)
-        {
-            origin.y -= objectSize.x;
-            Vector3 position = new Vector3(origin.x, 0, origin.y);
-            Instantiate(obj, position, rotation, root.transform);
-        }
-
-        rotation = Quaternion.AngleAxis(0, Vector3.up);
-
-        currentGrid.Add(root);
-        return origin;
+    private void GetCurrentGrid()
+    {
+        foreach (Transform child in transform.GetChild(0).transform)
+            if (child.name == gridRootName)
+                currentGrid.Add(child.gameObject);
     }
 
     private void ClearGrid(List<GameObject> grid)
@@ -150,5 +103,24 @@ public class GridSystem : MonoBehaviour
         }
 
         grid.Clear();
+    }
+
+    private Vector3 ScaleYProportional(Vector3 toScale, Vector3 scaleTo)
+    {
+        return toScale / toScale.LongestAxis();
+    }
+
+    private float norm(float val, float min, float max)
+    {
+        return (val - min) / (max - min);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(transform.position, transform.localScale);
+        Gizmos.color = new Color(0, 0, 1, 0.5f);
+        Gizmos.DrawSphere(gridOrigin, 0.2f);
+        Gizmos.DrawIcon(transform.position, "grid.png");
     }
 }
