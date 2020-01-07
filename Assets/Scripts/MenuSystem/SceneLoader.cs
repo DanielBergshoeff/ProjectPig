@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(AudioSource))]
-public class LoadScene : MonoBehaviour, IInteractible
+public class SceneLoader : MonoBehaviour, IInteractible
 {
     [SerializeField] private GameObject transitionUI;
     [SerializeField] private float transitionOffset = 2f;
@@ -16,37 +15,30 @@ public class LoadScene : MonoBehaviour, IInteractible
     private GameObject transition;
     private CanvasGroup canvas;
     private AudioSource source;
+    private bool done = false;
 
     private void Start()
     {
         gameObject.layer = LayerMask.NameToLayer("Interactable");
-        source = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        InnitLoadScene();
+        QuitGame(gameObject.name);
+        InnitLoadScene(gameObject.name);
     }
 
     public void Interact()
     {
-        InnitLoadScene();
+        QuitGame(gameObject.name);
+        InnitLoadScene(gameObject.name);
     }
 
-    private void InnitLoadScene()
+    private void InnitLoadScene(string sceneName)
     {
-        string scene = gameObject.name;
-
-        if (scene == "Exit")
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-         Application.Quit();
-#endif
-        }
-
         transition = Instantiate(transitionUI);
+        source = transition.GetComponent<AudioSource>();
+
         DontDestroyOnLoad(transition);
 
         canvas = transition.GetComponentInChildren<CanvasGroup>();
@@ -59,15 +51,26 @@ public class LoadScene : MonoBehaviour, IInteractible
 
         fadeIn.Finished += delegate (bool manual)
         {
-            Load(scene);
+            Load(sceneName);
         };
     }
 
-    private void Load(string scene)
+    private static void QuitGame(string sceneName)
+    {
+        if (sceneName != "Exit") { return; }
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+    }
+
+    private void Load(string sceneName)
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += Loaded;
-        SceneManager.LoadSceneAsync(scene);
+        SceneManager.LoadSceneAsync(sceneName);
     }
 
     private void Loaded(Scene scene, LoadSceneMode mode)
@@ -78,11 +81,17 @@ public class LoadScene : MonoBehaviour, IInteractible
         source.clip = transitionOutAudio;
         source.Play();
 
-        fadeOut.Finished += delegate (bool manual)
+        fadeOut.Finished += CleanUp;
+    }
+
+    private void CleanUp(bool manual)
+    {
+        try
         {
             Destroy(transition);
             Destroy(gameObject);
-        };
+        }
+        catch { }
     }
 
     IEnumerator FadeIn()
@@ -95,12 +104,14 @@ public class LoadScene : MonoBehaviour, IInteractible
             yield return null;
         }
 
-        yield return new WaitForSeconds(transitionInAudio.length + transitionOffset);
+        float length = transitionOutAudio ? transitionInAudio.length : 0;
+        yield return new WaitForSeconds(length + transitionOffset);
     }
 
     IEnumerator FadeOut()
     {
-        yield return new WaitForSeconds(transitionOutAudio.length + transitionOffset);
+        float length = transitionOutAudio ? transitionInAudio.length : 0;
+        yield return new WaitForSeconds(length + transitionOffset);
 
         for (int i = 10; i >= 0; i -= 1)
         {

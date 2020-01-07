@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 990382144430054283}
   - component: {fileID: 990382144428433675}
   - component: {fileID: 990382145626166244}
+  - component: {fileID: 7087509654312675370}
   m_Layer: 0
   m_Name: BystanderController
   m_TagString: Player
@@ -400,6 +401,19 @@ MonoBehaviour:
   interactionKey: 101
   flashlightObject: {fileID: 4664629619831781804}
   flashlightKey: 102
+--- !u!114 &7087509654312675370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990382144435484907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee226cadaa5ca3046835be69943ccd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 8359781753860747531, guid: 7430d8989ff7e1643bb0ce85bcc72095, type: 3}
 --- !u!1 &990382144871612217
 GameObject:
   m_ObjectHideFlags: 0
