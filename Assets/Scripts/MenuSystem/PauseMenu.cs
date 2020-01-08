@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,10 +17,6 @@ public class PauseMenu : MonoBehaviour
         foreach (MonoBehaviour pausable in pausables)
         {
             if (pausable == this) { continue; }
-            if (pausable is UnityEngine.UI.GraphicRaycaster) { continue; }
-            if (pausable is UnityEngine.UI.CanvasScaler) { continue; }
-            if (pausable is UnityEngine.EventSystems.EventSystem) { continue; }
-            if (pausable is UnityEngine.EventSystems.StandaloneInputModule) { continue; }
 
             print(pausable.GetType());
             objectToPause.Add(pausable);
@@ -29,29 +26,30 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            paused = TogglePause();
+            TogglePause();
     }
 
     public void Pause()
     {
-        paused = TogglePause();
+        TogglePause();
     }
 
-    private bool TogglePause()
+    private void TogglePause()
     {
-        if (Time.timeScale == 0f)
+        if (paused)
         {
             Time.timeScale = 1f;
             Destroy(cachedPauseUI);
-            // ToggleMonoBehaviors();
-            return (false);
+            ToggleMonoBehaviors();
+            paused = false;
         }
         else
         {
             Time.timeScale = 0f;
             cachedPauseUI = Instantiate(pauseUI);
-            // ToggleMonoBehaviors();
-            return (true);
+            cachedPauseUI.GetComponentInChildren<Button>().onClick.AddListener(TogglePause);
+            ToggleMonoBehaviors();
+            paused = true;
         }
     }
 
