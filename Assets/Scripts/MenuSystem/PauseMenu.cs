@@ -11,14 +11,17 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        cachedPauseUI = Instantiate(pauseUI);
-        cachedPauseUI.SetActive(false);
-
         var pausables = FindObjectsOfType<MonoBehaviour>();
+
         foreach (MonoBehaviour pausable in pausables)
         {
             if (pausable == this) { continue; }
-            print(pausable);
+            if (pausable is UnityEngine.UI.GraphicRaycaster) { continue; }
+            if (pausable is UnityEngine.UI.CanvasScaler) { continue; }
+            if (pausable is UnityEngine.EventSystems.EventSystem) { continue; }
+            if (pausable is UnityEngine.EventSystems.StandaloneInputModule) { continue; }
+
+            print(pausable.GetType());
             objectToPause.Add(pausable);
         }
     }
@@ -39,20 +42,20 @@ public class PauseMenu : MonoBehaviour
         if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
-            cachedPauseUI.SetActive(false);
-            ToggleMonoBehaviours();
+            Destroy(cachedPauseUI);
+            // ToggleMonoBehaviors();
             return (false);
         }
         else
         {
             Time.timeScale = 0f;
-            cachedPauseUI.SetActive(true);
-            ToggleMonoBehaviours();
+            cachedPauseUI = Instantiate(pauseUI);
+            // ToggleMonoBehaviors();
             return (true);
         }
     }
 
-    private void ToggleMonoBehaviours()
+    private void ToggleMonoBehaviors()
     {
         var copy = new List<MonoBehaviour>(objectToPause);
         foreach (MonoBehaviour pausable in copy)
