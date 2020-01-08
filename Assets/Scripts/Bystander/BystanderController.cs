@@ -35,7 +35,7 @@ public class BystanderController : MonoBehaviour
     private void CheckForInteraction()
     {
         RaycastHit hit;
-        if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance, 1 << LayerMask.NameToLayer("Interactable")))
+        if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance))
         {
             interactionCanvas.SetActive(false);
             return;
@@ -43,7 +43,10 @@ public class BystanderController : MonoBehaviour
 
         IInteractible interactible = hit.collider.GetComponent<IInteractible>();
 
-        if (interactible == null) { return; }
+        if (interactible == null) {
+            interactionCanvas.SetActive(false);
+            return;
+        }
 
         interactionCanvas.SetActive(true);
 
