@@ -5,23 +5,34 @@ using UnityEngine.Events;
 
 public class DehairingPig : MonoBehaviour
 {
-    public GameObject FixedJointObject;
+    public GameObject FixedJointObjectLeft;
+    public GameObject FixedJointObjectRight;
     public bool Dehaired = false;
     public bool Checked = false;
+    public bool Alive = false;
 
-    private FixedJoint myFixedJoint;
-    private Rigidbody myRigidbody;
+    private FixedJoint myFixedJointLeft;
+    private Rigidbody myRigidbodyLeft;
+
+    private FixedJoint myFixedJointRight;
+    private Rigidbody myRigidbodyRight;
 
     // Start is called before the first frame update
     void Start()
     {
-        myFixedJoint = FixedJointObject.GetComponent<FixedJoint>();
-        myRigidbody = FixedJointObject.GetComponent<Rigidbody>();
+        myFixedJointLeft = FixedJointObjectLeft.GetComponent<FixedJoint>();
+        myRigidbodyLeft = FixedJointObjectLeft.GetComponent<Rigidbody>();
+
+        myFixedJointRight = FixedJointObjectRight.GetComponent<FixedJoint>();
+        myRigidbodyRight = FixedJointObjectRight.GetComponent<Rigidbody>();
     }
 
     public void UnHook() {
-        Destroy(myFixedJoint);
-        Destroy(myRigidbody);
+        Destroy(myFixedJointLeft);
+        Destroy(myRigidbodyLeft);
+
+        Destroy(myFixedJointRight);
+        Destroy(myRigidbodyRight);
     }
 }
 
