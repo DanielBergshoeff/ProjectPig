@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public class SceneLoader : MonoBehaviour, IInteractible
 {
     [SerializeField] private GameObject transitionUI;
