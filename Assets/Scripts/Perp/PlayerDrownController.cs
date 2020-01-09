@@ -79,6 +79,10 @@ public class PlayerDrownController : MonoBehaviour
             {
                 drownTimer = 0f;
                 pigBeingDrowned.Dehaired = true;
+                if (pigBeingDrowned.Alive) {
+                    pigBeingDrowned.Alive = false;
+                    pigBeingDrowned.Kill();
+                }
             }
         }
         else if (!drowning && drownTimer < totalTimeDrown)
@@ -87,6 +91,9 @@ public class PlayerDrownController : MonoBehaviour
             if (drownTimer > totalTimeDrown)
                 drownTimer = totalTimeDrown;
         }
+
+        if(pigBeingDrowned.Alive)
+            Hooks.Instance.UpdateHeartBeat(drownTimer / totalTimeDrown);
 
         if (!showTimer)
             return;
@@ -155,11 +162,13 @@ public class PlayerDrownController : MonoBehaviour
         {
             drowning = true;
             pigBeingDrowned = other.GetComponentInParent<DehairingPig>();
+            pigBeingDrowned.transform.parent = gridAnimator.transform;
         }
         else
         {
             drowning = false;
-            pigBeingDrowned = null;
+            pigBeingDrowned.transform.parent = null;
+            //pigBeingDrowned = null;
         }
     }
 }

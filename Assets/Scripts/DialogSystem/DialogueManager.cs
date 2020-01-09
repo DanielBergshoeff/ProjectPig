@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 /// <summary>
 /// Shows and plays the dialogue objects contents
@@ -28,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     private TMP_Text[] textObjects;
     private AudioSource dialogueAudio;
 
+    private UnityEvent dialogueMethod;
     private DialogueObject currentDialogue;
     private int dialogueIndex;
     private bool dialogueMode = false;
@@ -58,6 +60,13 @@ public class DialogueManager : MonoBehaviour
                 dialogueBox.SetActive(false);
                 currentDialogue = null;
                 dialogueIndex = 0;
+
+                //If there is a method to call at the end of the dialogue, call it
+                if (dialogueMethod == null)
+                    return;
+
+                dialogueMethod.Invoke();
+                dialogueMethod = null;
                 return;
             }
         }
@@ -67,11 +76,12 @@ public class DialogueManager : MonoBehaviour
     /// Start playing the a dialogue object or skip through it
     /// </summary>
     /// <param name="dialogue">The dialogue object to play</param>
-    public void StartDialogue(DialogueObject dialogue, GameObject box = default)
+    public void StartDialogue(DialogueObject dialogue, GameObject box = default, UnityEvent dm = null)
     {
         if (!CheckDialogue(dialogue)) { return; }
 
         dialogueMode = true;
+        dialogueMethod = dm;
 
         if (box != default)
             dialogueBox = box;

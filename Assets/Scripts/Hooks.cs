@@ -7,6 +7,8 @@ public class Hooks : MonoBehaviour
     public List<DehairingPig> Pigs;
     public List<GameObject> AllHooks;
 
+    public static Hooks Instance { get; private set; }
+
     [SerializeField] private TextMeshProUGUI processTime;
     [SerializeField] private TextMeshProUGUI shortestProcessTime;
     private float processTimer = 0f;
@@ -33,6 +35,7 @@ public class Hooks : MonoBehaviour
     [SerializeField] private AudioClip negativeClip;
 
     [SerializeField] private AudioSource heartBeatAudioSource;
+    [SerializeField] private float heartBeatSpeed = 3.0f;
 
     private bool newPigAllowed = true;
     private Animator myAnimator;
@@ -47,6 +50,8 @@ public class Hooks : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
+
         pigPositions = new Vector3[Pigs.Count];
         myAnimator = GetComponent<Animator>();
 
@@ -131,6 +136,7 @@ public class Hooks : MonoBehaviour
             return;
 
         pig.GetComponent<HalfDeadPig>().enabled = true;
+        heartBeatAudioSource.pitch = heartBeatSpeed;
         heartBeatAudioSource.Play();
         Pigs[0].Alive = true;
         livingPig = false;
@@ -155,8 +161,11 @@ public class Hooks : MonoBehaviour
         Destroy(pig.gameObject);
     }
 
-    public void CheckPig(Collider coll, bool enter)
-    {
+    public void UpdateHeartBeat(float drowning) {
+        heartBeatAudioSource.pitch = drowning * heartBeatSpeed;
+    }
+
+    public void CheckPig(Collider coll, bool enter) {
         if (!enter)
             return;
 
@@ -170,16 +179,9 @@ public class Hooks : MonoBehaviour
         pig.Checked = true;
         newPigAllowed = true;
         pigProcess = false;
-
-        if (pig.Alive)
-        {
-            heartBeatAudioSource.Stop();
-        }
-
-        if (pig.Dehaired)
-        {
-            if (processTimer < shortestProcessTimer)
-            {
+        
+        if (pig.Dehaired) {
+            if (processTimer < shortestProcessTimer) {
                 shortestProcessTimer = processTimer;
                 shortestProcessTime.text = shortestProcessTimer.ToString("F2");
             }

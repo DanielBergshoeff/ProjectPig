@@ -11,7 +11,7 @@ public class HalfDeadPig : MonoBehaviour
     [SerializeField] private float minTimeBetweenScreams = 1.0f;
     [SerializeField] private float maxTimeBetweenScreams = 3.0f;
 
-    private AudioSource source;
+    public AudioSource source;
 
     private void Start()
     {
@@ -26,6 +26,8 @@ public class HalfDeadPig : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minTimeBetweenScreams, maxTimeBetweenScreams));
+            if (source == null)
+                break;
             source.PlayOneShot(screams[UnityEngine.Random.Range(0, screams.Length)]);
 
             foreach (var rb in rbs)
