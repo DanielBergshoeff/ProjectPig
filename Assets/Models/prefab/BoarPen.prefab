@@ -251,11 +251,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pig
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 344595d883a55604486273d293832692,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 021aaad1c92fbd74ca1f447228d95ecd, type: 2}
     - target: {fileID: -4216859302048453862, guid: 344595d883a55604486273d293832692,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,6 +321,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.72437
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 344595d883a55604486273d293832692,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 021aaad1c92fbd74ca1f447228d95ecd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344595d883a55604486273d293832692, type: 3}
 --- !u!4 &7805983279281943042 stripped
