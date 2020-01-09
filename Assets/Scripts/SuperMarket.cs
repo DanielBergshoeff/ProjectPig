@@ -17,13 +17,14 @@ public class SuperMarket : MonoBehaviour
 
     private bool shown = false;
     private bool down = false;
+    private bool moving = false;
     private Vector3 originalPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        originalPosition = transform.position;
+        originalPosition = elevator.transform.position;
     }
 
     public void ElevatorOpening() {
@@ -41,11 +42,17 @@ public class SuperMarket : MonoBehaviour
         Player.GetComponent<FirstPersonController>().enabled = true;
         Player.transform.SetParent(null);
         elevatorAnimator.SetTrigger("Open");
+
+        moving = false;
     }
 
     public void CloseElevator() {
+        if (moving)
+            return;
+
+        moving = true;
         elevatorAnimator.SetTrigger("Close");
-        Invoke("SetNewElevatorPosition", 3f);
+        Invoke("SetNewElevatorPosition", 10f);
     }
 
     public void SetNewElevatorPosition() {
@@ -56,6 +63,7 @@ public class SuperMarket : MonoBehaviour
             elevator.transform.position = originalPosition;
         else
             elevator.transform.position = secondElevatorPosition.position;
-        Invoke("OpenElevator", 1f);
+        down = !down;
+        Invoke("OpenElevator", 0.1f);
     }
 }
