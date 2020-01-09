@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -46,8 +45,7 @@ public class Hooks : MonoBehaviour
 
     private AudioSource myAudioSource;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         pigPositions = new Vector3[Pigs.Count];
         myAnimator = GetComponent<Animator>();
@@ -64,28 +62,36 @@ public class Hooks : MonoBehaviour
         myAudioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (pigDropTime) {
+        if (pigDropTime)
+        {
             DropPig();
             pigDropTime = false;
             pigProcess = true;
         }
 
-        if (Input.GetKeyDown(keySpawn) && newPigAllowed) {
-            myAudioSource.Play();
-            myAnimator.SetTrigger("Move");
-            newPigAllowed = false;
+        if (Input.GetKeyDown(keySpawn) && newPigAllowed)
+        {
+            SetupNextPig();
         }
 
-        if (pigProcess) {
+        if (pigProcess)
+        {
             processTimer += Time.deltaTime;
             processTime.text = processTimer.ToString("F2");
         }
     }
 
-    public void SetPigDrop() {
+    public void SetupNextPig()
+    {
+        myAudioSource.Play();
+        myAnimator.SetTrigger("Move");
+        newPigAllowed = false;
+    }
+
+    public void SetPigDrop()
+    {
         pigDropTime = true;
         PlayerDrownController.Instance.ResetDrown();
 
@@ -95,14 +101,17 @@ public class Hooks : MonoBehaviour
         processTimer = 0f;
         processTime.text = processTimer.ToString("F2");
 
-        for (int i = AllHooks.Count - 1; i > 0; i--) {
+        for (int i = AllHooks.Count - 1; i > 0; i--)
+        {
             Pigs[i] = Pigs[i - 1];
             Pigs[i].transform.SetParent(null);
         }
     }
 
-    public void DropPig() {
-        for (int i = AllHooks.Count - 1; i > 0; i--) {
+    public void DropPig()
+    {
+        for (int i = AllHooks.Count - 1; i > 0; i--)
+        {
             Pigs[i].transform.SetParent(AllHooks[i].transform);
         }
 
@@ -112,7 +121,8 @@ public class Hooks : MonoBehaviour
     /// <summary>
     /// Instantiate pig at the pig spawn position
     /// </summary>
-    private void SpawnPig() {
+    private void SpawnPig()
+    {
         GameObject pig = Instantiate(pigPrefab, pigSpawnPosition.transform.position, pigSpawnPosition.transform.rotation);
         Pigs[0] = pig.GetComponent<DehairingPig>();
         Pigs[0].transform.SetParent(AllHooks[0].transform);
@@ -126,7 +136,8 @@ public class Hooks : MonoBehaviour
         livingPig = false;
     }
 
-    private void ResetPig(Collision coll, bool enter) {
+    private void ResetPig(Collision coll, bool enter)
+    {
         if (!enter)
             return;
 
@@ -134,7 +145,8 @@ public class Hooks : MonoBehaviour
         if (pig == null)
             return;
 
-        if (!pig.Checked) {
+        if (!pig.Checked)
+        {
             pig.Checked = true;
             newPigAllowed = true;
             pigProcess = false;
@@ -143,7 +155,8 @@ public class Hooks : MonoBehaviour
         Destroy(pig.gameObject);
     }
 
-    public void CheckPig(Collider coll, bool enter) {
+    public void CheckPig(Collider coll, bool enter)
+    {
         if (!enter)
             return;
 
@@ -158,25 +171,30 @@ public class Hooks : MonoBehaviour
         newPigAllowed = true;
         pigProcess = false;
 
-        if (pig.Alive) {
+        if (pig.Alive)
+        {
             heartBeatAudioSource.Stop();
         }
 
-        if (pig.Dehaired) {
-            if (processTimer < shortestProcessTimer) {
+        if (pig.Dehaired)
+        {
+            if (processTimer < shortestProcessTimer)
+            {
                 shortestProcessTimer = processTimer;
                 shortestProcessTime.text = shortestProcessTimer.ToString("F2");
             }
 
             checkLight.color = correctLightColor;
             amtOfCorrectPigs++;
-            if(amtOfCorrectPigs == correctPigsTillTimerGone) {
+            if (amtOfCorrectPigs == correctPigsTillTimerGone)
+            {
                 PlayerDrownController.Instance.DisableTimer();
                 livingPig = true;
             }
             reactionSound.PlayOneShot(positiveClip);
         }
-        else {
+        else
+        {
             checkLight.color = wrongLightColor;
             amtOfCorrectPigs = 0;
             reactionSound.PlayOneShot(negativeClip);
