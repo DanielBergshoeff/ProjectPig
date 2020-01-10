@@ -15,6 +15,15 @@ public class SuperMarket : MonoBehaviour
     [SerializeField] private GameObject elevator;
     [SerializeField] private Transform secondElevatorPosition;
 
+    [SerializeField] private float timeInElevator = 6f;
+
+    [SerializeField] private AudioSource elevatorAudio;
+    [SerializeField] private AudioClip elevatorMovement;
+    [SerializeField] private AudioClip elevatorOpenDoor;
+    [SerializeField] private AudioClip elevatorButtonPress;
+    [SerializeField] private AudioClip elevatorWallOpen;
+
+    private AudioSource elevatorWallAudioSource;
     private bool shown = false;
     private bool down = false;
     private bool moving = false;
@@ -25,6 +34,7 @@ public class SuperMarket : MonoBehaviour
     {
         Instance = this;
         originalPosition = elevator.transform.position;
+        elevatorWallAudioSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void ElevatorOpening() {
@@ -32,30 +42,38 @@ public class SuperMarket : MonoBehaviour
             return;
 
         elevatorWallAnimator.SetTrigger("Up");
+        elevatorWallAudioSource.PlayOneShot(elevatorWallOpen);
         Invoke("OpenElevator", 3.0f);
+        Invoke("StopElevatorWallOpenAudio", 5f);
 
         shown = true;
     }
 
-    public void OpenElevator() {
-        Player.GetComponent<CharacterController>().enabled = true;
-        Player.GetComponent<FirstPersonController>().enabled = true;
-        Player.transform.SetParent(null);
-        elevatorAnimator.SetTrigger("Open");
+    private void StopElevatorWallOpenAudio() {
+        elevatorWallAudioSource.Stop();
+    }
 
+    public void OpenElevator() {
+        elevatorAnimator.SetTrigger("Open");
+        elevatorAudio.Stop();
         moving = false;
+        elevatorAudio.PlayOneShot(elevatorOpenDoor);
     }
 
     public void CloseElevator() {
         if (moving)
             return;
-
+        
         moving = true;
         elevatorAnimator.SetTrigger("Close");
-        Invoke("SetNewElevatorPosition", 10f);
+        Invoke("SetNewElevatorPosition", 4f);
+        elevatorAudio.PlayOneShot(elevatorOpenDoor);
     }
 
     public void SetNewElevatorPosition() {
+        elevatorAudio.clip = elevatorMovement;
+        elevatorAudio.loop = true;
+        elevatorAudio.Play();
         Player.GetComponent<CharacterController>().enabled = false;
         Player.GetComponent<FirstPersonController>().enabled = false;
         Player.transform.SetParent(elevator.transform);
@@ -64,6 +82,13 @@ public class SuperMarket : MonoBehaviour
         else
             elevator.transform.position = secondElevatorPosition.position;
         down = !down;
-        Invoke("OpenElevator", 0.1f);
+        Invoke("TurnOnMovement", 0.1f);
+        Invoke("OpenElevator", timeInElevator);
+    }
+
+    private void TurnOnMovement() {
+        Player.GetComponent<CharacterController>().enabled = true;
+        Player.GetComponent<FirstPersonController>().enabled = true;
+        Player.transform.SetParent(null);
     }
 }
