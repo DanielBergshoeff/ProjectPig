@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class SceneLoader : MonoBehaviour, IInteractible
 {
     [SerializeField] private GameObject transitionUI;
@@ -11,69 +12,76 @@ public class SceneLoader : MonoBehaviour, IInteractible
 
     private Task fadeIn;
     private Task fadeOut;
-    private static GameObject transition;
-    private static CanvasGroup canvas;
-    private static AudioSource source;
+    private GameObject transition;
+    private CanvasGroup canvas;
+    private AudioSource source;
+    private bool done = false;
 
-    private void Innit()
+    private void Start()
     {
         gameObject.layer = LayerMask.NameToLayer("Interactable");
-
-        transition = Instantiate(transitionUI);
-        transition.SetActive(false);
-
-        source = transition.GetComponent<AudioSource>();
-        canvas = transition.GetComponentInChildren<CanvasGroup>();
-        canvas.alpha = 0;
-
-        DontDestroyOnLoad(transition);
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        Interact();
+        QuitGame(gameObject.name);
+        InnitLoadScene(gameObject.name);
     }
 
     public void Interact()
     {
         QuitGame(gameObject.name);
-        Innit();
-        StartSceneTransition();
+        InnitLoadScene(gameObject.name);
     }
 
-    private void StartSceneTransition()
+    private void InnitLoadScene(string sceneName)
     {
-        transition.SetActive(true);
+        transition = Instantiate(transitionUI);
+        source = transition.GetComponent<AudioSource>();
 
-        fadeIn = new Task(FadeOut());
+        DontDestroyOnLoad(transition);
 
-        PlayAudio(transitionInAudio);
+        canvas = transition.GetComponentInChildren<CanvasGroup>();
+        canvas.alpha = 0;
 
-        fadeIn.Finished += LoadScene;
+        source.clip = transitionInAudio;
+        source.Play();
+
+        fadeIn = new Task(FadeIn());
+
+        fadeIn.Finished += delegate (bool manual)
+        {
+            Load(sceneName);
+        };
     }
 
-    private void EndSceneTransition(Scene scene, LoadSceneMode mode)
+    private static void QuitGame(string sceneName)
     {
-        fadeOut = new Task(FadeIn());
+        if (sceneName != "Exit") { return; }
 
-        PlayAudio(transitionInAudio);
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+    }
+
+    private void Load(string sceneName)
+    {
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += Loaded;
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    private void Loaded(Scene scene, LoadSceneMode mode)
+    {
+        fadeOut = new Task(FadeOut());
+
+        source.Stop();
+        source.clip = transitionOutAudio;
+        source.Play();
 
         fadeOut.Finished += CleanUp;
-    }
-
-    private void PlayAudio(AudioClip clip)
-    {
-        source.Stop();
-        source.clip = clip;
-        source.Play();
-    }
-
-    private void LoadScene(bool manual)
-    {
-        transform.SetParent(null);
-        DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += EndSceneTransition;
-        SceneManager.LoadScene(gameObject.name);
     }
 
     private void CleanUp(bool manual)
@@ -86,18 +94,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
         catch { }
     }
 
-    private static void QuitGame(string sceneName)
-    {
-        if (sceneName != "Exit") { return; }
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
-    }
-
-    IEnumerator FadeOut()
+    IEnumerator FadeIn()
     {
         for (int i = 0; i <= 10; i += 1)
         {
@@ -111,7 +108,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
         yield return new WaitForSeconds(length + transitionOffset);
     }
 
-    IEnumerator FadeIn()
+    IEnumerator FadeOut()
     {
         float length = transitionOutAudio ? transitionInAudio.length : 0;
         yield return new WaitForSeconds(length + transitionOffset);
