@@ -8,10 +8,15 @@ public class DialogueTriggerObject : MonoBehaviour, IInteractible
 
     [SerializeField] private DialogueObject dialogue;
     [SerializeField] private UnityEvent dialogueMethod;
+    [SerializeField] private ButtonAudio buttonAudio;
 
     public void Interact()
     {
         TriggerDialogue();
+        if (buttonAudio == null)
+            return;
+
+        buttonAudio.PlayAudio();
     }
 
     private void Start()
