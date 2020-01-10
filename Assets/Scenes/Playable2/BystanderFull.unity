@@ -10962,6 +10962,22 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 990382145252076302, guid: c0caa9f4de2047240b77e1b826184ba1,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 990382144425233675, guid: c0caa9f4de2047240b77e1b826184ba1,
+        type: 3}
+      propertyPath: m_WalkSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 990382144425233675, guid: c0caa9f4de2047240b77e1b826184ba1,
+        type: 3}
+      propertyPath: m_UseHeadBob
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 800153455023776837, guid: c0caa9f4de2047240b77e1b826184ba1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c0caa9f4de2047240b77e1b826184ba1, type: 3}
@@ -37467,6 +37483,21 @@ PrefabInstance:
       propertyPath: viewAngle
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5376498667477041649, guid: 155b23c814bcc564a86b057bc181988a,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376498667477041649, guid: 155b23c814bcc564a86b057bc181988a,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376498667477041649, guid: 155b23c814bcc564a86b057bc181988a,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155b23c814bcc564a86b057bc181988a, type: 3}
 --- !u!4 &1458941383 stripped
@@ -42408,7 +42439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1670701645
 Transform:
   m_ObjectHideFlags: 0
@@ -47445,11 +47476,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4315e3de36df01540b97dcbc51df8d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionUI: {fileID: 8359781753860747531, guid: 0d231f40e10e9514da43b981e71b9be4,
+  transitionUI: {fileID: 8359781753860747531, guid: c49f120482bf07d4485dba506e0aaf1e,
     type: 3}
   transitionOffset: 0
-  transitionInAudio: {fileID: 8300000, guid: 9dfa750ede5717e4c816698e2213aeb2, type: 3}
-  transitionOutAudio: {fileID: 8300000, guid: 11a952590b0c62b4eb60567197c1ef50, type: 3}
+  transitionInAudio: {fileID: 0}
+  transitionOutAudio: {fileID: 0}
 --- !u!82 &1980850958
 AudioSource:
   m_ObjectHideFlags: 0
@@ -47554,7 +47585,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980850955}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

@@ -16,7 +16,11 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters: []
-  m_AudioMixerGroupViews: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 22450d7c808effe49bf2ea2aea87debd
+    - b2b54ccf48a357049bfc3df44719d6c8
+    name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
@@ -28,7 +32,8 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 22450d7c808effe49bf2ea2aea87debd
-  m_Children: []
+  m_Children:
+  - {fileID: 7791619668795518660}
   m_Volume: 9099b0aae0fe3dc4a80cf3b943a4cd56
   m_Pitch: 9ebd5b17c357cc945a0354a9a9922543
   m_Send: 00000000000000000000000000000000
@@ -63,3 +68,36 @@ AudioMixerSnapshotController:
   m_SnapshotID: 39552184ab5ba2c4ea6b456aed52a7f9
   m_FloatValues: {}
   m_TransitionOverrides: {}
+--- !u!244 &296548023699458470
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 078a6d94c00e9e840bac05dd6130c6fb
+  m_EffectName: Attenuation
+  m_MixLevel: fe070e253ed192d4a87043e6ed6736e3
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &7791619668795518660
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PokePots
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b2b54ccf48a357049bfc3df44719d6c8
+  m_Children: []
+  m_Volume: 3fc816210a764794c9d4c84b566486cd
+  m_Pitch: 1165b33e8d873344f8e1c74aaf26be34
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 296548023699458470}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
