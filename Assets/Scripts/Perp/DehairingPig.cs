@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class DehairingPig : MonoBehaviour
 {
@@ -17,8 +14,7 @@ public class DehairingPig : MonoBehaviour
     private FixedJoint myFixedJointRight;
     private Rigidbody myRigidbodyRight;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         myFixedJointLeft = FixedJointObjectLeft.GetComponent<FixedJoint>();
         myRigidbodyLeft = FixedJointObjectLeft.GetComponent<Rigidbody>();
@@ -27,7 +23,8 @@ public class DehairingPig : MonoBehaviour
         myRigidbodyRight = FixedJointObjectRight.GetComponent<Rigidbody>();
     }
 
-    public void UnHook() {
+    public void UnHook()
+    {
         Destroy(myFixedJointLeft);
         Destroy(myRigidbodyLeft);
 
@@ -35,7 +32,8 @@ public class DehairingPig : MonoBehaviour
         Destroy(myRigidbodyRight);
     }
 
-    public void Kill() {
+    public void Kill()
+    {
         HalfDeadPig pig = GetComponent<HalfDeadPig>();
         if (pig == null)
             return;
