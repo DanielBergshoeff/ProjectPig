@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,13 +11,14 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        var pausables = FindObjectsOfType<MonoBehaviour>();
+        cachedPauseUI = Instantiate(pauseUI);
+        cachedPauseUI.SetActive(false);
 
+        var pausables = FindObjectsOfType<MonoBehaviour>();
         foreach (MonoBehaviour pausable in pausables)
         {
             if (pausable == this) { continue; }
-
-            print(pausable.GetType());
+            print(pausable);
             objectToPause.Add(pausable);
         }
     }
@@ -26,34 +26,33 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            TogglePause();
+            paused = TogglePause();
     }
 
     public void Pause()
     {
-        TogglePause();
+        paused = TogglePause();
     }
 
-    private void TogglePause()
+    private bool TogglePause()
     {
-        if (paused)
+        if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
-            Destroy(cachedPauseUI);
-            ToggleMonoBehaviors();
-            paused = false;
+            cachedPauseUI.SetActive(false);
+            ToggleMonoBehaviours();
+            return (false);
         }
         else
         {
             Time.timeScale = 0f;
-            cachedPauseUI = Instantiate(pauseUI);
-            cachedPauseUI.GetComponentInChildren<Button>().onClick.AddListener(TogglePause);
-            ToggleMonoBehaviors();
-            paused = true;
+            cachedPauseUI.SetActive(true);
+            ToggleMonoBehaviours();
+            return (true);
         }
     }
 
-    private void ToggleMonoBehaviors()
+    private void ToggleMonoBehaviours()
     {
         var copy = new List<MonoBehaviour>(objectToPause);
         foreach (MonoBehaviour pausable in copy)

@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SuperMarket : MonoBehaviour
 {
+    public static SuperMarket Instance { get; private set; }
+
+    [SerializeField] private GameObject Player;
+
     [SerializeField] private Animator elevatorWallAnimator;
     [SerializeField] private Animator elevatorAnimator;
 
@@ -20,6 +25,9 @@ public class SuperMarket : MonoBehaviour
 
     private AudioSource elevatorWallAudioSource;
     private bool shown = false;
+    private bool down = false;
+    private bool moving = false;
+    private Vector3 originalPosition;
 
     // Start is called before the first frame update
     void Start()

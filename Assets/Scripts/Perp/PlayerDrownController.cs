@@ -39,8 +39,8 @@ public class PlayerDrownController : MonoBehaviour
 
     private bool tilting = false;
 
-    private void Start()
-    {
+    // Start is called before the first frame update
+    void Start() {
         startPosition = Platform.transform.position;
         endPosition = startPosition - Vector3.up * distanceDown;
         if (drownTriggerObject.triggerEvent == null)
@@ -55,16 +55,16 @@ public class PlayerDrownController : MonoBehaviour
         Instance = this;
     }
 
-    private void UnTilt()
-    {
+    private void UnTilt() {
         tilting = false;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(keyTilt) && goingDownTimer <= 0 && !tilting)
-        {
-            Tilt();
+    // Update is called once per frame
+    void Update() {
+        if (Input.GetKeyDown(keyTilt) && goingDownTimer <= 0 && !tilting) {
+            gridAnimator.SetTrigger("Tilt");
+            tilting = true;
+            Invoke("UnTilt", 2.5f);
         }
 
         MovePlatform();
@@ -72,11 +72,9 @@ public class PlayerDrownController : MonoBehaviour
         if (pigBeingDrowned == null || pigBeingDrowned.Dehaired)
             return;
 
-        if (drowning && drownTimer > 0f)
-        {
+        if (drowning && drownTimer > 0f) {
             drownTimer -= Time.deltaTime;
-            if (drownTimer <= 0f)
-            {
+            if (drownTimer <= 0f) {
                 drownTimer = 0f;
                 pigBeingDrowned.Dehaired = true;
                 if (pigBeingDrowned.Alive) {
@@ -85,8 +83,7 @@ public class PlayerDrownController : MonoBehaviour
                 }
             }
         }
-        else if (!drowning && drownTimer < totalTimeDrown)
-        {
+        else if (!drowning && drownTimer < totalTimeDrown) {
             drownTimer += Time.deltaTime;
             if (drownTimer > totalTimeDrown)
                 drownTimer = totalTimeDrown;
@@ -100,15 +97,7 @@ public class PlayerDrownController : MonoBehaviour
         drownTimeText.text = drownTimer.ToString("F2");
     }
 
-    public void Tilt()
-    {
-        gridAnimator.SetTrigger("Tilt");
-        tilting = true;
-        Invoke("UnTilt", 2.5f);
-    }
-
-    public void ResetDrown()
-    {
+    public void ResetDrown() {
         drownTimer = totalTimeDrown;
 
         if (!showTimer)
@@ -116,31 +105,23 @@ public class PlayerDrownController : MonoBehaviour
         drownTimeText.text = drownTimer.ToString("F2");
     }
 
-    public void DisableTimer()
-    {
+    public void DisableTimer() {
         showTimer = false;
         drownTimeText.text = "";
     }
 
-    public void SetGoingDown(bool dir)
-    {
-        goingDown = dir;
-    }
 
     /// <summary>
     /// Move platform based on user input
     /// </summary>
-    private void MovePlatform()
-    {
+    private void MovePlatform() {
         if (tilting)
             return;
 
-        if (Input.GetKeyDown(keyDown))
-        {
+        if (Input.GetKeyDown(keyDown)) {
             goingDown = true;
         }
-        if (Input.GetKeyUp(keyDown))
-        {
+        if (Input.GetKeyUp(keyDown)) {
             goingDown = false;
         }
 
@@ -153,19 +134,16 @@ public class PlayerDrownController : MonoBehaviour
         Platform.transform.position = startPosition + direction * goingDownTimer / timeTillDown;
     }
 
-    private void DrownPig(Collider other, bool enter)
-    {
-        if (!other.CompareTag("Pig"))
+    private void DrownPig(Collider other, bool enter) {
+        if (!other.CompareTag("Pig")) 
             return;
 
-        if (enter)
-        {
+        if (enter) {
             drowning = true;
             pigBeingDrowned = other.GetComponentInParent<DehairingPig>();
             pigBeingDrowned.transform.parent = gridAnimator.transform;
         }
-        else
-        {
+        else {
             drowning = false;
             pigBeingDrowned.transform.parent = null;
             //pigBeingDrowned = null;
