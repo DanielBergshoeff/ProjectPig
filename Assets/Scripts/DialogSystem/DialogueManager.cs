@@ -147,7 +147,7 @@ public class DialogueManager : MonoBehaviour
         }
         catch
         {
-            Debug.LogError(dialogueBox.name + " is missing a speaker box");
+            Debug.LogWarning(dialogueBox.name + " is missing a speaker box");
         }
 
         //Play the audio clip with it
