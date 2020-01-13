@@ -40,14 +40,12 @@ public class Robot : MonoBehaviour
 
         myNavMeshAgent.speed = moveSpeed;
 
-        SetEvil();
+        //SetEvil();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetEvil();
-
         Move();
         /*if (evil)
             CheckForPlayer();*/

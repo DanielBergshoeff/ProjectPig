@@ -21,39 +21,49 @@ public class PauseMenu : MonoBehaviour
             print(pausable.GetType());
             objectToPause.Add(pausable);
         }
+
+        cachedPauseUI = Instantiate(pauseUI);
+        cachedPauseUI.GetComponentInChildren<Button>().onClick.AddListener(Pause);
+        cachedPauseUI.SetActive(false);
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            paused = TogglePause();
-            ToggleMonoBehaviours();
+            Pause();
         }
-
     }
 
     public void Pause()
     {
-        TogglePause();
+        paused = TogglePause();
+        ToggleMonoBehaviours();
     }
 
-    private void TogglePause()
+    private bool TogglePause()
     {
+        Cursor.visible = !Cursor.visible;
+
         if (paused)
         {
             Time.timeScale = 1f;
             cachedPauseUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
             return (false);
         }
         else
         {
             Time.timeScale = 0f;
             cachedPauseUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             return (true);
         }
     }
 
-    private void ToggleMonoBehaviors()
+    private void ToggleMonoBehaviours()
     {
         var copy = new List<MonoBehaviour>(objectToPause);
         foreach (MonoBehaviour pausable in copy)
