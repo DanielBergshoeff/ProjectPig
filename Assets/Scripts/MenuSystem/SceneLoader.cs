@@ -37,15 +37,13 @@ public class SceneLoader : MonoBehaviour, IInteractible
     private void InnitLoadScene(string sceneName)
     {
         transition = Instantiate(transitionUI);
-        source = transition.GetComponent<AudioSource>();
 
         DontDestroyOnLoad(transition);
 
         canvas = transition.GetComponentInChildren<CanvasGroup>();
         canvas.alpha = 0;
 
-        source.clip = transitionInAudio;
-        source.Play();
+        PlayAudio(transitionInAudio);
 
         fadeIn = new Task(FadeIn());
 
@@ -53,6 +51,15 @@ public class SceneLoader : MonoBehaviour, IInteractible
         {
             Load(sceneName);
         };
+    }
+
+    private void PlayAudio(AudioClip ac) {
+        if (source == null)
+            source = transition.AddComponent<AudioSource>();
+
+        source.Stop();
+        source.clip = ac;
+        source.Play();
     }
 
     private static void QuitGame(string sceneName)
@@ -77,9 +84,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
     {
         fadeOut = new Task(FadeOut());
 
-        source.Stop();
-        source.clip = transitionOutAudio;
-        source.Play();
+        PlayAudio(transitionOutAudio);
 
         fadeOut.Finished += CleanUp;
     }

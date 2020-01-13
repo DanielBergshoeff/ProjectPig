@@ -2,6 +2,7 @@
 
 public class ToggleLights : MonoBehaviour, IInteractible
 {
+    [SerializeField] private GameObject pathLock;
     private Light[] lights;
 
     private void Start()
@@ -15,10 +16,11 @@ public class ToggleLights : MonoBehaviour, IInteractible
 
     public void Interact()
     {
+        pathLock.SetActive(!pathLock.activeSelf);
+
         foreach (var light in lights)
         {
             light.enabled = !light.enabled;
-
         }
     }
 }

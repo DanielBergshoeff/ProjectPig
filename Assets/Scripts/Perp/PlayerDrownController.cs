@@ -36,13 +36,14 @@ public class PlayerDrownController : MonoBehaviour
     private DehairingPig pigBeingDrowned;
 
     private Animator gridAnimator;
-
+    private Rigidbody platformRigidbody;
     private bool tilting = false;
 
     // Start is called before the first frame update
     void Start() {
         startPosition = Platform.transform.position;
         endPosition = startPosition - Vector3.up * distanceDown;
+        platformRigidbody = Platform.GetComponent<Rigidbody>();
         if (drownTriggerObject.triggerEvent == null)
             drownTriggerObject.triggerEvent = new TriggerEvent();
         drownTriggerObject.triggerEvent.AddListener(DrownPig);
@@ -131,7 +132,7 @@ public class PlayerDrownController : MonoBehaviour
             goingDownTimer -= Time.deltaTime;
 
         Vector3 direction = (endPosition - startPosition);
-        Platform.transform.position = startPosition + direction * goingDownTimer / timeTillDown;
+        platformRigidbody.MovePosition(startPosition + direction * goingDownTimer / timeTillDown);
     }
 
     private void DrownPig(Collider other, bool enter) {

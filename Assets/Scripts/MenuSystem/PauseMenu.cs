@@ -25,8 +25,11 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             paused = TogglePause();
+            ToggleMonoBehaviours();
+        }
+
     }
 
     public void Pause()
@@ -40,14 +43,12 @@ public class PauseMenu : MonoBehaviour
         {
             Time.timeScale = 1f;
             cachedPauseUI.SetActive(false);
-            ToggleMonoBehaviours();
             return (false);
         }
         else
         {
             Time.timeScale = 0f;
             cachedPauseUI.SetActive(true);
-            ToggleMonoBehaviours();
             return (true);
         }
     }
