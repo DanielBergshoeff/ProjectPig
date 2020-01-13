@@ -1,0 +1,3224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &929569283615150612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929569283615150615}
+  m_Layer: 0
+  m_Name: SprayBottle 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &929569283615150615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929569283615150612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 929569283424823148}
+  - {fileID: 3609994724305909815}
+  - {fileID: 3609994723866966825}
+  - {fileID: 3609994725169533779}
+  - {fileID: 3609994725118266368}
+  - {fileID: 3609994724106163650}
+  - {fileID: 3609994724364238189}
+  - {fileID: 3609994725212380808}
+  - {fileID: 3609994724704004155}
+  - {fileID: 3609994725369640899}
+  - {fileID: 3609994723588161406}
+  - {fileID: 3609994723720584176}
+  - {fileID: 3609994725198114443}
+  - {fileID: 3609994723270034630}
+  - {fileID: 3609994723522356489}
+  - {fileID: 3609994723388262346}
+  - {fileID: 3609994723711208278}
+  - {fileID: 3609994723880565707}
+  - {fileID: 3609994724113740664}
+  - {fileID: 3609994724662471481}
+  - {fileID: 3609994724408697789}
+  - {fileID: 3609994725055180026}
+  - {fileID: 3609994723727993281}
+  - {fileID: 3609994724922748005}
+  - {fileID: 3609994724664920171}
+  - {fileID: 3609994724205552808}
+  - {fileID: 3609994723642702950}
+  - {fileID: 3609994723438003138}
+  - {fileID: 3609994724880644010}
+  - {fileID: 3609994725297308544}
+  - {fileID: 3609994723654493223}
+  - {fileID: 3609994724854259499}
+  - {fileID: 3609994724650218739}
+  - {fileID: 3609994725379394703}
+  - {fileID: 3609994723694050186}
+  - {fileID: 3609994724407611587}
+  - {fileID: 3609994723963181445}
+  - {fileID: 3609994724229049882}
+  - {fileID: 3609994725246120612}
+  - {fileID: 3609994725330218102}
+  - {fileID: 3609994725049346536}
+  - {fileID: 3609994725273849927}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &929569283101342686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724704004155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283101342686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283125606620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724662471481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283125606620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283127991182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.109
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724664920171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283127991182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283172067094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724650218739 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283172067094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283239988430
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1089997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724854259499 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283239988430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283397321510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3239996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724407611587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283397321510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283400314968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9130008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724408697789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283400314968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283423940232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9130008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724364238189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283423940232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283632963905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1089997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725246120612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283632963905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283651747182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725198114443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283651747182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283666333037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725212380808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283666333037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283692363958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.109
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725169533779 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283692363958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283764806694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725369640899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283764806694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283768278890
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9889998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725379394703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283768278890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283783917459
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.0519998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725330218102 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283783917459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283820474469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2479997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725297308544 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283820474469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283860710306
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9130006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725273849927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283860710306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569283922952064
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724922748005 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569283922952064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284014859343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3239996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724880644010 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284014859343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284050378725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725118266368 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284050378725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284112793375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725055180026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284112793375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284114561549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9889998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994725049346536 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284114561549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284179062659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723642702950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284179062659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284200017051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.109
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723588161406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284200017051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284266342124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723522356489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284266342124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284323854357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723720584176 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284323854357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284329175588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723727993281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284329175588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284362594415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9130006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723694050186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284362594415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284379498675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723711208278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284379498675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284390090690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1849997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.85099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723654493223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284390090690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284551677731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9130008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723270034630 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284551677731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284652535847
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9130008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723438003138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284652535847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284668855343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723388262346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284668855343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284776740391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9890008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724106163650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284776740391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284782284957
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724113740664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284782284957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284841221074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724305909815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284841221074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284905926143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1849997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724229049882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284905926143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569284942001997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.70699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994724205552808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569284942001997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569285012285644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723866966825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569285012285644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569285019658286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.109
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723880565707 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569285019658286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929569285167549024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2479997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &3609994723963181445 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 929569285167549024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3609994724367938697
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 929569283615150615}
+    m_Modifications:
+    - target: {fileID: 4539409921524699077, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_Name
+      value: SprayBottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3010006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29699996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e48781175a7719b46982ee57d71ea8bf, type: 3}
+--- !u!4 &929569283424823148 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4539409921524536293, guid: e48781175a7719b46982ee57d71ea8bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3609994724367938697}
+  m_PrefabAsset: {fileID: 0}
