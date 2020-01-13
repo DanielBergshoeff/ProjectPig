@@ -1,15 +1,22 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueTriggerObject : MonoBehaviour, IInteractible
 {
     public bool TriggerByTouch;
 
     [SerializeField] private DialogueObject dialogue;
+    [SerializeField] private UnityEvent dialogueMethod;
+    [SerializeField] private ButtonAudio buttonAudio;
 
     public void Interact()
     {
         TriggerDialogue();
+        if (buttonAudio == null)
+            return;
+
+        buttonAudio.PlayAudio();
     }
 
     private void Start()
@@ -39,9 +46,9 @@ public class DialogueTriggerObject : MonoBehaviour, IInteractible
 
         if (tMP_Text)
         {
-            DialogueManager.Instance.StartDialogue(dialogue, tMP_Text.gameObject);
+            DialogueManager.Instance.StartDialogue(dialogue, tMP_Text.gameObject, dialogueMethod);
         }
-        DialogueManager.Instance.StartDialogue(dialogue);
+        DialogueManager.Instance.StartDialogue(dialogue, null, dialogueMethod);
 
     }
 

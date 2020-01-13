@@ -34,6 +34,15 @@ public class DehairingPig : MonoBehaviour
         Destroy(myFixedJointRight);
         Destroy(myRigidbodyRight);
     }
+
+    public void Kill() {
+        HalfDeadPig pig = GetComponent<HalfDeadPig>();
+        if (pig == null)
+            return;
+
+        Destroy(pig.source);
+        Destroy(pig);
+    }
 }
 
 
