@@ -41,9 +41,6 @@ public class BystanderController : MonoBehaviour
             return;
         }
 
-        if (!(hit.transform.gameObject.layer == LayerMask.NameToLayer("Interactable")))
-            return;
-
         IInteractible interactible = hit.collider.GetComponent<IInteractible>();
 
         if (interactible == null) {
