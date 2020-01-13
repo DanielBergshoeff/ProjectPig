@@ -167,6 +167,10 @@ public class Hooks : MonoBehaviour
         pig.Checked = true;
         newPigAllowed = true;
         pigProcess = false;
+
+        if (pig.GetComponent<HalfDeadPig>().enabled) {
+
+        }
         
         if (pig.Dehaired) {
             if (processTimer < shortestProcessTimer) {
