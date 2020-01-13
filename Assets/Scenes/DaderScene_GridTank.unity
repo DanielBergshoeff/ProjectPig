@@ -3348,6 +3348,8 @@ MonoBehaviour:
   negativeClip: {fileID: 8300000, guid: 0b03d7612dc4e4e4d864adbb4da59cdf, type: 3}
   heartBeatAudioSource: {fileID: 695530562}
   heartBeatSpeed: 2.5
+  transitionObject: {fileID: 8359781753860747531, guid: a003ae9f8d376e34fbbd65e0c706dfcd,
+    type: 3}
 --- !u!82 &1106409528
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4001,7 +4003,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1347644812}
-  - component: {fileID: 1347644811}
   m_Layer: 0
   m_Name: PreVictim
   m_TagString: Untagged
@@ -4009,22 +4010,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1347644811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347644810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4315e3de36df01540b97dcbc51df8d28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionUI: {fileID: 0}
-  transitionOffset: 2
-  transitionInAudio: {fileID: 0}
-  transitionOutAudio: {fileID: 0}
 --- !u!4 &1347644812
 Transform:
   m_ObjectHideFlags: 0
@@ -5694,6 +5679,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockoutDaderRuimte2.1
       objectReference: {fileID: 0}
+    - target: {fileID: -2944672298171240149, guid: e824d35ed6b29d64395edeee33de403b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4864657372585090556, guid: e824d35ed6b29d64395edeee33de403b,
         type: 3}
       propertyPath: m_IsActive
@@ -5799,12 +5789,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -2944672298171240149, guid: e824d35ed6b29d64395edeee33de403b,
+    - target: {fileID: -1487614274590306928, guid: e824d35ed6b29d64395edeee33de403b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -1487614274590306928, guid: e824d35ed6b29d64395edeee33de403b,
+    - target: {fileID: 1375140570654347821, guid: e824d35ed6b29d64395edeee33de403b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5813,11 +5803,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1375140570654347821, guid: e824d35ed6b29d64395edeee33de403b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e824d35ed6b29d64395edeee33de403b, type: 3}

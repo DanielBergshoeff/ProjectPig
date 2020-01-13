@@ -37,6 +37,8 @@ public class Hooks : MonoBehaviour
     [SerializeField] private AudioSource heartBeatAudioSource;
     [SerializeField] private float heartBeatSpeed = 3.0f;
 
+    [SerializeField] private GameObject transitionObject;
+
     private bool newPigAllowed = true;
     private Animator myAnimator;
     private Vector3[] pigPositions;
@@ -47,6 +49,7 @@ public class Hooks : MonoBehaviour
     private int amtOfCorrectPigs = 0;
 
     private AudioSource myAudioSource;
+    private SceneLoader sceneLoader;
 
     private void Start()
     {
@@ -65,6 +68,7 @@ public class Hooks : MonoBehaviour
         resetObject.collisionEvent.AddListener(ResetPig);
 
         myAudioSource = GetComponent<AudioSource>();
+        sceneLoader = gameObject.AddComponent<SceneLoader>();
     }
 
     private void Update()
@@ -139,7 +143,6 @@ public class Hooks : MonoBehaviour
         heartBeatAudioSource.pitch = heartBeatSpeed;
         heartBeatAudioSource.Play();
         Pigs[0].Alive = true;
-        livingPig = false;
     }
 
     private void ResetPig(Collision coll, bool enter)
@@ -180,8 +183,8 @@ public class Hooks : MonoBehaviour
         newPigAllowed = true;
         pigProcess = false;
 
-        if (pig.GetComponent<HalfDeadPig>().enabled) {
-
+        if (pig.Dehaired && pig.GetComponent<HalfDeadPig>().enabled) {
+            sceneLoader.LoadScene("PreVictim", transitionObject);
         }
         
         if (pig.Dehaired) {

@@ -16,6 +16,7 @@ public class SetupPigAnimations : MonoBehaviour
         foreach (GameObject pig in pigs)
         {
             Animator animator = pig.gameObject.GetComponent<Animator>();
+            if (!animator) { continue; }
             animator.runtimeAnimatorController = animators[Random.Range(0, animators.Length)];
             float rndSize = Random.Range(animationSpeedRange.x, animationSpeedRange.y);
             animator.SetFloat("Speed", rndSize);

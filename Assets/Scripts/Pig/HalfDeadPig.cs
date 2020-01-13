@@ -12,13 +12,18 @@ public class HalfDeadPig : MonoBehaviour
     [SerializeField] private float maxTimeBetweenScreams = 3.0f;
 
     public AudioSource source;
+    private Task fadeOut;
 
     private void Start()
     {
         source = gameObject.AddComponent<AudioSource>();
         source.volume = 1.0f;
         source.spatialBlend = 1.0f;
-        Task fadeOut = new Task(AddRandomRotation());
+        fadeOut = new Task(AddRandomRotation());
+    }
+
+    public void KillCoroutine() {
+        fadeOut.Stop();
     }
 
     IEnumerator AddRandomRotation()

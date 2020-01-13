@@ -39,7 +39,7 @@ public class DehairingPig : MonoBehaviour
             return;
 
         Destroy(pig.source);
-        Destroy(pig);
+        pig.KillCoroutine();
     }
 }
 

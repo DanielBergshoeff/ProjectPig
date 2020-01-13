@@ -30,6 +30,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
 
     private void OnTriggerEnter(Collider col)
     {
+        Innit();
         Interact();
     }
 
@@ -65,6 +66,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
         if(source == null)
             source = transition.AddComponent<AudioSource>();
 
+        source.enabled = true;
         source.Stop();
         source.clip = clip;
         source.Play();
@@ -76,6 +78,14 @@ public class SceneLoader : MonoBehaviour, IInteractible
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += EndSceneTransition;
         SceneManager.LoadScene(gameObject.name);
+    }
+
+
+    public void LoadScene(string scene, GameObject transitionObject) {
+        transitionUI = transitionObject;
+        gameObject.name = scene;
+        Innit();
+        StartSceneTransition();                 
     }
 
     private void CleanUp(bool manual)
