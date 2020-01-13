@@ -16,7 +16,7 @@ public class VictimController : MonoBehaviour
 
         playVictim = new Task(PlayVictim());
     }
-    
+
     IEnumerator PlayVictim()
     {
         for (int i = 0; i < 3; i++)
@@ -24,7 +24,7 @@ public class VictimController : MonoBehaviour
             hookController.SetupNextPig();
             yield return new WaitForSeconds(1);
             playerDrownController.SetGoingDown(true);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(6);
             if (i < 2)
             {
                 playerDrownController.SetGoingDown(false);

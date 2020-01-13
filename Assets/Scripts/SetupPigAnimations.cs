@@ -6,6 +6,8 @@ public class SetupPigAnimations : MonoBehaviour
     [SerializeField] private Vector2 animationSpeedRange = new Vector2(.5f, 1.5f);
     [SerializeField] private Vector2 colorTintRange = new Vector2(.75f, 1f);
     [SerializeField] private Vector2 sizeRange = new Vector2(.25f, 1.25f);
+    [SerializeField] private Vector2 volumeRange = new Vector2(.25f, 1.25f);
+    [SerializeField] private AudioClip[] pigSounds;
     private RuntimeAnimatorController[] animators;
 
     private void Start()
@@ -15,7 +17,7 @@ public class SetupPigAnimations : MonoBehaviour
         GameObject[] pigs = GameObject.FindGameObjectsWithTag("Pig");
         foreach (GameObject pig in pigs)
         {
-            Animator animator = pig.gameObject.GetComponent<Animator>();
+            Animator animator = pig.gameObject.GetComponentInChildren<Animator>();
             if (!animator) { continue; }
             animator.runtimeAnimatorController = animators[Random.Range(0, animators.Length)];
             float rndSize = Random.Range(animationSpeedRange.x, animationSpeedRange.y);
@@ -27,6 +29,9 @@ public class SetupPigAnimations : MonoBehaviour
             rndSize = Random.Range(sizeRange.x, sizeRange.y);
             Material mat = pig.GetComponentInChildren<Renderer>().material;
             mat.color *= rndSize;
+
+            // if ((int)Random.Range(0, 10) == 1)
+            pig.AddComponent<RandomSqueel>().Innit(pig.gameObject.GetComponent<AudioSource>(), pigSounds);
         }
     }
 }
