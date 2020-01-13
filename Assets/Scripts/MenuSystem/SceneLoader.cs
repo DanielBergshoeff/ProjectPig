@@ -22,7 +22,6 @@ public class SceneLoader : MonoBehaviour, IInteractible
         transition = Instantiate(transitionUI);
         transition.SetActive(false);
 
-        source = transition.GetComponent<AudioSource>();
         canvas = transition.GetComponentInChildren<CanvasGroup>();
         canvas.alpha = 0;
 
@@ -63,6 +62,9 @@ public class SceneLoader : MonoBehaviour, IInteractible
 
     private void PlayAudio(AudioClip clip)
     {
+        if(source == null)
+            source = transition.AddComponent<AudioSource>();
+
         source.Stop();
         source.clip = clip;
         source.Play();

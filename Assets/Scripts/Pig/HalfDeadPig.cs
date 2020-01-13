@@ -16,7 +16,7 @@ public class HalfDeadPig : MonoBehaviour
     private void Start()
     {
         source = gameObject.AddComponent<AudioSource>();
-        source.volume = 0.1f;
+        source.volume = 1.0f;
         source.spatialBlend = 1.0f;
         Task fadeOut = new Task(AddRandomRotation());
     }
