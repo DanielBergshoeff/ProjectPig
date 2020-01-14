@@ -92,7 +92,7 @@ public class Robot : MonoBehaviour
             else
             {
                 currentPathPosition = 0;
-                ReturnToStart();
+                //ReturnToStart();
             }
             myNavMeshAgent.speed = moveSpeed;
             myNavMeshAgent.SetDestination(path[currentPathPosition].position);
