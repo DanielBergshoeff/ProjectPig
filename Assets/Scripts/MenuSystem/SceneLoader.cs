@@ -115,6 +115,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
         {
             float a = canvas.alpha;
             a = i / 10f;
+            AudioListener.volume = a;
             canvas.alpha = a;
             yield return null;
         }
@@ -132,6 +133,7 @@ public class SceneLoader : MonoBehaviour, IInteractible
         {
             float a = canvas.alpha;
             a = i / 10f;
+            AudioListener.volume = a;
             canvas.alpha = a;
             yield return null;
         }
