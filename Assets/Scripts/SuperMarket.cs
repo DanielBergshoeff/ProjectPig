@@ -71,7 +71,7 @@ public class SuperMarket : MonoBehaviour
         
         moving = true;
         elevatorAnimator.SetTrigger("Close");
-        Invoke("SetNewElevatorPosition", 4f);
+        Invoke("SetNewElevatorPosition", 5f);
         elevatorAudio.PlayOneShot(elevatorOpenDoor);
     }
 
