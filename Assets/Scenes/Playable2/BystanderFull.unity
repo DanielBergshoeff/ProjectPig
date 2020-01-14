@@ -16948,6 +16948,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 676176340}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &694442869 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6943818370030855602, guid: 9593509448793634286e83f1d9cbfc23,
+    type: 3}
+  m_PrefabInstance: {fileID: 5430636548988454122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &697623290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53993,6 +53999,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1843269302}
+    - target: {fileID: 5430636549819792636, guid: 9593509448793634286e83f1d9cbfc23,
+        type: 3}
+      propertyPath: elevatorAnimator
+      value: 
+      objectReference: {fileID: 694442869}
     - target: {fileID: 5430636549060255054, guid: 9593509448793634286e83f1d9cbfc23,
         type: 3}
       propertyPath: m_StaticEditorFlags
