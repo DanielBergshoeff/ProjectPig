@@ -39,7 +39,7 @@ public class HalfDeadPig : MonoBehaviour
             {
                 rb.maxAngularVelocity = maxSpasms;
                 Vector3 randomDirection = new Vector3().RandomVector(0f, 100f);
-                rb.AddRelativeTorque((randomDirection * rb.mass) * forceMultiplier, ForceMode.Force);
+                rb.AddRelativeTorque((randomDirection * rb.mass) * forceMultiplier, ForceMode.Acceleration);
             }
         }
     }
