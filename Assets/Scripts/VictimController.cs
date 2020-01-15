@@ -5,14 +5,14 @@ public class VictimController : MonoBehaviour
 {
     private static Hooks hookController;
     private static PlayerDrownController playerDrownController;
-    private static IInteractible sceneLoader;
+    private static IIntractable sceneLoader;
     private Task playVictim;
 
     private void Start()
     {
         hookController = FindObjectOfType<Hooks>();
         playerDrownController = FindObjectOfType<PlayerDrownController>();
-        sceneLoader = GetComponent<IInteractible>();
+        sceneLoader = GetComponent<IIntractable>();
 
         playVictim = new Task(PlayVictim());
     }

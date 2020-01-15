@@ -18,21 +18,21 @@ public class PauseMenu : MonoBehaviour
         {
             if (pausable == this) { continue; }
 
-            print(pausable.GetType());
             objectToPause.Add(pausable);
         }
 
         cachedPauseUI = Instantiate(pauseUI);
         cachedPauseUI.GetComponentInChildren<Button>().onClick.AddListener(Pause);
         cachedPauseUI.SetActive(false);
-        
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             Pause();
         }
     }

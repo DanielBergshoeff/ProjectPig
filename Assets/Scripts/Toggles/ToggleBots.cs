@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ToggleBots : MonoBehaviour, IInteractible
+public class ToggleBots : MonoBehaviour, IIntractable
 {
     private Robot[] bots;
 

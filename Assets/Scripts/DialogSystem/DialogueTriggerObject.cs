@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DialogueTriggerObject : MonoBehaviour, IInteractible
+public class DialogueTriggerObject : MonoBehaviour, IIntractable
 {
     public bool TriggerByTouch;
 
