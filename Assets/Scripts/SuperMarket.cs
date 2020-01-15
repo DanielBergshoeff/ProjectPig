@@ -21,8 +21,17 @@ public class SuperMarket : MonoBehaviour
     [SerializeField] private AudioClip elevatorOpenDoor;
     [SerializeField] private AudioClip elevatorButtonPress;
     [SerializeField] private AudioClip elevatorWallOpen;
+    [SerializeField] private AudioClip elevatorDing;
+
+    [SerializeField] private GameObject elevatorButtonUp;
+    [SerializeField] private GameObject elevatorButtonDown;
+
+    [SerializeField] private Material normalMat;
+    [SerializeField] private Material litMat;
 
     private AudioSource elevatorWallAudioSource;
+    private AudioSource elevatorDingSource;
+
     private bool shown = false;
     private bool moving = false;
     private bool down = false;
@@ -34,12 +43,7 @@ public class SuperMarket : MonoBehaviour
         Instance = this;
         originalPosition = elevator.transform.position;
         elevatorWallAudioSource = gameObject.AddComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        elevatorDingSource = elevator.AddComponent<AudioSource>();
     }
 
     public void ElevatorOpening() {
@@ -63,6 +67,13 @@ public class SuperMarket : MonoBehaviour
         elevatorAudio.Stop();
         moving = false;
         elevatorAudio.PlayOneShot(elevatorOpenDoor);
+
+        if (!down) {
+            elevatorButtonUp.GetComponent<MeshRenderer>().material = normalMat;
+        }
+        else {
+            elevatorButtonDown.GetComponent<MeshRenderer>().material = normalMat;
+        }
     }
 
     public void CloseElevator() {
@@ -73,6 +84,14 @@ public class SuperMarket : MonoBehaviour
         elevatorAnimator.SetTrigger("Close");
         Invoke("SetNewElevatorPosition", 5f);
         elevatorAudio.PlayOneShot(elevatorOpenDoor);
+        elevatorDingSource.PlayOneShot(elevatorDing);
+
+        if(down) {
+            elevatorButtonUp.GetComponent<MeshRenderer>().material = litMat;
+        }
+        else {
+            elevatorButtonDown.GetComponent<MeshRenderer>().material = litMat;
+        }
     }
 
     public void SetNewElevatorPosition() {

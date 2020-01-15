@@ -3,6 +3,7 @@
 public class ToggleLights : MonoBehaviour, IIntractable
 {
     [SerializeField] private GameObject pathLock;
+    [SerializeField] private SetupPigAnimations pigAnims;
     private Light[] lights;
 
     private void Start()
@@ -17,6 +18,7 @@ public class ToggleLights : MonoBehaviour, IIntractable
     public void Interact()
     {
         pathLock.SetActive(!pathLock.activeSelf);
+        pigAnims.SwitchToScreaming();
 
         foreach (var light in lights)
         {

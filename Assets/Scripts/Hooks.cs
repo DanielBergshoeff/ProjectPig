@@ -139,6 +139,7 @@ public class Hooks : MonoBehaviour
         if (!livingPig)
             return;
 
+        livingPig = false;
         pig.GetComponent<HalfDeadPig>().enabled = true;
         heartBeatAudioSource.pitch = heartBeatSpeed;
         heartBeatAudioSource.Play();
@@ -185,6 +186,9 @@ public class Hooks : MonoBehaviour
 
         if (pig.Dehaired && pig.GetComponent<HalfDeadPig>().enabled) {
             sceneLoader.LoadScene("PreVictim", transitionObject);
+        }
+        else if(pig.GetComponent<HalfDeadPig>().enabled) {
+            livingPig = true;
         }
         
         if (pig.Dehaired) {

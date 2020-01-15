@@ -886,8 +886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac94dca2ef33f44b9cbc913f28fb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpasms: 75
-  forceMultiplier: 5
+  maxSpasms: 150
+  forceMultiplier: 10
   screams:
   - {fileID: 8300000, guid: c2599748e18c1b249b0a611fdf722b22, type: 3}
   - {fileID: 8300000, guid: 4a855aad9840dce4d862e4a1327f4ad8, type: 3}
@@ -909,8 +909,9 @@ MonoBehaviour:
   - {fileID: 4672269681452638284}
   - {fileID: 4672269682207970068}
   - {fileID: 4672269680759740582}
-  minTimeBetweenScreams: 1
-  maxTimeBetweenScreams: 3
+  - {fileID: 4672269680615670548}
+  minTimeBetweenScreams: 0.5
+  maxTimeBetweenScreams: 2
   source: {fileID: 0}
 --- !u!1 &4373852620696510922
 GameObject:
