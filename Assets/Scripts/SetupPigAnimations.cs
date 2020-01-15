@@ -7,8 +7,14 @@ public class SetupPigAnimations : MonoBehaviour
     [SerializeField] private Vector2 colorTintRange = new Vector2(.75f, 1f);
     [SerializeField] private Vector2 sizeRange = new Vector2(.25f, 1.25f);
     [SerializeField] private Vector2 volumeRange = new Vector2(.25f, 1.25f);
+    [SerializeField] private AudioClip[] pigScreaming;
     [SerializeField] private AudioClip[] pigSounds;
+    [SerializeField] private Vector2 pigSoundWaitingRange = new Vector2(5f, 20f);
+    [SerializeField] private Vector2 pigSoundVolumeRange = new Vector2(0.01f, 0.2f);
+    [SerializeField] private Vector2 pigSoundVolumeRange2 = new Vector2(0.5f, 1f);
     private RuntimeAnimatorController[] animators;
+
+    private bool switched = false;
 
     private void Start()
     {
@@ -31,7 +37,22 @@ public class SetupPigAnimations : MonoBehaviour
             mat.color *= rndSize;
 
             // if ((int)Random.Range(0, 10) == 1)
-            pig.AddComponent<RandomSqueel>().Innit(pig.gameObject.GetComponent<AudioSource>(), pigSounds);
+            pig.AddComponent<RandomSqueel>().Innit(pig.gameObject.GetComponent<AudioSource>(), pigSounds, pigSoundWaitingRange, pigSoundVolumeRange); 
+        }
+    }
+
+    public void SwitchToScreaming() {
+        if (switched)
+            return;
+
+        switched = true;
+
+        GameObject[] pigs = GameObject.FindGameObjectsWithTag("Pig");
+        foreach (GameObject pig in pigs) {
+            Animator animator = pig.gameObject.GetComponentInChildren<Animator>();
+            if (!animator) { continue; }
+
+            pig.GetComponent<RandomSqueel>().SetSounds(pigScreaming, pigSoundWaitingRange, pigSoundVolumeRange2);
         }
     }
 }
