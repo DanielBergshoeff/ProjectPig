@@ -1,6 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
 
 public class BystanderController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class BystanderController : MonoBehaviour
     private bool interactionCanvasOn = false;
     private float interactionTimerTotal = 0f;
     private Image interactionImage;
+
+    private List<Renderer> occluders = new List<Renderer>();
+    private List<Renderer> newOccluders = new List<Renderer>();
 
     private void Awake()
     {
@@ -61,18 +65,22 @@ public class BystanderController : MonoBehaviour
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * interactDistance, Color.red);
     }
 
-    private void UpdateInteractionCanvas() {
-        if (interactionCanvasOn && interactionImage.color.a < 1f) {
+    private void UpdateInteractionCanvas()
+    {
+        if (interactionCanvasOn && interactionImage.color.a < 1f)
+        {
             interactionTimer -= Time.deltaTime;
             if (interactionTimer < 0f)
                 interactionTimer = 0f;
         }
-        else if(!interactionCanvasOn && interactionImage.color.a > 0f) {
+        else if (!interactionCanvasOn && interactionImage.color.a > 0f)
+        {
             interactionTimer += Time.deltaTime;
             if (interactionTimer > interactionTimerTotal)
                 interactionTimer = interactionTimerTotal;
         }
-        else {
+        else
+        {
             return;
         }
 
@@ -81,31 +89,37 @@ public class BystanderController : MonoBehaviour
         interactionImage.color = tempColor;
     }
 
-    private bool HasMouseMoved() {
+    private bool HasMouseMoved()
+    {
         return (Input.GetAxis("Mouse X") != 0) || (Input.GetAxis("Mouse Y") != 0);
     }
 
-    private bool HasUsedWASD() {
+    private bool HasUsedWASD()
+    {
         return (Input.GetKeyDown(KeyCode.W));
     }
 
-    private void EnableMoveTutorial() {
+    private void EnableMoveTutorial()
+    {
         moveTutorialCanvas.SetActive(true);
     }
 
-    private void UpdateMoveTutorial() {
+    private void UpdateMoveTutorial()
+    {
         if (!wasdUsed && HasUsedWASD())
             wasdUsed = true;
         if (!mouseMoved && HasMouseMoved())
             mouseMoved = true;
 
-        if (wasdUsed && mouseMoved) {
+        if (wasdUsed && mouseMoved)
+        {
             Invoke("DisableMoveTutorial", 5.0f);
             moveTutorial = false;
         }
     }
 
-    private void DisableMoveTutorial() {
+    private void DisableMoveTutorial()
+    {
         if (moveTutorialTimer > 0)
             moveTutorialTimer -= Time.deltaTime;
         if (moveTutorialTimer < 0f)
@@ -126,24 +140,66 @@ public class BystanderController : MonoBehaviour
         RaycastHit hit;
         if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactDistance))
         {
+            UnhideMaterials();
             interactionCanvasOn = false;
             return;
         }
 
-        IInteractible interactible = hit.collider.GetComponent<IInteractible>();
+        GameObject obj = hit.collider.gameObject;
+        IIntractable intractable = obj.GetComponent<IIntractable>();
 
-        if (interactible == null) {
+        if (intractable == null)
+        {
+            UnhideMaterials();
             interactionCanvasOn = false;
             return;
         }
 
-        //interactionCanvas.SetActive(true);
         interactionCanvasOn = true;
+        HighlightObject(hit);
 
         if (!Input.GetKeyDown(interactionKey)) { return; }
 
-        print("click");
+        intractable.Interact();
+    }
 
-        interactible.Interact();
+    private void HighlightObject(RaycastHit hit)
+    {
+        List<RaycastHit> hits = new List<RaycastHit>() { hit };
+
+        HideMaterials(hits);
+
+        UnhideMaterials();
+
+        occluders.Clear();
+    }
+
+    private void HideMaterials(List<RaycastHit> hits)
+    {
+        foreach (RaycastHit hit in hits)
+        {
+            Renderer renderer = hit.collider.GetComponent<Renderer>();
+            occluders.Add(renderer);
+
+            if (!newOccluders.Contains(renderer))
+            {
+                Outline outline = renderer.gameObject.AddComponent<Outline>();
+                outline.OutlineWidth = 10f;
+                outline.OutlineColor = Color.magenta;
+                newOccluders.Add(renderer);
+            }
+
+        }
+    }
+
+    private void UnhideMaterials()
+    {
+        List<Renderer> oldOccluders = newOccluders.Where(item => !occluders.Any(item2 => item2 == item)).ToList();
+
+        foreach (Renderer hit in oldOccluders)
+        {
+            hit.gameObject.GetComponent<Outline>().CleanUp();
+            newOccluders.Remove(hit);
+        }
     }
 }
