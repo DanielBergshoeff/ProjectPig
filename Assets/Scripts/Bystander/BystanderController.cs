@@ -184,8 +184,9 @@ public class BystanderController : MonoBehaviour
             if (!newOccluders.Contains(renderer))
             {
                 Outline outline = renderer.gameObject.AddComponent<Outline>();
-                outline.OutlineWidth = 10f;
-                outline.OutlineColor = Color.magenta;
+                outline.OutlineWidth = 25f;
+                outline.OutlineMode = Outline.Mode.OutlineAndSilhouette;
+                outline.OutlineColor = Color.blue;
                 newOccluders.Add(renderer);
             }
 
