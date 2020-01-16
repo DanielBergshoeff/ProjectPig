@@ -28,6 +28,7 @@ public class Hooks : MonoBehaviour
     [SerializeField] private Light checkLight;
     [SerializeField] private Color correctLightColor;
     [SerializeField] private Color wrongLightColor;
+    [SerializeField] private MeshRenderer robotHeadMesh;
 
     [Header("Audio")]
     [SerializeField] private AudioSource reactionSound;
@@ -69,6 +70,10 @@ public class Hooks : MonoBehaviour
 
         myAudioSource = GetComponent<AudioSource>();
         sceneLoader = gameObject.AddComponent<SceneLoader>();
+
+        checkLight.color = wrongLightColor;
+        robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor);
+        robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor);
     }
 
     private void Update()
@@ -198,10 +203,13 @@ public class Hooks : MonoBehaviour
             }
 
             checkLight.color = correctLightColor;
+            robotHeadMesh.materials[5].SetColor("_EmissionColor", correctLightColor);
+            robotHeadMesh.materials[1].SetColor("_EmissionColor", correctLightColor);
+
             amtOfCorrectPigs++;
             if (amtOfCorrectPigs == correctPigsTillTimerGone)
             {
-                PlayerDrownController.Instance.DisableTimer();
+                //PlayerDrownController.Instance.DisableTimer();
                 livingPig = true;
             }
             reactionSound.PlayOneShot(positiveClip);
@@ -209,6 +217,9 @@ public class Hooks : MonoBehaviour
         else
         {
             checkLight.color = wrongLightColor;
+            robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor);
+            robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor);
+
             amtOfCorrectPigs = 0;
             reactionSound.PlayOneShot(negativeClip);
         }
