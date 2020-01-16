@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: BaconBox
   m_EditorClassIdentifier: 
   lines:
-  - speaker: You
-    line: OUT OF STOCK
-    audio: {fileID: 0}
+  - speaker: AI
+    line: "Repair results \u2026 unsuccessful"
+    audio: {fileID: 8300000, guid: 1cdb2906a43d3334ebc4de7341b862f0, type: 3}
+  - speaker: AI
+    line: "Internal malfunctioning detected at \u2026 The Fields"
+    audio: {fileID: 8300000, guid: 51c21c869a54dff47aa33f5cbaaede0f, type: 3}
+  - speaker: AI
+    line: Access granted. Please, proceed to the elevator
+    audio: {fileID: 8300000, guid: 1d2729ab3487d684bb697dc79caead31, type: 3}

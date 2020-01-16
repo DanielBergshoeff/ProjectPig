@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802ba7c8b0865514f90b6edaf82fa41c, type: 3}
+  m_Name: Dialogue3
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: The Fields AI
+    line: 'Malfunctions detected: power loss, malfunctioning robot.'
+    audio: {fileID: 8300000, guid: 96a260af0abca32429f8c615705f6c9a, type: 3}
+  - speaker: The Fields AI
+    line: Before we proceed, please read and consent to our confidentiality agreement.
+    audio: {fileID: 8300000, guid: c10b7ab2a5a444942a0a1603f4b0dd2f, type: 3}
+  - speaker: The Fields AI
+    line: 'Place your hand on the scanner on your left-hand-side to accept. '
+    audio: {fileID: 8300000, guid: ace1db18e293d4346a780c6ea71ea68c, type: 3}

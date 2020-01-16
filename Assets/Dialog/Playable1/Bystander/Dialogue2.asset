@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 802ba7c8b0865514f90b6edaf82fa41c, type: 3}
-  m_Name: TheBoard
+  m_Name: Dialogue2
   m_EditorClassIdentifier: 
   lines:
   - speaker: The Fields AI
-    line: Hello dear [engineer] and welcome to the best meat-processing facility of
-      the world!
-    audio: {fileID: 0}
+    line: "Repair results \u2026 unsuccessful."
+    audio: {fileID: 8300000, guid: 1cdb2906a43d3334ebc4de7341b862f0, type: 3}
   - speaker: The Fields AI
-    line: To maintain our world-renowned production speed, we need you to fix our
-      malfunctioning working robots!
-    audio: {fileID: 0}
+    line: "Internal malfunctioning detected at \u2026 The Fields."
+    audio: {fileID: 8300000, guid: 51c21c869a54dff47aa33f5cbaaede0f, type: 3}
   - speaker: The Fields AI
-    line: Please proceed with caution and mind your step. Farewell!
-    audio: {fileID: 0}
+    line: Access granted. Please, proceed to the elevator.
+    audio: {fileID: 8300000, guid: 1d2729ab3487d684bb697dc79caead31, type: 3}
