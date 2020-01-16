@@ -201,7 +201,7 @@ public class Hooks : MonoBehaviour
             amtOfCorrectPigs++;
             if (amtOfCorrectPigs == correctPigsTillTimerGone)
             {
-                PlayerDrownController.Instance.DisableTimer();
+                //PlayerDrownController.Instance.DisableTimer();
                 livingPig = true;
             }
             reactionSound.PlayOneShot(positiveClip);
