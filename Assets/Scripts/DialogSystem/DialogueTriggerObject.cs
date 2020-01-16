@@ -49,7 +49,6 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
             DialogueManager.Instance.StartDialogue(dialogue, tMP_Text.gameObject, dialogueMethod);
         }
         DialogueManager.Instance.StartDialogue(dialogue, null, dialogueMethod);
-
     }
 
     [ExecuteInEditMode]

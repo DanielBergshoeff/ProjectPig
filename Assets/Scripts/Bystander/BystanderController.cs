@@ -181,6 +181,8 @@ public class BystanderController : MonoBehaviour
             Renderer renderer = hit.collider.GetComponent<Renderer>();
             occluders.Add(renderer);
 
+            if (!renderer) { return; }
+
             if (!newOccluders.Contains(renderer))
             {
                 Outline outline = renderer.gameObject.AddComponent<Outline>();
@@ -189,7 +191,6 @@ public class BystanderController : MonoBehaviour
                 outline.OutlineColor = Color.blue;
                 newOccluders.Add(renderer);
             }
-
         }
     }
 
