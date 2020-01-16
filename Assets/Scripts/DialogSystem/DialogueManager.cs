@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
         private set { }
     }
 
-    public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.E, KeyCode.Space };
+    private List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.Mouse0 };
 
     private GameObject dialogueBox;
     private TMP_Text[] textObjects;
@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueObject currentDialogue;
     private int dialogueIndex;
     private bool dialogueMode = false;
+    private bool firstLine;
 
     /// <summary>
     /// Skip through all the dialogue options
@@ -40,6 +41,8 @@ public class DialogueManager : MonoBehaviour
     private void Update()
     {
         if (!dialogueMode) { return; }
+
+        if (firstLine) { firstLine = false; return; }
 
         //Wait for input before showing next line
         foreach (var keycode in keycodes)
@@ -93,6 +96,7 @@ public class DialogueManager : MonoBehaviour
         //If new dialogue then start directly
         if (dialogueIndex == 0)
         {
+            firstLine = true;
             dialogueBox.SetActive(true);
             ShowDialogue(dialogue.lines[dialogueIndex]);
         }

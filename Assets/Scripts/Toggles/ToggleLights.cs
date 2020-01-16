@@ -5,6 +5,7 @@ public class ToggleLights : MonoBehaviour, IIntractable
     [SerializeField] private GameObject pathLock;
     [SerializeField] private SetupPigAnimations pigAnims;
     private Light[] lights;
+    public bool interacted { get; set; }
 
     private void Start()
     {

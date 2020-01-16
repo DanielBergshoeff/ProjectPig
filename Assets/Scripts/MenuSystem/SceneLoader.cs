@@ -18,6 +18,8 @@ public class SceneLoader : MonoBehaviour, IIntractable
     private static AudioSource source;
     private List<AudioSource> sources;
 
+    public bool interacted { get; set; }
+
     private void Innit()
     {
         gameObject.layer = LayerMask.NameToLayer("Interactable");
@@ -33,12 +35,16 @@ public class SceneLoader : MonoBehaviour, IIntractable
 
     private void OnTriggerEnter(Collider col)
     {
+        interacted = true;
+
         Innit();
         Interact();
     }
 
     public void Interact()
     {
+        interacted = true;
+
         QuitGame(gameObject.name);
         Innit();
         StartSceneTransition();
@@ -104,6 +110,7 @@ public class SceneLoader : MonoBehaviour, IIntractable
         {
             Destroy(transition);
             Destroy(gameObject);
+            interacted = false;
         }
         catch { }
     }
