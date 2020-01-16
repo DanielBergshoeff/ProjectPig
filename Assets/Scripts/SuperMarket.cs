@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class SuperMarket : MonoBehaviour
@@ -37,8 +35,7 @@ public class SuperMarket : MonoBehaviour
     private bool down = false;
     private Vector3 originalPosition;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Instance = this;
         originalPosition = elevator.transform.position;
@@ -46,7 +43,8 @@ public class SuperMarket : MonoBehaviour
         elevatorDingSource = elevator.AddComponent<AudioSource>();
     }
 
-    public void ElevatorOpening() {
+    public void ElevatorOpening()
+    {
         if (shown)
             return;
 
@@ -58,43 +56,51 @@ public class SuperMarket : MonoBehaviour
         shown = true;
     }
 
-    private void StopElevatorWallOpenAudio() {
+    private void StopElevatorWallOpenAudio()
+    {
         elevatorWallAudioSource.Stop();
     }
 
-    public void OpenElevator() {
+    public void OpenElevator()
+    {
         elevatorAnimator.SetTrigger("Open");
         elevatorAudio.Stop();
         moving = false;
         elevatorAudio.PlayOneShot(elevatorOpenDoor);
 
-        if (!down) {
+        if (!down)
+        {
             elevatorButtonUp.GetComponent<MeshRenderer>().material = normalMat;
         }
-        else {
+        else
+        {
             elevatorButtonDown.GetComponent<MeshRenderer>().material = normalMat;
         }
     }
 
-    public void CloseElevator() {
+    public void CloseElevator()
+    {
         if (moving)
             return;
-        
+
         moving = true;
         elevatorAnimator.SetTrigger("Close");
         Invoke("SetNewElevatorPosition", 5f);
         elevatorAudio.PlayOneShot(elevatorOpenDoor);
         elevatorDingSource.PlayOneShot(elevatorDing);
 
-        if(down) {
+        if (down)
+        {
             elevatorButtonUp.GetComponent<MeshRenderer>().material = litMat;
         }
-        else {
+        else
+        {
             elevatorButtonDown.GetComponent<MeshRenderer>().material = litMat;
         }
     }
 
-    public void SetNewElevatorPosition() {
+    public void SetNewElevatorPosition()
+    {
         elevatorAudio.clip = elevatorMovement;
         elevatorAudio.loop = true;
         elevatorAudio.Play();
@@ -110,7 +116,8 @@ public class SuperMarket : MonoBehaviour
         Invoke("OpenElevator", timeInElevator);
     }
 
-    private void TurnOnMovement() {
+    private void TurnOnMovement()
+    {
         Player.GetComponent<CharacterController>().enabled = true;
         Player.GetComponent<FirstPersonController>().enabled = true;
         Player.transform.SetParent(null);

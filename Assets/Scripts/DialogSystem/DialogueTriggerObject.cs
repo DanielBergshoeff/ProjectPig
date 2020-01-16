@@ -10,8 +10,13 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
     [SerializeField] private UnityEvent dialogueMethod;
     [SerializeField] private ButtonAudio buttonAudio;
 
+    public bool interacted { get; set; }
+
     public void Interact()
     {
+        interacted = true;
+        dialogueMethod.AddListener(() => { interacted = false; });
+
         TriggerDialogue();
         if (buttonAudio == null)
             return;
