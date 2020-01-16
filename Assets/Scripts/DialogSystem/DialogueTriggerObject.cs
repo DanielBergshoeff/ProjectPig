@@ -10,8 +10,13 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
     [SerializeField] private UnityEvent dialogueMethod;
     [SerializeField] private ButtonAudio buttonAudio;
 
+    public bool interacted { get; set; }
+
     public void Interact()
     {
+        interacted = true;
+        dialogueMethod.AddListener(() => { interacted = false; });
+
         TriggerDialogue();
         if (buttonAudio == null)
             return;
@@ -49,7 +54,6 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
             DialogueManager.Instance.StartDialogue(dialogue, tMP_Text.gameObject, dialogueMethod);
         }
         DialogueManager.Instance.StartDialogue(dialogue, null, dialogueMethod);
-
     }
 
     [ExecuteInEditMode]

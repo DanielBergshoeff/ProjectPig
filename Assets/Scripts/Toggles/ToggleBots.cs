@@ -3,6 +3,8 @@
 public class ToggleBots : MonoBehaviour, IIntractable
 {
     private Robot[] bots;
+    public bool interacted { get; set; }
+
 
     private void Start()
     {
