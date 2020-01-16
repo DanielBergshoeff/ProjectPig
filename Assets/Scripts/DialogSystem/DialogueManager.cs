@@ -2,6 +2,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using System;
+using System.Collections;
 
 /// <summary>
 /// Shows and plays the dialogue objects contents
@@ -143,10 +145,11 @@ public class DialogueManager : MonoBehaviour
     /// <param name="dialogueLine">The dialogue line to play</param>
     private void ShowDialogue(DialogueLine dialogueLine)
     {
+        StopAllCoroutines();
         //Display the text
         try
         {
-            textObjects[0].text = dialogueLine.line;
+            StartCoroutine(TypeWriteText(textObjects[0], dialogueLine.line));
             textObjects[1].text = dialogueLine.speaker;
         }
         catch
@@ -158,6 +161,23 @@ public class DialogueManager : MonoBehaviour
         dialogueAudio.Stop();
         dialogueAudio.clip = dialogueLine.audio;
         dialogueAudio.Play();
+    }
+
+    /// <summary>
+    /// Takes a text and writes it down in the specified time
+    /// </summary>
+    /// <param name="container">Where to write the text</param>
+    /// <param name="text">Text to write</param>
+    /// <param name="speed">Speed to write the text at</param>
+    /// <returns></returns>
+    IEnumerator TypeWriteText(TMP_Text container, string text, float speed = 1f)
+    {
+        container.text = "";
+        foreach (char c in text)
+        {
+            container.text += c;
+            yield return new WaitForSeconds(speed / text.Length);
+        }
     }
 
     /// <summary>
