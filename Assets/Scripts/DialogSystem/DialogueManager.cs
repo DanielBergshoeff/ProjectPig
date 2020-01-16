@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
         private set { }
     }
 
-    public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.E, KeyCode.Space };
+    public List<KeyCode> keycodes = new List<KeyCode>() { KeyCode.Mouse0 };
 
     private GameObject dialogueBox;
     private TMP_Text[] textObjects;
