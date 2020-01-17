@@ -3,7 +3,27 @@ guid: fcd2762f25510d14abb1fe965fde89f6
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CageTexture
+    second: {fileID: 2100000, guid: 6b8d049a00633ca45858129cbcb730c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor1
+    second: {fileID: 2100000, guid: 8a605ac130423ee4c8df9b70b2c4b1fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Food
+    second: {fileID: 2100000, guid: 3e461273c010ff04fa404fde6a9d46b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\xC7ageTexture2"
+    second: {fileID: 2100000, guid: 36b5e196009370b419540b57648f0eca, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
