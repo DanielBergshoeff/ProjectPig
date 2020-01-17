@@ -14,6 +14,9 @@ public class ToggleLights : MonoBehaviour, IIntractable
         int childCount = transform.parent.childCount;
 
         lights = transform.parent.GetComponentsInChildren<Light>();
+        foreach (var light in lights) {
+            light.enabled = false;
+        }
     }
 
     public void Interact()
