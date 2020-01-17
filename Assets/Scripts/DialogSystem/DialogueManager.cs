@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     private int dialogueIndex;
     private bool dialogueMode = false;
     private bool firstLine;
+    private bool custom = false;
 
     /// <summary>
     /// Skip through all the dialogue options
@@ -62,7 +63,8 @@ public class DialogueManager : MonoBehaviour
             {
                 //Reset the dialogue system
                 dialogueMode = false;
-                dialogueBox.SetActive(false);
+                if (!custom)
+                    dialogueBox.SetActive(false);
                 currentDialogue = null;
                 dialogueIndex = 0;
 
@@ -89,7 +91,10 @@ public class DialogueManager : MonoBehaviour
         dialogueMethod = dm;
 
         if (box != default)
+        {
             dialogueBox = box;
+            custom = true;
+        }
 
         GetDialogueBox();
 
@@ -168,25 +173,25 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     /// <param name="container">Where to write the text</param>
     /// <param name="text">Text to write</param>
-    /// <param name="speed">Speed to write the text at</param>
+    /// <param name="duration">Speed to write the text at</param>
     /// <returns></returns>
     IEnumerator TypeWriteText(TMP_Text container, string text, float duration = 10f)
     {
         int AmountOfCharactersPossible = 0;
         container.text = "";
-        for (float t = 0f; t < duration; t += Time.deltaTime)
+        for (float t = 0; t < text.Length; t += Time.deltaTime)
         {
             int charactersTyped = (int)(text.Length * t / duration);
             int beginIndex = AmountOfCharactersPossible == 0 ? AmountOfCharactersPossible : charactersTyped - AmountOfCharactersPossible;
             container.text = text.Substring(beginIndex, charactersTyped);
+
             container.ForceMeshUpdate();
             if (container.isTextTruncated && AmountOfCharactersPossible == 0)
-            {
                 AmountOfCharactersPossible = charactersTyped;
-            }
 
             yield return null;
         }
+        container.text = text;
     }
 
     /// <summary>

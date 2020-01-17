@@ -16,5 +16,12 @@ public class ToggleBots : MonoBehaviour, IIntractable
     public void Interact()
     {
         foreach (var bot in bots) { bot.evil = !bot.evil; }
+        Done();
+    }
+
+    public void Done()
+    {
+        this.enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 }

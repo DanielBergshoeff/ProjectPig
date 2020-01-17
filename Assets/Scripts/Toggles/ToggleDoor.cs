@@ -11,5 +11,11 @@ public class ToggleDoor : MonoBehaviour, IIntractable
     public void Interact()
     {
         action.Invoke();
+        Done();
+    }
+    public void Done()
+    {
+        this.enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 }
