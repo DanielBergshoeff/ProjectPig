@@ -170,13 +170,22 @@ public class DialogueManager : MonoBehaviour
     /// <param name="text">Text to write</param>
     /// <param name="speed">Speed to write the text at</param>
     /// <returns></returns>
-    IEnumerator TypeWriteText(TMP_Text container, string text, float speed = 1f)
+    IEnumerator TypeWriteText(TMP_Text container, string text, float duration = 10f)
     {
+        int AmountOfCharactersPossible = 0;
         container.text = "";
-        foreach (char c in text)
+        for (float t = 0f; t < duration; t += Time.deltaTime)
         {
-            container.text += c;
-            yield return new WaitForSeconds(speed / text.Length);
+            int charactersTyped = (int)(text.Length * t / duration);
+            int beginIndex = AmountOfCharactersPossible == 0 ? AmountOfCharactersPossible : charactersTyped - AmountOfCharactersPossible;
+            container.text = text.Substring(beginIndex, charactersTyped);
+            container.ForceMeshUpdate();
+            if (container.isTextTruncated && AmountOfCharactersPossible == 0)
+            {
+                AmountOfCharactersPossible = charactersTyped;
+            }
+
+            yield return null;
         }
     }
 
