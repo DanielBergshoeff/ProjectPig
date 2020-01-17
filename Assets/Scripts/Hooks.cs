@@ -39,6 +39,7 @@ public class Hooks : MonoBehaviour
     [SerializeField] private float heartBeatSpeed = 3.0f;
 
     [SerializeField] private GameObject transitionObject;
+    [SerializeField] private DialogueObject dialoguePreVictim;
 
     private bool newPigAllowed = true;
     private Animator myAnimator;
@@ -190,7 +191,7 @@ public class Hooks : MonoBehaviour
         pigProcess = false;
 
         if (pig.Dehaired && pig.GetComponent<HalfDeadPig>().enabled) {
-            sceneLoader.LoadScene("PreVictim", transitionObject);
+            sceneLoader.LoadScene("PreVictim", transitionObject, dialoguePreVictim);
         }
         else if(pig.GetComponent<HalfDeadPig>().enabled) {
             livingPig = true;
