@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802ba7c8b0865514f90b6edaf82fa41c, type: 3}
+  m_Name: Dialogue8
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: The Fields AI
+    line: "Repairs successful,  scanning problems in system\u2026"
+    audio: {fileID: 8300000, guid: ef4af0d3622ce68449d11ba9f6d2e841, type: 3}
+  - speaker: The Fields AI
+    line: zero errors detected. Everything works as intended.
+    audio: {fileID: 8300000, guid: a77223d79d33ade40a510f393f3641a7, type: 3}
+  - speaker: The Fields AI
+    line: Please return to the elevator.
+    audio: {fileID: 8300000, guid: 7864886c3b643624e8a652168b7972f1, type: 3}

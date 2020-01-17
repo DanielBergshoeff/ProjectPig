@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802ba7c8b0865514f90b6edaf82fa41c, type: 3}
+  m_Name: Dialogue7
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: The Fields AI
+    line: To restore the machine to its proper state, ensure the following actions
+      are functioning adequately.
+    audio: {fileID: 8300000, guid: 7190d640980dde44b9a19d607268e984, type: 3}
+  - speaker: The Fields AI
+    line: Make sure it stays submerged long enough.
+    audio: {fileID: 8300000, guid: c142a8eb9d28c8d4895c209f87fbfdde, type: 3}
