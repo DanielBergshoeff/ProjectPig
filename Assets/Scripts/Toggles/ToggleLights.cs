@@ -28,5 +28,11 @@ public class ToggleLights : MonoBehaviour, IIntractable
         {
             light.enabled = !light.enabled;
         }
+        Done();
+    }
+    public void Done()
+    {
+        this.enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 }

@@ -3,4 +3,6 @@
     bool interacted { get; set; }
 
     void Interact();
+
+    void Done();
 }
