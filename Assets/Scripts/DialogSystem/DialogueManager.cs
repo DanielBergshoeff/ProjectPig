@@ -2,6 +2,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using System;
+using System.Collections;
 
 /// <summary>
 /// Shows and plays the dialogue objects contents
@@ -143,10 +145,11 @@ public class DialogueManager : MonoBehaviour
     /// <param name="dialogueLine">The dialogue line to play</param>
     private void ShowDialogue(DialogueLine dialogueLine)
     {
+        StopAllCoroutines();
         //Display the text
         try
         {
-            textObjects[0].text = dialogueLine.line;
+            StartCoroutine(TypeWriteText(textObjects[0], dialogueLine.line));
             textObjects[1].text = dialogueLine.speaker;
         }
         catch
@@ -158,6 +161,32 @@ public class DialogueManager : MonoBehaviour
         dialogueAudio.Stop();
         dialogueAudio.clip = dialogueLine.audio;
         dialogueAudio.Play();
+    }
+
+    /// <summary>
+    /// Takes a text and writes it down in the specified time
+    /// </summary>
+    /// <param name="container">Where to write the text</param>
+    /// <param name="text">Text to write</param>
+    /// <param name="speed">Speed to write the text at</param>
+    /// <returns></returns>
+    IEnumerator TypeWriteText(TMP_Text container, string text, float duration = 10f)
+    {
+        int AmountOfCharactersPossible = 0;
+        container.text = "";
+        for (float t = 0f; t < duration; t += Time.deltaTime)
+        {
+            int charactersTyped = (int)(text.Length * t / duration);
+            int beginIndex = AmountOfCharactersPossible == 0 ? AmountOfCharactersPossible : charactersTyped - AmountOfCharactersPossible;
+            container.text = text.Substring(beginIndex, charactersTyped);
+            container.ForceMeshUpdate();
+            if (container.isTextTruncated && AmountOfCharactersPossible == 0)
+            {
+                AmountOfCharactersPossible = charactersTyped;
+            }
+
+            yield return null;
+        }
     }
 
     /// <summary>
