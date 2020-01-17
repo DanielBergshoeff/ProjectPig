@@ -1,8 +1,8 @@
 ﻿using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 public class SceneLoader : MonoBehaviour, IIntractable
 {
@@ -10,13 +10,15 @@ public class SceneLoader : MonoBehaviour, IIntractable
     [SerializeField] private float transitionOffset = 2f;
     [SerializeField] private AudioClip transitionInAudio;
     [SerializeField] private AudioClip transitionOutAudio;
+    [SerializeField] private DialogueObject dialogueNewScene;
 
-    private Task fadeOut;
     private Task fadeIn;
+    private Task fadeOut;
     private static GameObject transition;
     private static CanvasGroup canvas;
     private static AudioSource source;
-    private List<AudioSource> sources;
+    private static DialogueObject dialogue;
+    private const float iterations = 50f;
 
     public bool interacted { get; set; }
 
@@ -35,15 +37,14 @@ public class SceneLoader : MonoBehaviour, IIntractable
 
     private void OnTriggerEnter(Collider col)
     {
-        interacted = true;
-
         Innit();
         Interact();
     }
 
     public void Interact()
     {
-        interacted = true;
+        if (dialogueNewScene != null)
+            dialogue = dialogueNewScene;
 
         QuitGame(gameObject.name);
         Innit();
@@ -54,26 +55,20 @@ public class SceneLoader : MonoBehaviour, IIntractable
     {
         transition.SetActive(true);
 
-        sources = FindObjectsOfType<AudioSource>().ToList();
-        sources.Remove(source);
-
-        fadeOut = new Task(Fade(true));
+        fadeIn = new Task(FadeOut());
 
         PlayAudio(transitionInAudio);
 
-        fadeOut.Finished += LoadScene;
+        fadeIn.Finished += LoadScene;
     }
 
     private void EndSceneTransition(Scene scene, LoadSceneMode mode)
     {
-        sources = FindObjectsOfType<AudioSource>().ToList();
-        sources.Remove(source);
-
-        fadeIn = new Task(Fade(false));
+        fadeOut = new Task(FadeIn());
 
         PlayAudio(transitionInAudio);
 
-        fadeIn.Finished += CleanUp;
+        fadeOut.Finished += CleanUp;
     }
 
     private void PlayAudio(AudioClip clip)
@@ -96,8 +91,9 @@ public class SceneLoader : MonoBehaviour, IIntractable
     }
 
 
-    public void LoadScene(string scene, GameObject transitionObject)
+    public void LoadScene(string scene, GameObject transitionObject, DialogueObject dialogueObject = null)
     {
+        dialogue = dialogueObject;
         transitionUI = transitionObject;
         gameObject.name = scene;
         Innit();
@@ -110,9 +106,14 @@ public class SceneLoader : MonoBehaviour, IIntractable
         {
             Destroy(transition);
             Destroy(gameObject);
-            interacted = false;
         }
         catch { }
+
+        if (dialogue == null)
+            return;
+
+        DialogueManager.Instance.StartDialogue(dialogue);
+        dialogue = null;
     }
 
     private static void QuitGame(string sceneName)
@@ -126,32 +127,48 @@ public class SceneLoader : MonoBehaviour, IIntractable
 #endif
     }
 
-    IEnumerator Fade(bool fadeIn, int iterations = 50)
+    IEnumerator FadeOut()
     {
-        float length = transitionOutAudio ? transitionOutAudio.length : 0;
+        List<AudioSource> sources = FindObjectsOfType<AudioSource>().ToList();
+        sources.Remove(source);
 
-        if (fadeIn)
-            yield return new WaitForSeconds(length + transitionOffset);
-
-        int dir = fadeIn ? 1 : -1;
-        int start = fadeIn ? 0 : iterations;
-        int end = fadeIn ? iterations : 0;
-
-        for (int i = start; i <= end; i += dir)
+        for (int i = 0; i <= iterations; i += 1)
         {
             float a = canvas.alpha;
-            a = (float)i / (float)iterations;
-            print(fadeIn);
-            print((fadeIn ? "out " : "in ") + a);
-            foreach (AudioSource s in sources)
-                s.volume = a - 1f;
-
+            a = i / iterations;
             canvas.alpha = a;
+            foreach (AudioSource s in sources)
+                s.volume = 1 - a;
+
             yield return null;
         }
 
-        if (!fadeIn)
-            yield return new WaitForSeconds(length + transitionOffset);
+        float length = transitionOutAudio ? transitionInAudio.length : 0;
+        yield return new WaitForSeconds(length + transitionOffset);
+    }
+
+    IEnumerator FadeIn()
+    {
+        List<AudioSource> sources = FindObjectsOfType<AudioSource>().ToList();
+        sources.Remove(source);
+
+        foreach (AudioSource s in sources)
+            s.volume = 0f;
+
+        float length = transitionOutAudio ? transitionInAudio.length : 0;
+        yield return new WaitForSeconds(length + transitionOffset);
+
+        for (int i = (int)iterations; i >= 0; i -= 1)
+        {
+            float a = canvas.alpha;
+            a = i / iterations;
+            canvas.alpha = a;
+
+            foreach (AudioSource s in sources)
+                s.volume = Mathf.Abs(a - 1f);
+
+            yield return null;
+        }
     }
 
     [ExecuteInEditMode]

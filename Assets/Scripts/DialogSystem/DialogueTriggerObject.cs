@@ -51,7 +51,7 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
 
         if (tMP_Text)
         {
-            DialogueManager.Instance.StartDialogue(dialogue, tMP_Text.gameObject, dialogueMethod);
+            DialogueManager.Instance.StartDialogue(dialogue, gameObject, dialogueMethod);
         }
         DialogueManager.Instance.StartDialogue(dialogue, null, dialogueMethod);
     }
