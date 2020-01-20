@@ -23,32 +23,39 @@ public class SetupPigAnimations : MonoBehaviour
         GameObject[] pigs = GameObject.FindGameObjectsWithTag("Pig");
         foreach (GameObject pig in pigs)
         {
-            Animator animator = pig.gameObject.GetComponentInChildren<Animator>();
-            if (!animator) { continue; }
-            animator.runtimeAnimatorController = animators[Random.Range(0, animators.Length)];
+            Animator[] animator = pig.gameObject.GetComponentsInChildren<Animator>();
             float rndSize = Random.Range(animationSpeedRange.x, animationSpeedRange.y);
-            animator.SetFloat("Speed", rndSize);
+            RuntimeAnimatorController runtimeAnimatorController = animators[Random.Range(0, animators.Length)];
+
+            foreach (Animator anim in animator)
+            {
+                if (!anim) { continue; }
+                anim.runtimeAnimatorController = runtimeAnimatorController;
+                anim.SetFloat("Speed", rndSize);
+            }
 
             rndSize = Random.Range(colorTintRange.x, colorTintRange.y);
             pig.transform.localScale *= rndSize;
 
+            pig.AddComponent<RandomSqueel>().Innit(pig.GetComponent<AudioSource>(), pigSounds, pigSoundWaitingRange, pigSoundVolumeRange);
+
             rndSize = Random.Range(sizeRange.x, sizeRange.y);
             Material mat = pig.GetComponentInChildren<Renderer>().material;
-            mat.color *= rndSize;
-
-            // if ((int)Random.Range(0, 10) == 1)
-            pig.AddComponent<RandomSqueel>().Innit(pig.gameObject.GetComponent<AudioSource>(), pigSounds, pigSoundWaitingRange, pigSoundVolumeRange); 
+            if (mat)
+                mat.color *= rndSize;
         }
     }
 
-    public void SwitchToScreaming() {
+    public void SwitchToScreaming()
+    {
         if (switched)
             return;
 
         switched = true;
 
         GameObject[] pigs = GameObject.FindGameObjectsWithTag("Pig");
-        foreach (GameObject pig in pigs) {
+        foreach (GameObject pig in pigs)
+        {
             Animator animator = pig.gameObject.GetComponentInChildren<Animator>();
             if (!animator) { continue; }
 
