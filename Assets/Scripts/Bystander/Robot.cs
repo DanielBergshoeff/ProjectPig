@@ -39,6 +39,7 @@ public class Robot : MonoBehaviour
         }
 
         myNavMeshAgent.speed = moveSpeed;
+        myNavMeshAgent.SetDestination(path[currentPathPosition].position);
 
         //SetEvil();
     }

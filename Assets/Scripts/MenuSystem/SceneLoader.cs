@@ -10,12 +10,14 @@ public class SceneLoader : MonoBehaviour, IIntractable
     [SerializeField] private float transitionOffset = 2f;
     [SerializeField] private AudioClip transitionInAudio;
     [SerializeField] private AudioClip transitionOutAudio;
+    [SerializeField] private DialogueObject dialogueNewScene;
 
     private Task fadeIn;
     private Task fadeOut;
     private static GameObject transition;
     private static CanvasGroup canvas;
     private static AudioSource source;
+    private static DialogueObject dialogue;
     private const float iterations = 50f;
 
     public bool interacted { get; set; }
@@ -41,6 +43,9 @@ public class SceneLoader : MonoBehaviour, IIntractable
 
     public void Interact()
     {
+        if (dialogueNewScene != null)
+            dialogue = dialogueNewScene;
+
         QuitGame(gameObject.name);
         Innit();
         StartSceneTransition();
@@ -86,8 +91,9 @@ public class SceneLoader : MonoBehaviour, IIntractable
     }
 
 
-    public void LoadScene(string scene, GameObject transitionObject)
+    public void LoadScene(string scene, GameObject transitionObject, DialogueObject dialogueObject = null)
     {
+        dialogue = dialogueObject;
         transitionUI = transitionObject;
         gameObject.name = scene;
         Innit();
@@ -102,6 +108,12 @@ public class SceneLoader : MonoBehaviour, IIntractable
             Destroy(gameObject);
         }
         catch { }
+
+        if (dialogue == null)
+            return;
+
+        DialogueManager.Instance.StartDialogue(dialogue);
+        dialogue = null;
     }
 
     private static void QuitGame(string sceneName)

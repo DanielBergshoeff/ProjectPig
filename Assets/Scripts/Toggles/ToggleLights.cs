@@ -4,6 +4,8 @@ public class ToggleLights : MonoBehaviour, IIntractable
 {
     [SerializeField] private GameObject pathLock;
     [SerializeField] private SetupPigAnimations pigAnims;
+    [SerializeField] private GameObject path1;
+    [SerializeField] private GameObject path2;
     private Light[] lights;
     public bool interacted { get; set; }
 
@@ -17,10 +19,16 @@ public class ToggleLights : MonoBehaviour, IIntractable
         foreach (var light in lights) {
             light.enabled = false;
         }
+
+        path1.SetActive(true);
+        path2.SetActive(false);
     }
 
     public void Interact()
     {
+        path1.SetActive(false);
+        path2.SetActive(true);
+
         pathLock.SetActive(!pathLock.activeSelf);
         pigAnims.SwitchToScreaming();
 
