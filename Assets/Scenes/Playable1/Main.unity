@@ -414,6 +414,7 @@ MonoBehaviour:
   transitionOffset: 0
   transitionInAudio: {fileID: 0}
   transitionOutAudio: {fileID: 0}
+  dialogueNewScene: {fileID: 11400000, guid: 59764ed216340114fa7cb4228d6c78d1, type: 2}
 --- !u!65 &273570934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -637,9 +638,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4e5a62c6cb714a44c8f3eadd844c66ec, type: 2}
-  m_sharedMaterial: {fileID: 4145209024303004904, guid: 4e5a62c6cb714a44c8f3eadd844c66ec,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -793,9 +793,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4e5a62c6cb714a44c8f3eadd844c66ec, type: 2}
-  m_sharedMaterial: {fileID: 4145209024303004904, guid: 4e5a62c6cb714a44c8f3eadd844c66ec,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1452,6 +1451,7 @@ MonoBehaviour:
   transitionOffset: 2
   transitionInAudio: {fileID: 8300000, guid: 11a952590b0c62b4eb60567197c1ef50, type: 3}
   transitionOutAudio: {fileID: 8300000, guid: 11a952590b0c62b4eb60567197c1ef50, type: 3}
+  dialogueNewScene: {fileID: 0}
 --- !u!65 &2095645808
 BoxCollider:
   m_ObjectHideFlags: 0
