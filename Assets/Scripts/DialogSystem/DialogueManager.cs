@@ -67,6 +67,7 @@ public class DialogueManager : MonoBehaviour
                     dialogueBox.SetActive(false);
                 currentDialogue = null;
                 dialogueIndex = 0;
+                custom = false;
 
                 //If there is a method to call at the end of the dialogue, call it
                 if (dialogueMethod == null)
@@ -90,11 +91,12 @@ public class DialogueManager : MonoBehaviour
         dialogueMode = true;
         dialogueMethod = dm;
 
-        if (box != default)
-        {
+        if (box != default) {
             dialogueBox = box;
             custom = true;
         }
+        else
+            dialogueBox = null;
 
         GetDialogueBox();
 
@@ -155,7 +157,7 @@ public class DialogueManager : MonoBehaviour
         try
         {
             StartCoroutine(TypeWriteText(textObjects[0], dialogueLine.line));
-            textObjects[1].text = dialogueLine.speaker;
+            //textObjects[1].text = dialogueLine.speaker;
         }
         catch
         {
@@ -175,15 +177,15 @@ public class DialogueManager : MonoBehaviour
     /// <param name="text">Text to write</param>
     /// <param name="duration">Speed to write the text at</param>
     /// <returns></returns>
-    IEnumerator TypeWriteText(TMP_Text container, string text, float duration = 10f)
+    IEnumerator TypeWriteText(TMP_Text container, string text, float duration = 1f)
     {
         int AmountOfCharactersPossible = 0;
         container.text = "";
-        for (float t = 0; t < text.Length; t += Time.deltaTime)
+        for (float t = 0; t < text.Length; t += Time.deltaTime * text.Length / duration)
         {
-            int charactersTyped = (int)(text.Length * t / duration);
+            int charactersTyped = (int)Mathf.Clamp(t, 0f, text.Length-1);
             int beginIndex = AmountOfCharactersPossible == 0 ? AmountOfCharactersPossible : charactersTyped - AmountOfCharactersPossible;
-            container.text = text.Substring(beginIndex, charactersTyped);
+            container.text = text.Substring(beginIndex, charactersTyped - beginIndex);
 
             container.ForceMeshUpdate();
             if (container.isTextTruncated && AmountOfCharactersPossible == 0)
