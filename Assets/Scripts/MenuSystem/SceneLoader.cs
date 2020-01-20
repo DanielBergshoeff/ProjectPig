@@ -171,6 +171,12 @@ public class SceneLoader : MonoBehaviour, IIntractable
         }
     }
 
+    public void Done()
+    {
+        this.enabled = false;
+        GetComponent<Collider>().enabled = false;
+    }
+
     [ExecuteInEditMode]
     private void OnDrawGizmos()
     {

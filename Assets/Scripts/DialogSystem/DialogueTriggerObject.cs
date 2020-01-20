@@ -15,7 +15,7 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
     public void Interact()
     {
         interacted = true;
-        dialogueMethod.AddListener(() => { interacted = false; });
+        dialogueMethod.AddListener(() => { interacted = false; Done(); });
 
         TriggerDialogue();
         if (buttonAudio == null)
@@ -65,5 +65,11 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
             Gizmos.DrawCube(transform.position, transform.localScale);
         }
         Gizmos.DrawIcon(transform.position, "DialogueGizmo.png", true);
+    }
+
+    public void Done()
+    {
+        this.enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 }
