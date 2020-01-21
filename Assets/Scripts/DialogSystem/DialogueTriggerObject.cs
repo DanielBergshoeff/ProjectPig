@@ -37,7 +37,7 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
 
         if (other.CompareTag("Player"))
         {
-            TriggerDialogue();
+            Interact();
         }
     }
 
