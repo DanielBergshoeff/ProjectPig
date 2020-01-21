@@ -12,7 +12,7 @@ public class VictimController : MonoBehaviour
     {
         hookController = FindObjectOfType<Hooks>();
         playerDrownController = FindObjectOfType<PlayerDrownController>();
-        sceneLoader = GetComponent<IIntractable>();
+        sceneLoader = GetComponentInChildren<IIntractable>();
 
         playVictim = new Task(PlayVictim());
     }
