@@ -176,6 +176,10 @@ public class Hooks : MonoBehaviour
             pigProcess = false;
         }
 
+        if (pig.GetComponent<HalfDeadPig>().enabled) {
+            livingPig = true;
+        }
+
         Destroy(pig.gameObject);
     }
 

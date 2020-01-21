@@ -30,7 +30,7 @@ public class VictimController : MonoBehaviour
                 playerDrownController.SetGoingDown(false);
                 yield return new WaitForSeconds(3);
                 playerDrownController.Tilt();
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(6);
             }
         }
         yield return new WaitForSeconds(3);

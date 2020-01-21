@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ToggleLights : MonoBehaviour, IIntractable
+public class ToggleLights : MonoBehaviour
 {
     [SerializeField] private GameObject pathLock;
     [SerializeField] private SetupPigAnimations pigAnims;
