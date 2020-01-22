@@ -14,6 +14,7 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
 
     public void Interact()
     {
+        GetComponent<Collider>().enabled = false;
         interacted = true;
         dialogueMethod.AddListener(() => { interacted = false; Done(); });
 
