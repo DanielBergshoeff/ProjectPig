@@ -8,7 +8,7 @@ public class TriggerAnimation : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            col.gameObject.GetComponent<Animator>().enabled = true;
+            GetComponent<Animator>().enabled = true;
         }
     }
 }
