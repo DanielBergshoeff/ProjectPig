@@ -99,6 +99,11 @@ public class Outline : MonoBehaviour
         outlineMaskMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineMask"));
         outlineFillMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineFill"));
 
+        Renderer renderer1 = GetComponent<Renderer>();
+        Material[] mat = renderer1.materials;
+        mat.Reverse();
+        renderer1.materials = mat;
+
         outlineMaskMaterial.name = "OutlineMask (Instance)";
         outlineFillMaterial.name = "OutlineFill (Instance)";
 

@@ -7,6 +7,7 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
     public bool TriggerByTouch;
 
     [SerializeField] private DialogueObject dialogue;
+    [SerializeField] private UnityEvent preDialogueMethod;
     [SerializeField] private UnityEvent dialogueMethod;
     [SerializeField] private ButtonAudio buttonAudio;
 
@@ -18,10 +19,12 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
         dialogueMethod.AddListener(() => { interacted = false; Done(); });
 
         TriggerDialogue();
-        if (buttonAudio == null)
-            return;
 
-        buttonAudio.PlayAudio();
+        if (buttonAudio != null)
+            buttonAudio.PlayAudio();
+
+        if (preDialogueMethod != null)
+            preDialogueMethod.Invoke();
     }
 
     private void Start()
@@ -37,7 +40,7 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
 
         if (other.CompareTag("Player"))
         {
-            TriggerDialogue();
+            Interact();
         }
     }
 

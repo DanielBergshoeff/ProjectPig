@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.031026125, y: 0.00008768149}
+  m_AnchoredPosition: {x: 0.031026125, y: -0.032}
   m_SizeDelta: {x: 3.36, y: 1.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &439491798
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: THE FIELDS NDA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -180,13 +180,13 @@ MonoBehaviour:
   m_margin: {x: 1.2239125, y: 0.07798685, z: 1.2622288, w: 0.8579677}
   m_textInfo:
     textComponent: {fileID: 439491795}
-    characterCount: 0
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 8938525375913635524}
   - component: {fileID: 8938525375913635523}
   - component: {fileID: 8938525375913635522}
-  - component: {fileID: 8938525375913635521}
+  - component: {fileID: 1783885065}
   m_Layer: 0
   m_Name: HandPad
   m_TagString: Untagged
@@ -262,7 +262,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 313ac66d0bda6b9468642aec1a17c300, type: 2}
+  - {fileID: 2100000, guid: e4bd5b3b7aa04e34b9e56f0d81e23f0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -296,7 +296,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8938525375913635521
+--- !u!114 &1783885065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,10 +305,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8938525375913635551}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ffa1a1db5ff7448800858698400739, type: 3}
+  m_Script: {fileID: 11500000, guid: fdb2a01bbd8711d4d942082677ce5155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action:
+  TriggerByTouch: 0
+  dialogue: {fileID: 11400000, guid: 8f66fa1f31361c044b2eff201d23ba3e, type: 2}
+  dialogueMethod:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8938525377398243335}
@@ -333,6 +335,7 @@ MonoBehaviour:
           m_StringArgument: Down
           m_BoolArgument: 0
         m_CallState: 2
+  buttonAudio: {fileID: 0}
 --- !u!95 &8938525377398243335
 Animator:
   serializedVersion: 3
@@ -467,7 +470,7 @@ BoxCollider:
   m_GameObject: {fileID: 8938525376112806164}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -484,11 +487,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerByTouch: 0
-  dialogue: {fileID: 11400000, guid: 590a1027599949244a2e425ea6d11e38, type: 2}
+  dialogue: {fileID: 11400000, guid: 64fa4752e67e6744d8401b84024363fe, type: 2}
   dialogueMethod:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8938525375913635521}
+      - m_Target: {fileID: 1783885065}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -733,7 +736,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 0
-  m_margin: {x: 1.2239125, y: 0.20330547, z: 1.2622288, w: 0.067230254}
+  m_margin: {x: 1.2296958, y: 0.20330547, z: 1.3002176, w: 0.11810842}
   m_textInfo:
     textComponent: {fileID: 8938525377590000122}
     characterCount: 0
@@ -766,10 +769,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8938525376786344331}
     m_Modifications:
-    - target: {fileID: 115324, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
-      propertyPath: m_Name
-      value: door_2 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2766287
@@ -826,6 +825,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.66745156
       objectReference: {fileID: 0}
+    - target: {fileID: 115324, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
+      propertyPath: m_Name
+      value: door_2 (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
 --- !u!1 &8938525375955656358 stripped
@@ -847,10 +850,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8938525376786344331}
     m_Modifications:
-    - target: {fileID: 115324, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
-      propertyPath: m_Name
-      value: door_2 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.77771
@@ -906,6 +905,10 @@ PrefabInstance:
     - target: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.66745156
+      objectReference: {fileID: 0}
+    - target: {fileID: 115324, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
+      propertyPath: m_Name
+      value: door_2 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
