@@ -39,6 +39,8 @@ public class PlayerDrownController : MonoBehaviour
     private Rigidbody platformRigidbody;
     private bool tilting = false;
 
+    private bool cursorOn = false;
+
     private void Start()
     {
         startPosition = Platform.transform.position;
@@ -56,6 +58,24 @@ public class PlayerDrownController : MonoBehaviour
         Instance = this;
     }
 
+    public void PressFirstButton() {
+        Hooks.Instance.PressFirstButton();
+    }
+
+    public void PressSecondButtonDown() {
+        if(!tilting)
+            goingDown = true;
+    }
+
+    public void PressSecondButtonUp() {
+        if(!tilting)
+            goingDown = false;
+    }
+
+    public void PressThirdButton() {
+        Tilt();
+    }
+
     private void UnTilt()
     {
         tilting = false;
@@ -63,7 +83,13 @@ public class PlayerDrownController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(keyTilt) && goingDownTimer <= 0 && !tilting)
+        if (!cursorOn) {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            cursorOn = true;
+        }
+
+        if (Input.GetKeyDown(keyTilt))
         {
             Tilt();
         }
@@ -103,7 +129,11 @@ public class PlayerDrownController : MonoBehaviour
 
     public void Tilt()
     {
+        if (!(goingDownTimer <= 0 && !tilting))
+            return;
+
         gridAnimator.SetTrigger("Tilt");
+        goingDown = false;
         tilting = true;
         Invoke("UnTilt", 2.5f);
     }
@@ -169,7 +199,6 @@ public class PlayerDrownController : MonoBehaviour
         {
             drowning = false;
             pigBeingDrowned.transform.parent = null;
-            //pigBeingDrowned = null;
         }
     }
 }

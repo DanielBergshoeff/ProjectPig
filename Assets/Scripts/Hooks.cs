@@ -86,6 +86,11 @@ public class Hooks : MonoBehaviour
         }
     }
 
+    public void PressFirstButton() {
+        if (newPigAllowed)
+            SetupNextPig();
+    }
+
     private void Update()
     {
         if (pigDropTime)
@@ -95,9 +100,9 @@ public class Hooks : MonoBehaviour
             pigProcess = true;
         }
 
-        if (Input.GetKeyDown(keySpawn) && newPigAllowed)
+        if (Input.GetKeyDown(keySpawn))
         {
-            SetupNextPig();
+            PressFirstButton();
         }
 
         if (pigProcess)
