@@ -493,7 +493,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1756,35 +1756,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4212214885689326752, guid: 5cd485e9130517e46a65ff4c50561e90,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.644
-      objectReference: {fileID: 0}
     - target: {fileID: -6499425649948538000, guid: 5cd485e9130517e46a65ff4c50561e90,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.644
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212214885689326752, guid: 5cd485e9130517e46a65ff4c50561e90,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.644
       objectReference: {fileID: 0}
     - target: {fileID: 6721102120700171384, guid: 5cd485e9130517e46a65ff4c50561e90,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.614
       objectReference: {fileID: 0}
-    - target: {fileID: -2478836721756207306, guid: 5cd485e9130517e46a65ff4c50561e90,
+    - target: {fileID: 4775378787678349059, guid: 5cd485e9130517e46a65ff4c50561e90,
         type: 3}
       propertyPath: m_Name
-      value: ButtonDown
+      value: SwitchInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 4786219582995621425, guid: 5cd485e9130517e46a65ff4c50561e90,
         type: 3}
       propertyPath: m_Name
       value: ButtonUp
       objectReference: {fileID: 0}
-    - target: {fileID: 4775378787678349059, guid: 5cd485e9130517e46a65ff4c50561e90,
+    - target: {fileID: -2478836721756207306, guid: 5cd485e9130517e46a65ff4c50561e90,
         type: 3}
       propertyPath: m_Name
-      value: SwitchInteractable
+      value: ButtonDown
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cd485e9130517e46a65ff4c50561e90, type: 3}
