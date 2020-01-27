@@ -238,41 +238,47 @@ public class Outline : MonoBehaviour
 
     List<Vector3> SmoothNormals(Mesh mesh)
     {
-
-        // Group vertices by location
-        var groups = mesh.vertices.Select((vertex, index) => new KeyValuePair<Vector3, int>(vertex, index)).GroupBy(pair => pair.Key);
-
-        // Copy normals to a new list
-        var smoothNormals = new List<Vector3>(mesh.normals);
-
-        // Average normals for grouped vertices
-        foreach (var group in groups)
+        try
         {
+            // Group vertices by location
+            var groups = mesh.vertices.Select((vertex, index) => new KeyValuePair<Vector3, int>(vertex, index)).GroupBy(pair => pair.Key);
+            // Copy normals to a new list
+            var smoothNormals = new List<Vector3>(mesh.normals);
 
-            // Skip single vertices
-            if (group.Count() == 1)
+            // Average normals for grouped vertices
+            foreach (var group in groups)
             {
-                continue;
+
+                // Skip single vertices
+                if (group.Count() == 1)
+                {
+                    continue;
+                }
+
+                // Calculate the average normal
+                var smoothNormal = Vector3.zero;
+
+                foreach (var pair in group)
+                {
+                    smoothNormal += mesh.normals[pair.Value];
+                }
+
+                smoothNormal.Normalize();
+
+                // Assign smooth normal to each vertex
+                foreach (var pair in group)
+                {
+                    smoothNormals[pair.Value] = smoothNormal;
+                }
             }
 
-            // Calculate the average normal
-            var smoothNormal = Vector3.zero;
-
-            foreach (var pair in group)
-            {
-                smoothNormal += mesh.normals[pair.Value];
-            }
-
-            smoothNormal.Normalize();
-
-            // Assign smooth normal to each vertex
-            foreach (var pair in group)
-            {
-                smoothNormals[pair.Value] = smoothNormal;
-            }
+            return smoothNormals;
+        }
+        catch
+        {
+            return default;
         }
 
-        return smoothNormals;
     }
 
     void UpdateMaterialProperties()
