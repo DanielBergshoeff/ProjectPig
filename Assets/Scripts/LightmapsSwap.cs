@@ -1,34 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine.Rendering;
-using System.Collections;
 
 public class LightmapsSwap : MonoBehaviour
 {
-    //GUI dropdown
-    public Dropdown dropdown;
+    public bool toggle;
+    public string nightpath = "";
 
     private LightmapData[] Daydata;
     private LightmapData[] Nightdata;
-
     private LightmapData[][] allLightmaps;
-
     private Texture[] DayReflections;
     private Texture[] NightReflections;
-
     private Texture[][] allReflections;
-
     private ReflectionProbe[] allReflectionProbes;
-    //path to the night lightmap and reflection substitudes
-    public string nightpath = "";
 
-
-
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-        //ypu can duplicate lightmap folder to break references, move to Resources, and rename back to the scene name
         if (nightpath == "") nightpath = SceneManager.GetActiveScene().name;
 
         Daydata = LightmapSettings.lightmaps;
@@ -63,14 +51,9 @@ public class LightmapsSwap : MonoBehaviour
         allReflections = new Texture[2][];
         allReflections[0] = DayReflections;
         allReflections[1] = NightReflections;
-
-        dropdown.onValueChanged.AddListener(delegate
-        {
-            SwapLightmaps(dropdown.value);
-        });
     }
 
-    public void SwapLightmaps(int option)
+    public void SwapLightmaps(int option = 1)
     {
 
         LightmapSettings.lightmaps = allLightmaps[option];

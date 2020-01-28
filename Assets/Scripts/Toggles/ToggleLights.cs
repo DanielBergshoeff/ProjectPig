@@ -6,17 +6,19 @@ public class ToggleLights : MonoBehaviour
     [SerializeField] private SetupPigAnimations pigAnims;
     [SerializeField] private GameObject path1;
     [SerializeField] private GameObject path2;
+    [SerializeField] private Material lightMat;
     private Light[] lights;
+    private GameObject[] lightsMat;
     public bool interacted { get; set; }
 
     private void Awake()
     {
         path1 = GameObject.Find("Part1");
         path2 = GameObject.Find("Part2");
-    }
+        pigAnims = FindObjectOfType<SetupPigAnimations>();
 
-    private void Start()
-    {
+        lightsMat = GameObject.FindGameObjectsWithTag("TubeLamp");
+
         gameObject.layer = LayerMask.NameToLayer("Interactable");
 
         int childCount = transform.parent.childCount;
@@ -37,12 +39,22 @@ public class ToggleLights : MonoBehaviour
         path2.SetActive(true);
 
         pathLock.SetActive(!pathLock.activeSelf);
-        pigAnims.SwitchToScreaming();
+        // pigAnims.SwitchToScreaming();
+
+        FindObjectOfType<LightmapsSwap>().SwapLightmaps();
+
+        foreach (GameObject go in lightsMat)
+        {
+            Renderer renderer1 = go.GetComponent<Renderer>();
+            renderer1.material = lightMat;
+        }
 
         foreach (var light in lights)
         {
-            light.enabled = !light.enabled;
+            light.enabled = true;
+            light.intensity = 1;
         }
+
         Done();
     }
     public void Done()
