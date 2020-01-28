@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private Vector3 startPosition;
     private float fixedDeltaTime;
 
-    private void Awake()
+    private void Start()
     {
         Instance = this;
         Player = GameObject.FindGameObjectWithTag("Player");

@@ -13,16 +13,16 @@ public class LoadScenes : MonoBehaviour
     {
         foreach (string scene in scenes)
         {
-#if UNITY_EDITOR
             if (!Application.isPlaying)
             {
                 EditorSceneManager.OpenScene(scene, OpenSceneMode.Additive);
                 EditorSceneManager.sceneSaved += OnSceneSaved;
             }
-#elif UNITY_STANDALONE_WIN
-            string sceneName = Path.GetFileName(scene);
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-#endif
+            else
+            {
+                string sceneName = Path.GetFileName(scene);
+                SceneManager.LoadScene(sceneName.Split('.')[0], LoadSceneMode.Additive);
+            }
         }
     }
 
