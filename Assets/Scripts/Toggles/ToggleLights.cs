@@ -21,7 +21,7 @@ public class ToggleLights : MonoBehaviour
 
         int childCount = transform.parent.childCount;
 
-        lights = transform.parent.GetComponentsInChildren<Light>();
+        lights = GameObject.Find("BoarRoomLights").GetComponentsInChildren<Light>();
         foreach (var light in lights)
         {
             light.enabled = false;
