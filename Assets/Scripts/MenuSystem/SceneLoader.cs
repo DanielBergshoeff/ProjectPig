@@ -43,7 +43,9 @@ public class SceneLoader : MonoBehaviour, IIntractable
 
     public void Interact()
     {
-        GetComponent<Collider>().enabled = false;
+        if (GetComponent<Collider>())
+            GetComponent<Collider>().enabled = false;
+
         if (dialogueNewScene != null)
             dialogue = dialogueNewScene;
 
