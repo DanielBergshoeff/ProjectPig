@@ -35,27 +35,30 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
-        MonoBehaviour[] pauseables = FindObjectsOfType<MonoBehaviour>();
-        for (int i = 0; i < pauseables.Length; i++)
+        if (Application.isPlaying)
         {
-            MonoBehaviour pauseable = pauseables[i];
+            MonoBehaviour[] pauseables = FindObjectsOfType<MonoBehaviour>();
+            for (int i = 0; i < pauseables.Length; i++)
+            {
+                MonoBehaviour pauseable = pauseables[i];
 
-            if (pauseable == this) { continue; }
-            if (pauseable.enabled == false) { continue; }
+                if (pauseable == this) { continue; }
+                if (pauseable.enabled == false) { continue; }
 
-            objectToPause.Add(pauseable);
+                objectToPause.Add(pauseable);
+            }
+
+            pauseUI = (GameObject)Resources.Load("Prefabs/PauseUI");
+
+            cachedPauseUI = Instantiate(pauseUI);
+            cachedPauseUI.GetComponentInChildren<Button>().onClick.AddListener(Pause);
+            cachedPauseUI.SetActive(false);
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
-
-        pauseUI = (GameObject)Resources.Load("Prefabs/PauseUI");
-
-        cachedPauseUI = Instantiate(pauseUI);
-        cachedPauseUI.GetComponentInChildren<Button>().onClick.AddListener(Pause);
-        cachedPauseUI.SetActive(false);
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
