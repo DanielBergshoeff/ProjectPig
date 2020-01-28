@@ -72,11 +72,12 @@ public class Hooks : MonoBehaviour
         resetObject.collisionEvent.AddListener(ResetPig);
 
         myAudioSource = GetComponent<AudioSource>();
-        sceneLoader = gameObject.AddComponent<SceneLoader>();
+        GameObject sceneLoaderObject = new GameObject();
+        sceneLoader = sceneLoaderObject.AddComponent<SceneLoader>();
 
         checkLight.color = wrongLightColor;
-        robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor);
-        robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor);
+        robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor * 1.5f);
+        robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor * 1.5f);
         foreach(GameObject go in wrongUI) {
             go.SetActive(true);
         }
@@ -176,6 +177,10 @@ public class Hooks : MonoBehaviour
             pigProcess = false;
         }
 
+        if (pig.GetComponent<HalfDeadPig>().enabled) {
+            livingPig = true;
+        }
+
         Destroy(pig.gameObject);
     }
 
@@ -212,8 +217,8 @@ public class Hooks : MonoBehaviour
             }
 
             checkLight.color = correctLightColor;
-            robotHeadMesh.materials[5].SetColor("_EmissionColor", correctLightColor);
-            robotHeadMesh.materials[1].SetColor("_EmissionColor", correctLightColor);
+            robotHeadMesh.materials[5].SetColor("_EmissionColor", correctLightColor * 1.5f);
+            robotHeadMesh.materials[1].SetColor("_EmissionColor", correctLightColor * 1.5f);
             foreach (GameObject go in wrongUI) {
                 go.SetActive(false);
             }
@@ -232,8 +237,8 @@ public class Hooks : MonoBehaviour
         else
         {
             checkLight.color = wrongLightColor;
-            robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor);
-            robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor);
+            robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor * 1.5f);
+            robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor * 1.5f);
             foreach (GameObject go in wrongUI) {
                 go.SetActive(true);
             }

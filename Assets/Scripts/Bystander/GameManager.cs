@@ -4,33 +4,29 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get;  private set; }
+    public static GameManager Instance { get; private set; }
 
     public GameObject Player;
 
     private Vector3 startPosition;
     private float fixedDeltaTime;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         Instance = this;
+        Player = GameObject.FindGameObjectWithTag("Player");
         startPosition = Player.transform.position;
 
         fixedDeltaTime = Time.fixedDeltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Respawn()
     {
-        
-    }
-
-    public void Respawn() {
         StartCoroutine("RespawnAfterSlow");
     }
 
-    private IEnumerator RespawnAfterSlow() {
+    private IEnumerator RespawnAfterSlow()
+    {
         Time.timeScale = 0.3f;
         Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
         yield return new WaitForSeconds(1f);

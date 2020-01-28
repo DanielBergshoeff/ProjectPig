@@ -35,9 +35,12 @@ public class SuperMarket : MonoBehaviour
     private bool down = false;
     private Vector3 originalPosition;
 
+    private bool inLift = false;
+
     private void Start()
     {
         Instance = this;
+        Player = GameObject.FindGameObjectWithTag("Player");
         originalPosition = elevator.transform.position;
         elevatorWallAudioSource = gameObject.AddComponent<AudioSource>();
         elevatorDingSource = elevator.AddComponent<AudioSource>();
@@ -99,8 +102,30 @@ public class SuperMarket : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inLift = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inLift = false;
+        }
+    }
+
     public void SetNewElevatorPosition()
     {
+        if (!inLift)
+        {
+            OpenElevator();
+            return;
+        }
+
         elevatorAudio.clip = elevatorMovement;
         elevatorAudio.loop = true;
         elevatorAudio.Play();
