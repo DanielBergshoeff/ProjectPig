@@ -9,14 +9,21 @@ public class ToggleLights : MonoBehaviour
     private Light[] lights;
     public bool interacted { get; set; }
 
+    private void Awake()
+    {
+        path1 = GameObject.Find("Part1");
+        path2 = GameObject.Find("Part2");
+    }
+
     private void Start()
     {
         gameObject.layer = LayerMask.NameToLayer("Interactable");
 
         int childCount = transform.parent.childCount;
 
-        lights = transform.parent.GetComponentsInChildren<Light>();
-        foreach (var light in lights) {
+        lights = GameObject.Find("BoarRoomLights").GetComponentsInChildren<Light>();
+        foreach (var light in lights)
+        {
             light.enabled = false;
         }
 
