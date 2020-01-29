@@ -12,7 +12,7 @@ public class BystanderController : MonoBehaviour
     [Header("Move tutorial")]
     [SerializeField] private GameObject moveTutorialCanvas;
     private Image imageMoveTutorial;
-    [SerializeField] private bool moveTutorial = false;
+    [SerializeField] public bool moveTutorial = false;
     [SerializeField] private float moveTutorialTimer = 5.0f;
 
     [Header("Interact")]

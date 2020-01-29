@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToggleLights : MonoBehaviour
 {
@@ -41,7 +42,17 @@ public class ToggleLights : MonoBehaviour
         pathLock.SetActive(!pathLock.activeSelf);
         pigAnims.SwitchToScreaming();
 
+        GameObject go1 = GameObject.FindGameObjectWithTag("Player");
+        SceneManager.MoveGameObjectToScene(go1, SceneManager.GetSceneByName("BoarRoom"));
+
+        SceneManager.UnloadSceneAsync("SupermarketRoom");
+        SceneManager.UnloadSceneAsync("VoorKamerRoom");
+        SceneManager.UnloadSceneAsync("DaderRoom");
+
         FindObjectOfType<LightmapsSwap>().SwapLightmaps();
+        SceneManager.LoadSceneAsync("DaderRoom", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("VoorKamerRoom", LoadSceneMode.Additive);
+        go1.GetComponent<BystanderController>().moveTutorial = false;
 
         foreach (GameObject go in lightsMat)
         {

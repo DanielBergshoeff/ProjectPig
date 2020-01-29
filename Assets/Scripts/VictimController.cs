@@ -25,7 +25,7 @@ public class VictimController : MonoBehaviour
             yield return new WaitForSeconds(1);
             playerDrownController.SetGoingDown(true);
             yield return new WaitForSeconds(6);
-            if (i < 2)
+            if (i < 3)
             {
                 playerDrownController.SetGoingDown(false);
                 yield return new WaitForSeconds(3);
