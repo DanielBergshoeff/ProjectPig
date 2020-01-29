@@ -37,7 +37,7 @@ public class PlayerDrownController : MonoBehaviour
 
     private Animator gridAnimator;
     private Rigidbody platformRigidbody;
-    private bool tilting = false;
+    public bool tilting = false;
 
     [SerializeField] private bool cursorShouldBeOn = false;
     private bool cursorOn = false;
@@ -142,7 +142,7 @@ public class PlayerDrownController : MonoBehaviour
         gridAnimator.SetTrigger("Tilt");
         goingDown = false;
         tilting = true;
-        Invoke("UnTilt", 2.5f);
+        Invoke("UnTilt", 6.5f);
     }
 
     public void ResetDrown()

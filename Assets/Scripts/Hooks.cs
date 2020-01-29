@@ -97,7 +97,7 @@ public class Hooks : MonoBehaviour
 
     public void PressFirstButton()
     {
-        if (newPigAllowed)
+        if (newPigAllowed && !PlayerDrownController.Instance.tilting)
             SetupNextPig();
     }
 

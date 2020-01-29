@@ -155,12 +155,17 @@ public class BystanderController : MonoBehaviour
             return;
         }
 
+        if (intractable.interacted)
+            return;
+
         interactionCanvasOn = true;
         HighlightObject(hit);
 
         if (!Input.GetKeyDown(interactionKey)) { return; }
 
         intractable.Interact();
+        UnhideMaterials();
+        interactionCanvasOn = false;
     }
 
     private void HighlightObject(RaycastHit hit)

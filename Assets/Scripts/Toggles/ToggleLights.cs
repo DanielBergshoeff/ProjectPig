@@ -39,7 +39,7 @@ public class ToggleLights : MonoBehaviour
         path2.SetActive(true);
 
         pathLock.SetActive(!pathLock.activeSelf);
-        // pigAnims.SwitchToScreaming();
+        pigAnims.SwitchToScreaming();
 
         FindObjectOfType<LightmapsSwap>().SwapLightmaps();
 

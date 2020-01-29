@@ -15,7 +15,6 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
 
     public void Interact()
     {
-        GetComponent<Collider>().enabled = false;
         interacted = true;
         dialogueMethod.AddListener(() => { interacted = false; Done(); });
 
@@ -26,6 +25,8 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
 
         if (preDialogueMethod != null)
             preDialogueMethod.Invoke();
+
+        Done();
     }
 
     private void Start()
@@ -74,6 +75,5 @@ public class DialogueTriggerObject : MonoBehaviour, IIntractable
     public void Done()
     {
         this.enabled = false;
-        GetComponent<Collider>().enabled = false;
     }
 }
