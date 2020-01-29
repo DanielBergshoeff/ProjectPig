@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         Player = GameObject.FindGameObjectWithTag("Player");
-        startPosition = Player.transform.position;
+        // startPosition = Player.transform.position;
 
         fixedDeltaTime = Time.fixedDeltaTime;
     }

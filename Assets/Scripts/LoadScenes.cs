@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+[ExecuteInEditMode]
 #endif
-[ExecuteAlways]
 public class LoadScenes : MonoBehaviour
 {
     [SerializeField] private string[] scenes;
@@ -19,9 +19,13 @@ public class LoadScenes : MonoBehaviour
                 EditorSceneManager.OpenScene(scene, OpenSceneMode.Additive);
                 EditorSceneManager.sceneSaved += OnSceneSaved;
             }
-#elif UNITY_STANDALONE_WIN
-            string sceneName = Path.GetFileName(scene);
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            else
+            {
+#endif
+                string sceneName = Path.GetFileName(scene);
+                SceneManager.LoadScene(sceneName.Split('.')[0], LoadSceneMode.Additive);
+#if UNITY_EDITOR
+            }
 #endif
         }
     }
