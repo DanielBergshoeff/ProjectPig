@@ -37,6 +37,8 @@ public class Hooks : MonoBehaviour
     [SerializeField] private AudioClip positiveClip;
     [SerializeField] private AudioClip negativeClip;
 
+    [SerializeField] private AudioClip submergePig;
+
     [SerializeField] private AudioSource heartBeatAudioSource;
     [SerializeField] private float heartBeatSpeed = 3.0f;
 
@@ -53,6 +55,9 @@ public class Hooks : MonoBehaviour
     private int amtOfCorrectPigs = 0;
 
     private AudioSource myAudioSource;
+
+    private AudioSource robotVoice;
+
     private SceneLoader sceneLoader;
 
     private void Start()
@@ -72,18 +77,28 @@ public class Hooks : MonoBehaviour
         resetObject.collisionEvent.AddListener(ResetPig);
 
         myAudioSource = GetComponent<AudioSource>();
+        robotVoice = gameObject.AddComponent<AudioSource>();
+
         GameObject sceneLoaderObject = new GameObject();
         sceneLoader = sceneLoaderObject.AddComponent<SceneLoader>();
 
         checkLight.color = wrongLightColor;
         robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor * 1.5f);
         robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor * 1.5f);
-        foreach(GameObject go in wrongUI) {
+        foreach (GameObject go in wrongUI)
+        {
             go.SetActive(true);
         }
-        foreach(GameObject go in correctUI) {
+        foreach (GameObject go in correctUI)
+        {
             go.SetActive(false);
         }
+    }
+
+    public void PressFirstButton()
+    {
+        if (newPigAllowed)
+            SetupNextPig();
     }
 
     private void Update()
@@ -95,9 +110,9 @@ public class Hooks : MonoBehaviour
             pigProcess = true;
         }
 
-        if (Input.GetKeyDown(keySpawn) && newPigAllowed)
+        if (Input.GetKeyDown(keySpawn))
         {
-            SetupNextPig();
+            PressFirstButton();
         }
 
         if (pigProcess)
@@ -177,18 +192,21 @@ public class Hooks : MonoBehaviour
             pigProcess = false;
         }
 
-        if (pig.GetComponent<HalfDeadPig>().enabled) {
+        if (pig.GetComponent<HalfDeadPig>().enabled)
+        {
             livingPig = true;
         }
 
         Destroy(pig.gameObject);
     }
 
-    public void UpdateHeartBeat(float drowning) {
+    public void UpdateHeartBeat(float drowning)
+    {
         heartBeatAudioSource.pitch = drowning * heartBeatSpeed;
     }
 
-    public void CheckPig(Collider coll, bool enter) {
+    public void CheckPig(Collider coll, bool enter)
+    {
         if (!enter)
             return;
 
@@ -203,15 +221,19 @@ public class Hooks : MonoBehaviour
         newPigAllowed = true;
         pigProcess = false;
 
-        if (pig.Dehaired && pig.GetComponent<HalfDeadPig>().enabled) {
+        if (pig.Dehaired && pig.GetComponent<HalfDeadPig>().enabled)
+        {
             sceneLoader.LoadScene("PreVictim", transitionObject, dialoguePreVictim);
         }
-        else if(pig.GetComponent<HalfDeadPig>().enabled) {
+        else if (pig.GetComponent<HalfDeadPig>().enabled)
+        {
             livingPig = true;
         }
-        
-        if (pig.Dehaired) {
-            if (processTimer < shortestProcessTimer) {
+
+        if (pig.Dehaired)
+        {
+            if (processTimer < shortestProcessTimer)
+            {
                 shortestProcessTimer = processTimer;
                 shortestProcessTime.text = shortestProcessTimer.ToString("F2");
             }
@@ -219,10 +241,12 @@ public class Hooks : MonoBehaviour
             checkLight.color = correctLightColor;
             robotHeadMesh.materials[5].SetColor("_EmissionColor", correctLightColor * 1.5f);
             robotHeadMesh.materials[1].SetColor("_EmissionColor", correctLightColor * 1.5f);
-            foreach (GameObject go in wrongUI) {
+            foreach (GameObject go in wrongUI)
+            {
                 go.SetActive(false);
             }
-            foreach (GameObject go in correctUI) {
+            foreach (GameObject go in correctUI)
+            {
                 go.SetActive(true);
             }
 
@@ -236,13 +260,16 @@ public class Hooks : MonoBehaviour
         }
         else
         {
+            robotVoice.PlayOneShot(submergePig);
             checkLight.color = wrongLightColor;
             robotHeadMesh.materials[5].SetColor("_EmissionColor", wrongLightColor * 1.5f);
             robotHeadMesh.materials[1].SetColor("_EmissionColor", wrongLightColor * 1.5f);
-            foreach (GameObject go in wrongUI) {
+            foreach (GameObject go in wrongUI)
+            {
                 go.SetActive(true);
             }
-            foreach (GameObject go in correctUI) {
+            foreach (GameObject go in correctUI)
+            {
                 go.SetActive(false);
             }
 
