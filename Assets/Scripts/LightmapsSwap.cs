@@ -17,6 +17,7 @@ public class LightmapsSwap : MonoBehaviour
 
     private void Start()
     {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(nightpath));
         Daydata = LightmapSettings.lightmaps;
 
         allLightmaps = new LightmapData[2][];
