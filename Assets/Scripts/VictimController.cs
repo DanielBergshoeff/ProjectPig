@@ -19,7 +19,7 @@ public class VictimController : MonoBehaviour
 
     IEnumerator PlayVictim()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             hookController.SetupNextPig();
             yield return new WaitForSeconds(1);
