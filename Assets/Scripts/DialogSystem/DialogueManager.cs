@@ -56,20 +56,24 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator TriggerNextDialogue(float time) {
+    private IEnumerator TriggerNextDialogue(float time)
+    {
         yield return new WaitForSeconds(time);
 
         NextDialogue();
     }
 
-    private void NextDialogue() {
+    private void NextDialogue()
+    {
         dialogueIndex++;
 
-        if (dialogueIndex < currentDialogue.lines.Length) {
+        if (dialogueIndex < currentDialogue.lines.Length)
+        {
             ShowDialogue(currentDialogue.lines[dialogueIndex]);
             return;
         }
-        else {
+        else
+        {
             //Reset the dialogue system
             dialogueMode = false;
             if (!custom)
@@ -79,7 +83,7 @@ public class DialogueManager : MonoBehaviour
             custom = false;
             StopAllCoroutines();
 
-            
+
 
             //If there is a method to call at the end of the dialogue, call it
             if (dialogueMethod == null)
@@ -101,7 +105,8 @@ public class DialogueManager : MonoBehaviour
         dialogueMode = true;
         dialogueMethod = dm;
 
-        if (box != default) {
+        if (box != default)
+        {
             dialogueBox = box;
             custom = true;
         }
@@ -130,7 +135,7 @@ public class DialogueManager : MonoBehaviour
         //Get references to components
         textObjects = dialogueBox.GetComponentsInChildren<TMP_Text>();
 
-        dialogueAudio = dialogueBox.GetComponentInChildren<AudioSource>();
+        dialogueAudio = GameObject.Find("DialogueSource").GetComponentInChildren<AudioSource>();
 
         if (dialogueAudio == null)
             dialogueAudio = dialogueBox.AddComponent<AudioSource>();
@@ -155,7 +160,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox = Instantiate(original, transform);
         dialogueBox.name = original.name;
     }
-        
+
     /// <summary>
     /// This handles the displaying of the text and playing of the audio.
     /// </summary>
@@ -175,7 +180,8 @@ public class DialogueManager : MonoBehaviour
 
         if (dialogueLine.audio != null && dialogueLine.audio != default)
             StartCoroutine(TriggerNextDialogue(dialogueLine.audio.length));
-        else {
+        else
+        {
             StartCoroutine(TriggerNextDialogue(2f));
         }
 
@@ -198,7 +204,7 @@ public class DialogueManager : MonoBehaviour
         container.text = "";
         for (float t = 0; t < text.Length; t += Time.deltaTime * text.Length / duration)
         {
-            int charactersTyped = (int)Mathf.Clamp(t, 0f, text.Length-1);
+            int charactersTyped = (int)Mathf.Clamp(t, 0f, text.Length - 1);
             int beginIndex = AmountOfCharactersPossible == 0 ? AmountOfCharactersPossible : charactersTyped - AmountOfCharactersPossible;
             container.text = text.Substring(beginIndex, charactersTyped - beginIndex);
 
